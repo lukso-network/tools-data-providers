@@ -13,21 +13,23 @@
     "@lukso/data-providers": "workspace:*",
     "@lukso/tsconfig": "workspace:*",
     "eslint": "^7.32.0",
-    "eslint-config-lukso": "workspace:*",
+    "eslint-config": "workspace:*",
+    "jest-presets": "workspace:*",
     "tsup": "^5.10.1",
     "typescript": "^4.5.3"
   },
-  "script": {
+  "scripts": {
     "test": "jest --detectOpenHandles"
   },
   "jest": {
-    "preset": "jest-presets-lukso/browser"
+    "preset": "jest-presets/jest/browser"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
     "@types/chrome": "^0.0.248",
-    "@types/jest": "^29.5.7"
+    "@types/jest": "^29.5.7",
+    "@types/node": "^20.8.10"
   }
 }

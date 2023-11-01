@@ -1,6 +1,6 @@
 0:[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L1",[[],["$L2",null]]]]
-3:I{"id":"7395","chunks":["272:static/chunks/webpack-8074fabf81ca3fbd.js","972:static/chunks/5150994f-90e0a7b367246cc6.js","638:static/chunks/638-6d16970b5a548619.js"],"name":"","async":false}
-4:I{"id":"5515","chunks":["272:static/chunks/webpack-8074fabf81ca3fbd.js","972:static/chunks/5150994f-90e0a7b367246cc6.js","638:static/chunks/638-6d16970b5a548619.js"],"name":"","async":false}
-5:I{"id":"8127","chunks":["931:static/chunks/app/page-2403ecd3c0f52a62.js"],"name":"Button","async":false}
+3:I{"id":"1828","chunks":["272:static/chunks/webpack-8074fabf81ca3fbd.js","304:static/chunks/f5b080f3-1f2988ea2ab54155.js","322:static/chunks/322-aeba7e2c1b32f418.js"],"name":"","async":false}
+4:I{"id":"8468","chunks":["272:static/chunks/webpack-8074fabf81ca3fbd.js","304:static/chunks/f5b080f3-1f2988ea2ab54155.js","322:static/chunks/322-aeba7e2c1b32f418.js"],"name":"","async":false}
+5:I{"id":"8127","chunks":["931:static/chunks/app/page-840b6d6441687249.js"],"name":"Button","async":false}
 1:[["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"template":["$","$L4",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","asNotFound":"$undefined","childProp":{"current":[[["$","h1",null,{"children":"Web"}],["$","$L5",null,{"children":"Boop"}]],null],"segment":"__PAGE__"},"styles":[]}]}]}],null]
 2:[[["$","meta",null,{"charSet":"utf-8"}],null,null,null,null,null,null,null,null,null,null,["$","meta",null,{"name":"viewport","content":"width=device-width, initial-scale=1"}],null,null,null,null,null,null,null,null,null,null,[]],[null,null,null,null],null,null,[null,null,null,null,null],null,null,null,null,null]

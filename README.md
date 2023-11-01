@@ -20,7 +20,8 @@ This Turborepo includes the following:
 - `@lukso/core`: core React components
 - `@lukso/utils`: shared React utilities
 - `@lukso/tsconfig`: shared `tsconfig.json`s used throughout the monorepo
-- `eslint-config-lukso`: ESLint preset
+- `eslint-config`: ESLint preset
+- `jest-presets`: Jest presets
 
 Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
 
