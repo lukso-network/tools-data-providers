@@ -1,0 +1,5 @@
+{
+  "extends": "@lukso/tsconfig/browser.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"]
+}

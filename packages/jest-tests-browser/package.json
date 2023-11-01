@@ -1,0 +1,33 @@
+{
+  "name": "jest-tests-browser",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "devDependencies": {
+    "@lukso/data-providers": "workspace:*",
+    "@lukso/tsconfig": "workspace:*",
+    "eslint": "^7.32.0",
+    "eslint-config-lukso": "workspace:*",
+    "tsup": "^5.10.1",
+    "typescript": "^4.5.3"
+  },
+  "script": {
+    "test": "jest --detectOpenHandles"
+  },
+  "jest": {
+    "preset": "jest-presets-lukso/browser"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@types/chrome": "^0.0.248",
+    "@types/jest": "^29.5.7"
+  }
+}
