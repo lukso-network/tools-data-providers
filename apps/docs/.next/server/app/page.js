@@ -223,10 +223,10 @@ Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_
 
 /***/ }),
 
-/***/ 9279:
+/***/ 4682:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 2169, 23))
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 4704, 23))
 
 /***/ }),
 
@@ -270,7 +270,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6786);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _lukso_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2437);
+/* harmony import */ var _lukso_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8526);
 /* harmony import */ var _lukso_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lukso_core__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -290,18 +290,18 @@ function Page() {
 
 /***/ }),
 
-/***/ 2437:
+/***/ 8526:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 /* __next_internal_client_entry_do_not_use__  cjs */ 
 const { createProxy  } = __webpack_require__(1333);
-module.exports = createProxy("/Users/andy/Development/tools-data-providers/packages/lukso-core/dist/index.js");
+module.exports = createProxy("/Users/andy/Development/tools-data-providers/packages/core/dist/index.js");
 
 
 /***/ }),
 
-/***/ 2169:
+/***/ 4704:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";

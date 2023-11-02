@@ -2,8 +2,6 @@ const crypto = require("node:crypto");
 const { TextEncoder, TextDecoder } = require("util");
 const ResizeObserver = require("resize-observer-polyfill");
 
-debugger;
-
 Object.defineProperty(globalThis, "crypto", {
   value: crypto,
 });
@@ -29,4 +27,3 @@ Object.defineProperty(globalThis, "TextDecoder", {
 Object.defineProperty(globalThis, "ResizeObserver", {
   value: ResizeObserver,
 });
-console.log(globalThis, globalThis.self);

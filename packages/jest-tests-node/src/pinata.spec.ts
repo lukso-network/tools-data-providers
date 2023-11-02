@@ -3,7 +3,7 @@
  * https://stackoverflow.com/a/57713960
  */
 import "whatwg-fetch";
-import { PinataFormDataUploader } from "@lukso/data-providers";
+import { PinataFormDataProvider } from "@lukso/data-provider-pinata";
 
 beforeEach(() => {
   jest.resetAllMocks();
@@ -31,7 +31,7 @@ async function mockDependencies() {
     pinataApiKey: "sample-api-key",
     pinataSecretApiKey: "some-secret-key",
   };
-  const uploader = new PinataFormDataUploader(config);
+  const uploader = new PinataFormDataProvider(config);
   const uploadFormData = jest.spyOn(uploader, "uploadFormData");
   (uploadFormData as jest.Mock).mockImplementation(async () => {
     return { IpfsHash: "QmY4Z" };

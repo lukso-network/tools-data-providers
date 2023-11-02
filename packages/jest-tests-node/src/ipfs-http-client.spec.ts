@@ -5,7 +5,7 @@
  */
 import { create } from "ipfs-http-client";
 
-import { HttpIPFSClientUploader } from "./ipfs-http-client";
+import { HttpIPFSClientUploader } from "@lukso/data-provider-http-client";
 
 jest.mock("ipfs-http-client");
 

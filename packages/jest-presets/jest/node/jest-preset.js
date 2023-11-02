@@ -4,7 +4,8 @@ const esModules = [
   "is-ipfs",
   "is-ip",
   "@lukso/data-providers",
-  `lukso-data-providers`,
+  "lukso-data-providers",
+  "ipfs-http-client",
 ].join("|");
 
 module.exports = {
@@ -18,7 +19,7 @@ module.exports = {
     "<rootDir>/node_modules",
     "<rootDir>/dist",
   ],
-  setupAfterEnv: ["jest-presets/jest/node/jest.setup.ts"],
+  setupFilesAfterEnv: ["jest-presets/jest/node/jest-setup.js"],
   preset: "ts-jest",
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
 };

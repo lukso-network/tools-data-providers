@@ -27,4 +27,3 @@ Object.defineProperty(globalThis, "TextDecoder", {
 Object.defineProperty(globalThis, "ResizeObserver", {
   value: ResizeObserver,
 });
-console.log(globalThis, globalThis.self);
