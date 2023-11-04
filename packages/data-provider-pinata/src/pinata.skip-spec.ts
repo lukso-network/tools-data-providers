@@ -1,8 +1,3 @@
-/**
- * Necessary due to JSDOM not providing TextDecoder
- * https://stackoverflow.com/a/57713960
- */
-import "whatwg-fetch";
 import { PinataFormDataProvider } from "./pinata-formdata-client";
 
 beforeEach(() => {

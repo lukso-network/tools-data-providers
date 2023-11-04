@@ -1,19 +1,6 @@
-import isIPFS from 'is-ipfs';
 import { BaseFormDataProvider } from '@lukso/data-providers';
 
 const ERROR_NO_CREDENTIALS_PROVIDED = "No credentials provided! Please provide your pinata api key and pinata secret api key or your pinata JWT key as an argument when you start this script";
-function validateHostNodes(hostNodes) {
-  if (!Array.isArray(hostNodes)) {
-    throw new TypeError("host_nodes value must be an array");
-  }
-  for (const node of hostNodes) {
-    if (!isIPFS.peerMultiaddr(node)) {
-      throw new Error(
-        `host_node array entry: ${node} is not a valid peer multiaddr`
-      );
-    }
-  }
-}
 function validateMetadata(metadata) {
   if (metadata.name && !(typeof metadata.name === "string" || metadata.name instanceof String)) {
     throw new Error("metadata name must be of type string");
@@ -35,24 +22,6 @@ function validateMetadata(metadata) {
         );
       }
       i++;
-    }
-  }
-}
-function validatePinPolicyStructure(pinPolicy) {
-  if (!pinPolicy) {
-    throw new TypeError("No pin policy provided");
-  }
-  if (!pinPolicy.regions) {
-    throw new TypeError("No regions provided in pin policy");
-  }
-  if (pinPolicy.regions?.length > 0) {
-    for (const region of pinPolicy.regions) {
-      if (!region.id || !(Object.prototype.toString.call(region.id) === "[object String]")) {
-        throw new TypeError("region id must be a string");
-      }
-      if (!(region.desiredReplicationCount || region.desiredReplicationCount === 0) || !Number.isInteger(region.desiredReplicationCount)) {
-        throw new TypeError("desiredReplicationCount must be an integer");
-      }
     }
   }
 }
@@ -84,25 +53,6 @@ function createConfigForAxiosHeadersWithFormData(config) {
   };
   return requestOptions;
 }
-function validatePinataOptions(options) {
-  if (typeof options !== "object") {
-    throw new TypeError("options must be an object");
-  }
-  if (options.cidVersion && options.cidVersion != 0 && options.cidVersion != 1) {
-    throw new Error("unsupported or invalid cidVersion");
-  }
-  if (options.wrapWithDirectory && options.wrapWithDirectory !== true && options.wrapWithDirectory !== false) {
-    throw new Error(
-      "wrapWithDirectory must be a boolean value of true or false"
-    );
-  }
-  if (options.hostNodes) {
-    validateHostNodes(options.hostNodes);
-  }
-  if (options.customPinPolicy) {
-    validatePinPolicyStructure(options.customPinPolicy);
-  }
-}
 class PinataFormDataProvider extends BaseFormDataProvider {
   constructor(pinataConfig) {
     super();
@@ -132,4 +82,4 @@ class PinataFormDataProvider extends BaseFormDataProvider {
   }
 }
 
-export { ERROR_NO_CREDENTIALS_PROVIDED, PinataFormDataProvider, createConfigForAxiosHeaders, createConfigForAxiosHeadersWithFormData, validateHostNodes, validateMetadata, validatePinPolicyStructure, validatePinataOptions };
+export { ERROR_NO_CREDENTIALS_PROVIDED, PinataFormDataProvider, createConfigForAxiosHeaders, createConfigForAxiosHeadersWithFormData, validateMetadata };

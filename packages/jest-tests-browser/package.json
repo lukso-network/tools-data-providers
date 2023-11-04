@@ -1,9 +1,7 @@
 {
   "name": "jest-tests-browser",
   "version": "0.0.0",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "type": "module",
   "sideEffects": false,
   "license": "MIT",
   "files": [
@@ -32,6 +30,8 @@
     "@lukso/data-providers": "workspace:*",
     "@types/chrome": "^0.0.248",
     "@types/jest": "^29.5.7",
-    "@types/node": "^20.8.10"
+    "@types/node": "^20.8.10",
+    "fetch-blob": "^4.0.0",
+    "ipfs-http-client": "^60.0.1"
   }
 }

@@ -6,7 +6,7 @@
       "name": "Run Script: test",
       "request": "launch",
       "command": "pnpm run test",
-      "cwd": "${workspaceFolder}/packages/jest-tests-node",
+      "cwd": "${workspaceFolder}",
       "autoAttachChildProcesses": true
     }
   ]

@@ -1,6 +1,13 @@
-import FormData from 'cross-formdata';
-import fetch from 'isomorphic-fetch';
-import { sign } from '@tsndr/cloudflare-worker-jwt';
+'use strict';
+
+const FormData = require('cross-formdata');
+const fetch = require('isomorphic-fetch');
+const cloudflareWorkerJwt = require('@tsndr/cloudflare-worker-jwt');
+
+function _interopDefaultCompat (e) { return e && typeof e === 'object' && 'default' in e ? e.default : e; }
+
+const FormData__default = /*#__PURE__*/_interopDefaultCompat(FormData);
+const fetch__default = /*#__PURE__*/_interopDefaultCompat(fetch);
 
 const NOT_IMPLEMENTED = "Not implemented";
 const handleError = (error) => {
@@ -46,7 +53,7 @@ class BaseFormDataProvider {
     return meta;
   }
   async upload(data, meta) {
-    const dataContent = new FormData();
+    const dataContent = new FormData__default();
     meta = this.populate(dataContent, data, meta);
     await this.addMetadata(dataContent, meta);
     const options = await this.getRequestOptions(dataContent, meta);
@@ -80,7 +87,7 @@ class BaseFormDataProvider {
       ...input.headers
       /* ...headers */
     };
-    return (globalThis.fetch || fetch)(this.getEndpoint(), {
+    return (globalThis.fetch || fetch__default)(this.getEndpoint(), {
       ...input,
       body: dataContent
     }).then((response) => {
@@ -144,7 +151,7 @@ class AuthenticatedFormDataProvider extends CustomHeaderFormDataProvider {
   }
   async getToken() {
     const now = Date.now();
-    return await sign(
+    return await cloudflareWorkerJwt.sign(
       { iss: "extension", iat: now / 1e3, exp: (now + 12e4) / 1e3 },
       process.env.VUE_APP_SHARED_KEY || ""
     );
@@ -229,4 +236,9 @@ class UrlResolver {
   }
 }
 
-export { AuthenticatedFormDataProvider, BaseFormDataProvider, CustomHeaderFormDataProvider, UrlConverter, UrlResolver, handleError };
+exports.AuthenticatedFormDataProvider = AuthenticatedFormDataProvider;
+exports.BaseFormDataProvider = BaseFormDataProvider;
+exports.CustomHeaderFormDataProvider = CustomHeaderFormDataProvider;
+exports.UrlConverter = UrlConverter;
+exports.UrlResolver = UrlResolver;
+exports.handleError = handleError;

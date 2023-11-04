@@ -1,6 +1,9 @@
 const crypto = require("node:crypto");
 const { TextEncoder, TextDecoder } = require("util");
 const ResizeObserver = require("resize-observer-polyfill");
+const { config } = require("dotenv");
+
+config({ path: "../../.env.test" });
 
 Object.defineProperty(globalThis, "crypto", {
   value: crypto,

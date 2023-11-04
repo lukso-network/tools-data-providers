@@ -1,8 +1,10 @@
 const esModules = [
-  "cross-blob",
-  "fetch-blob",
   "is-ip",
+  "jest-tests-browser",
   "@lukso/data-providers",
+  "data-provider-http-client",
+  "jest-tests-browser",
+  "@lukso/data-provider-http-client",
   "ipfs-http-client",
 ].join("|");
 
@@ -12,7 +14,17 @@ module.exports = {
   transform: {
     "^.+\\.(ts|tsx|js)?$": "ts-jest",
   },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  moduleFileExtensions: [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json",
+    "node",
+    "mjs",
+    "cjs",
+  ],
+  extensionsToTreatAsEsm: [".mts"],
   modulePathIgnorePatterns: [
     "<rootDir>/test/__fixtures__",
     "<rootDir>/node_modules",

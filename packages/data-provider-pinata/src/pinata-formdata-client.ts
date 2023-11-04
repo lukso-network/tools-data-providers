@@ -1,7 +1,5 @@
 import { PinataConfig } from "@pinata/sdk";
 
-import isIPFS from "is-ipfs";
-
 import {
   BaseFormDataProvider,
   FormDataPostHeaders,
@@ -10,19 +8,6 @@ import {
 
 export const ERROR_NO_CREDENTIALS_PROVIDED =
   "No credentials provided! Please provide your pinata api key and pinata secret api key or your pinata JWT key as an argument when you start this script";
-
-export function validateHostNodes(hostNodes: any) {
-  if (!Array.isArray(hostNodes)) {
-    throw new TypeError("host_nodes value must be an array");
-  }
-  for (const node of hostNodes) {
-    if (!isIPFS.peerMultiaddr(node)) {
-      throw new Error(
-        `host_node array entry: ${node} is not a valid peer multiaddr`
-      );
-    }
-  }
-}
 
 export function validateMetadata(metadata: any) {
   if (
@@ -62,36 +47,6 @@ export function validateMetadata(metadata: any) {
   }
 }
 
-export function validatePinPolicyStructure(pinPolicy: { regions: any[] }) {
-  //this function takes in a pin policy and checks the JSON structure to make sure it's valid
-  if (!pinPolicy) {
-    throw new TypeError("No pin policy provided");
-  }
-
-  if (!pinPolicy.regions) {
-    throw new TypeError("No regions provided in pin policy");
-  }
-  if (pinPolicy.regions?.length > 0) {
-    for (const region of pinPolicy.regions) {
-      if (
-        !region.id ||
-        !(Object.prototype.toString.call(region.id) === "[object String]")
-      ) {
-        throw new TypeError("region id must be a string");
-      }
-
-      if (
-        !(
-          region.desiredReplicationCount || region.desiredReplicationCount === 0
-        ) ||
-        !Number.isInteger(region.desiredReplicationCount)
-      ) {
-        throw new TypeError("desiredReplicationCount must be an integer");
-      }
-    }
-  }
-}
-
 export function createConfigForAxiosHeaders(config: PinataConfig) {
   if (
     config.pinataApiKey &&
@@ -126,42 +81,6 @@ export function createConfigForAxiosHeadersWithFormData(config: PinataConfig) {
     maxBodyLength: Number.POSITIVE_INFINITY,
   };
   return requestOptions;
-}
-
-export function validatePinataOptions(options: {
-  cidVersion?: number;
-  wrapWithDirectory?: boolean;
-  hostNodes?: any;
-  customPinPolicy?: any;
-}) {
-  if (typeof options !== "object") {
-    throw new TypeError("options must be an object");
-  }
-
-  if (
-    options.cidVersion &&
-    options.cidVersion != 0 &&
-    options.cidVersion != 1
-  ) {
-    throw new Error("unsupported or invalid cidVersion");
-  }
-  if (
-    options.wrapWithDirectory &&
-    options.wrapWithDirectory !== true &&
-    options.wrapWithDirectory !== false
-  ) {
-    throw new Error(
-      "wrapWithDirectory must be a boolean value of true or false"
-    );
-  }
-
-  if (options.hostNodes) {
-    validateHostNodes(options.hostNodes);
-  }
-
-  if (options.customPinPolicy) {
-    validatePinPolicyStructure(options.customPinPolicy);
-  }
 }
 
 export class PinataFormDataProvider extends BaseFormDataProvider {

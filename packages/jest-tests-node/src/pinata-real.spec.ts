@@ -1,11 +1,5 @@
-/**
- * Necessary due to JSDOM not providing TextDecoder
- * https://stackoverflow.com/a/57713960
- */
-import "whatwg-fetch";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import Blob from "cross-blob";
 
 import { PinataFormDataProvider } from "@lukso/data-provider-pinata";
 

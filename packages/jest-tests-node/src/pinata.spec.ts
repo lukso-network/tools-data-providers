@@ -1,8 +1,3 @@
-/**
- * Necessary due to JSDOM not providing TextDecoder
- * https://stackoverflow.com/a/57713960
- */
-import "whatwg-fetch";
 import { PinataFormDataProvider } from "@lukso/data-provider-pinata";
 
 beforeEach(() => {
@@ -16,9 +11,9 @@ it("should pin images (web)", async () => {
 
   expect(uploadFormData).toHaveBeenCalledWith(
     expect.objectContaining({
-      headers: expect.objectContaining({}),
+      headers: expect.any(Object),
     }),
-    expect.any(global.FormData || FormData)
+    expect.objectContaining({ __content: expect.anything() })
   );
 
   expect(upload.toString()).toEqual("ipfs://QmY4Z");

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
+  "types": "./dist/index.d.ts",
   "sideEffects": false,
   "license": "MIT",
   "files": [
@@ -34,7 +34,6 @@
     "cross-formdata": "^1.0.3",
     "form-data": "^4.0.0",
     "ipfs-http-client": "^60.0.1",
-    "is-ipfs": "^8.0.1",
     "isomorphic-fetch": "^3.0.0"
   }
 }

@@ -4,7 +4,10 @@ const esModules = [
   "is-ipfs",
   "is-ip",
   "@lukso/data-providers",
-  "lukso-data-providers",
+  "@lukso/data-provider-http-client",
+  "data-provider-http-client",
+  "data-providers",
+  "jest-tests-node",
   "ipfs-http-client",
 ].join("|");
 
@@ -13,7 +16,17 @@ module.exports = {
   transform: {
     "^.+\\.(ts|tsx|js)?$": "ts-jest",
   },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  moduleFileExtensions: [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "mjs",
+    "cjs",
+    "json",
+    "node",
+  ],
+  extensionsToTreatAsEsm: [".mts"],
   modulePathIgnorePatterns: [
     "<rootDir>/test/__fixtures__",
     "<rootDir>/node_modules",

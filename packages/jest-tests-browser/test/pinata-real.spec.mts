@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import Blob from "cross-blob";
 
-import { PinataFormDataProvider } from "./pinata-formdata-client";
+import { PinataFormDataProvider } from "@lukso/data-provider-pinata";
 
 beforeEach(() => {
   jest.resetAllMocks();
@@ -19,7 +19,7 @@ it("should pin images (web)", async () => {
 });
 
 async function mockDependencies() {
-  const file = new (global.Blob || Blob)(
+  const file = new Blob(
     // This is only for jest so it's no big deal.
     // eslint-disable-next-line unicorn/prefer-module
     [readFileSync(resolve(__dirname, "./test-image.png"))],
