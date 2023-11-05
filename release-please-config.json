@@ -15,12 +15,17 @@
         },
         {
           "type": "json",
-          "path": "package.json",
+          "path": "packages/data-provider-http-client/package.json",
           "jsonpath": "$.version"
         },
         {
           "type": "json",
-          "path": "package.json",
+          "path": "packages/data-provider-pinata/package.json",
+          "jsonpath": "$.version"
+        },
+        {
+          "type": "json",
+          "path": "packages/data-provider-pinata/package.json",
           "jsonpath": "$.version"
         }
       ]
