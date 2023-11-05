@@ -24,7 +24,6 @@ jobs:
 
       - name: Use Node.js '18.12.1'
         uses: actions/setup-node@v2
-        if: ${{ steps.release.outputs.release_created }}
         with:
           node-version: "18.12.1"
           registry-url: "https://registry.npmjs.org"
@@ -32,15 +31,24 @@ jobs:
           cache: "pnpm"
 
       - name: Install Dependencies
-        if: ${{ steps.release.outputs.release_created }}
         run: pnpm install
 
       # `npm run build:js` will also generate the auto-generated constants for methods, errors and events,
       # including extracting their devdocs and userdocs
       - name: Prepare artifacts to publish
-        if: ${{ steps.release.outputs.release_created }}
         run: |
           pnpm run build
+
+      - name: Colled documentation
+        run: |
+          pnpm run docs
+
+      - name: Deploy
+        # if: ${{ steps.release.outputs.release_created }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
 
       - name: Publish on NPM
         if: ${{ steps.release.outputs.release_created }}
