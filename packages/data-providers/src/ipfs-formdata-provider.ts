@@ -9,6 +9,7 @@ import {
  * as part of the form POST request to the endpoint.
  * One example of this is used when you secure a pinata or infura endpoint
  * with your own private proxy accepting a bearer token for example.
+ * @public
  */
 export class CustomHeaderFormDataProvider extends BaseFormDataProvider {
   constructor(private endpoint: string, private headers: FormDataPostHeaders) {

@@ -1,3 +1,7 @@
 .turbo
 node_modules
 /.env*
+temp
+etc/*
+/docs
+dist

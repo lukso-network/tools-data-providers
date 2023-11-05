@@ -2,14 +2,6 @@
 
 This is an official React design system starter powered by Turborepo. Versioning and package publishing is handled by [Changesets](https://github.com/changesets/changesets) and fully automated with GitHub Actions.
 
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest -e with-changesets
-```
-
 ## What's inside?
 
 This Turborepo includes the following:
@@ -17,37 +9,21 @@ This Turborepo includes the following:
 ### Apps and Packages
 
 - `docs`: A placeholder documentation site powered by [Next.js](https://nextjs.org/)
-- `@lukso/core`: core React components
-- `@lukso/utils`: shared React utilities
+- `@lukso/data-providers`: Base data providers using formdata and url mapping libraries.
+- `@lukso/data-provider-http-client`: Custom data provider using ipfs-http-client
+- `@lukso/data-provider-pinata`: Custom data provider using `@pinata/sdk`
 - `@lukso/tsconfig`: shared `tsconfig.json`s used throughout the monorepo
 - `eslint-config`: ESLint preset
 - `jest-presets`: Jest presets
-
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- `jest-tests-node`: Jest tests running in node
+- `jest-tests-browser`: Jest tests running in jsdom
 
 ### Useful commands
 
 - `pnpm run build` - Build all packages and the docs site
-- `pnpm run dev` - Develop all packages and the docs site
 - `pnpm run lint` - Lint all packages
 - `pnpm run changeset` - Generate a changeset
 - `pnpm run clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
-
-### Changing the npm organization scope
-
-The npm organization scope for this design system starter is `@lukso`. To change this, it's a bit manual at the moment, but you'll need to do the following:
-
-- Rename folders in `packages/*` to replace `lukso` with your desired scope
-- Search and replace `lukso` with your desired scope
-- Re-run `pnpm install`
 
 ## Versioning and Publishing packages
 
@@ -56,18 +32,6 @@ Package publishing has been configured using [Changesets](https://github.com/cha
 This example comes with automated npm releases setup in a [GitHub Action](https://github.com/changesets/action). To get this working, you will need to create an `NPM_TOKEN` and `GITHUB_TOKEN` in your repository settings. You should also install the [Changesets bot](https://github.com/apps/changeset-bot) on your GitHub repository as well.
 
 For more information about this automation, refer to the official [changesets documentation](https://github.com/changesets/changesets/blob/main/docs/automating-changesets.md)
-
-### npm
-
-If you want to publish package to the public npm registry and make them publicly available, this is already setup.
-
-To publish packages to a private npm organization scope, **remove** the following from each of the `package.json`'s
-
-```diff
-- "publishConfig": {
--  "access": "public"
-- },
-```
 
 ### GitHub Package Registry
 

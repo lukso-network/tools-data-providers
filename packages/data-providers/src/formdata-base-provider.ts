@@ -4,12 +4,26 @@ import fetch from "isomorphic-fetch";
 
 const NOT_IMPLEMENTED = "Not implemented";
 
+/**
+ * Manual asset buffer we can support for upload
+ * @public
+ */
 export interface AssetBuffer {
+  /** buffer Buffer - buffer to the data */
   buffer: Buffer;
+  /** mimeType string - set mimetype for the buffer */
   mimeType: string;
 }
 
+/**
+ * Type for POST headers
+ * @public
+ */
 export type FormDataPostHeaders = Record<string, string | number | any>;
+/**
+ * Request options for fetch (RequestInit)
+ * @public
+ */
 export type FormDataRequestOptions = {
   maxContentLength?: number;
   maxBodyLength?: number;
@@ -20,8 +34,9 @@ export type FormDataRequestOptions = {
 /**
  * Utility function to return error details.
  *
- * @param error extract more error information for this exception
- * @returns
+ * @param error - extract more error information for this exception
+ * @returns error details
+ * @internal
  */
 export const handleError = (error: any) => {
   if (
@@ -40,7 +55,21 @@ export const handleError = (error: any) => {
   return error;
 };
 
+/**
+ * Base data provider to upload data using a FormData POST. This is a generic
+ * class used by all the custom implementations.
+ * @public
+ */
 export class BaseFormDataProvider {
+  /**
+   *
+   * @param dataContent - FormData content to be sent
+   * @param data - Data to be sent (this will be added to
+   *  FormData and can be a Blob, ReadableStream, Buffer, AssetBuffer and so on)
+   * @param meta - Metadata to be added (could contain name, size, type and so on)
+   * @returns Option header information to be added to the request.
+   * @internal
+   */
   // Already refactored several times, but still too complex since it needs
   // to handle both node and browser types.
   // eslint-disable-next-line sonarjs/cognitive-complexity
@@ -80,8 +109,9 @@ export class BaseFormDataProvider {
   /**
    * External upload function to call to send data to the endpoint.
    *
-   * @param data data to upload
-   * @param meta optional metadata to send with the upload
+   * @param data - data to upload
+   * @param meta - optional metadata to send with the upload
+   * @internal
    */
   async upload(data: any, meta?: FormDataPostHeaders): Promise<string> {
     const dataContent = new FormData();
@@ -101,9 +131,10 @@ export class BaseFormDataProvider {
   /**
    * Construct options for the underlying fetch call.
    *
-   * @param dataContent content to upload
-   * @param meta optional meta data
+   * @param dataContent - content to upload
+   * @param meta - optional meta data
    * @returns return request options for fetch.
+   * @public
    */
   async getRequestOptions(
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -121,6 +152,7 @@ export class BaseFormDataProvider {
   /**
    * Return the fetch endpoint this is going to.
    * Must be overridden by a more specific implementation.
+   * @public
    */
   getPostEndpoint(): string {
     throw new Error(NOT_IMPLEMENTED);
@@ -131,8 +163,9 @@ export class BaseFormDataProvider {
    * In most of the current cases it will read Hash or IpfsHash and
    * return `ipfs://${hash}`.
    *
-   * @param result JSON result from the upload
+   * @param result - JSON result from the upload
    * @returns URL to the uploaded content
+   * @public
    */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   resolveUrl(result: any): string {
@@ -142,9 +175,10 @@ export class BaseFormDataProvider {
   /**
    * Low level implementation of fetch call to send the form data
    *
-   * @param requestOptions
-   * @param dataContent
+   * @param requestOptions - request options to send to fetch
+   * @param dataContent - the FormData to be posted
    * @returns JSON response from the gateway.
+   * @internal
    */
   uploadFormData(
     requestOptions: FormDataRequestOptions,
@@ -199,6 +233,7 @@ export class BaseFormDataProvider {
    * pointed to /api/v0 and it will add /add to the end before sending
    * the FormData to the server. This allows you to create a proxy that
    * can be used with the ipfs-http-client.
+   * @public
    */
   getEndpoint(): string {
     throw new Error(NOT_IMPLEMENTED);

@@ -9,7 +9,8 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo build --filter=docs^... && changeset publish",
-    "test": "turbo test"
+    "test": "turbo test",
+    "docs": "turbo doc && mkdir -p temp && cp packages/data-providers/temp/* packages/data-provider-http-client/temp/* packages/data-provider-pinata/temp/* temp/ && api-documenter markdown -i temp -o docs"
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
@@ -22,6 +23,8 @@
   },
   "packageManager": "pnpm@8.6.10",
   "dependencies": {
+    "@microsoft/api-documenter": "^7.23.11",
+    "@microsoft/api-extractor": "^7.38.2",
     "@types/node": "^20.8.10",
     "@typescript-eslint/eslint-plugin": "^6.9.1",
     "@typescript-eslint/parser": "^6.9.1",
