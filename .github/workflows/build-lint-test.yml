@@ -1,0 +1,25 @@
+name: Node.js - Build + Lint + Test
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js '18.12.1'
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.12.1"
+          cache: "pnpm"
+
+      - name: 📦 Install dependencies
+        run: pnpm install
+
+      - name: 🔍 Run Build
+        run: pnpm run build
+
+      - name: 🎨 Run Lint
+        run: npm run lint
