@@ -17,6 +17,12 @@ export type FormDataRequestOptions = {
   headers?: FormDataPostHeaders;
 };
 
+/**
+ * Utility function to return error details.
+ *
+ * @param error extract more error information for this exception
+ * @returns
+ */
 export const handleError = (error: any) => {
   if (
     error &&
@@ -70,6 +76,13 @@ export class BaseFormDataProvider {
     }
     return meta;
   }
+
+  /**
+   * External upload function to call to send data to the endpoint.
+   *
+   * @param data data to upload
+   * @param meta optional metadata to send with the upload
+   */
   async upload(data: any, meta?: FormDataPostHeaders): Promise<string> {
     const dataContent = new FormData();
     meta = this.populate(dataContent, data, meta);
@@ -81,8 +94,17 @@ export class BaseFormDataProvider {
       await this.uploadFormData(options, dataContent as FormData)
     );
   }
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async addMetadata(dataContent: FormData, meta?: FormDataPostHeaders) {}
+
+  /**
+   * Construct options for the underlying fetch call.
+   *
+   * @param dataContent content to upload
+   * @param meta optional meta data
+   * @returns return request options for fetch.
+   */
   async getRequestOptions(
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     dataContent: FormData,
@@ -95,13 +117,35 @@ export class BaseFormDataProvider {
       withCredentials: true,
     };
   }
+
+  /**
+   * Return the fetch endpoint this is going to.
+   * Must be overridden by a more specific implementation.
+   */
   getPostEndpoint(): string {
     throw new Error(NOT_IMPLEMENTED);
   }
+
+  /**
+   * Convert the upload JSON result to a URL.
+   * In most of the current cases it will read Hash or IpfsHash and
+   * return `ipfs://${hash}`.
+   *
+   * @param result JSON result from the upload
+   * @returns URL to the uploaded content
+   */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   resolveUrl(result: any): string {
     throw new Error(NOT_IMPLEMENTED);
   }
+
+  /**
+   * Low level implementation of fetch call to send the form data
+   *
+   * @param requestOptions
+   * @param dataContent
+   * @returns JSON response from the gateway.
+   */
   uploadFormData(
     requestOptions: FormDataRequestOptions,
     dataContent: FormData
@@ -138,9 +182,24 @@ export class BaseFormDataProvider {
         throw handleError(error);
       });
   }
+
+  /**
+   * Return a token if this provider requires authentication.
+   *
+   * @returns token or throws an NOT_IMPLEMENTED error
+   */
   async getToken(): Promise<string> {
     throw new Error(NOT_IMPLEMENTED);
   }
+
+  /**
+   * Return the endpoint to allow this be used with an old
+   * ipfs-http-client implementation. If the proxy is running
+   * at /api/v0/add for pinning then you can use the ipfs-http-client
+   * pointed to /api/v0 and it will add /add to the end before sending
+   * the FormData to the server. This allows you to create a proxy that
+   * can be used with the ipfs-http-client.
+   */
   getEndpoint(): string {
     throw new Error(NOT_IMPLEMENTED);
   }

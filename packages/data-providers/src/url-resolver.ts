@@ -1,5 +1,6 @@
 export class UrlConverter {
-  private destination: URL
+  protected destination: string;
+  protected match?: RegExp | string;
   /**
    * It will relatively append pathname or hostname to the desination URL
    *
@@ -13,50 +14,55 @@ export class UrlConverter {
    * output=https://some.api.gateway/something/ipfs/somewhere
    *
    * @param destination destination string | URL
+   * @param match optionally pass in what RegExp or string to replace in the URL
+   * NOTE: Under normal circumstances the match will be passed in from the converter
+   *   as configured in the UrlResolver. For example when the match is ipfs://
+   *   we will replace ipfs:// with the destination URL string.
    */
-  constructor(destination: string | URL) {
-    this.destination = new URL(destination)
-    if (this.destination.pathname.at(-1) != '/') {
-      this.destination.pathname += '/'
+  constructor(destination: string | URL, match?: RegExp | string) {
+    this.destination =
+      destination instanceof URL ? destination.toString() : destination;
+    if (this.destination.at(-1) != "/") {
+      this.destination += "/";
     }
+    this.match = match;
   }
 
-  resolveUrl(url: string): string {
-    // Parse and convert to javascript URL objects
-    // this will manage / and relative paths for us.
-    const source = new URL(url)
-    // extract the relative path. For URLs with a pathname prepend "." to make it ./ (i.e. relative)
-    // for anything that only has a hostname we prepend ./ to make it relative
-    // the pathname is at least slash for https urls, but '' for ipfs for example
-    const relativePath = source.pathname
-      ? `.${source.pathname}` // pathname always starts with at least a slash
-      : `./${source.hostname}`
-    // Construct relative URL on destination using the relative pathname.
-    const out = new URL(relativePath, this.destination)
-    out.pathname = out.pathname.replaceAll(/\/\/+/g, '/')
-    return out.toString()
+  resolveUrl(match: RegExp | string, url: string): string {
+    match = this.match || match;
+    return url.replaceAll(match, this.destination.toString());
   }
 }
 
+/**
+ * UrlResolver resolved URLs to gateway URLs.
+ *
+ * const resolver = new UrlResolver([
+ *  ["ipfs://", "https://some.api.gateway/something/ipfs"],
+ *  ["ar://", "https://some.api.gateway/something/ar"],
+ *  [/^ipfs:\/\/Qm/, new UrlConverter("https://some2.api.gateway/something/ipfs")]
+ * ])
+ * resolver.resolveUrl("ipfs://QmSomeHash") // https://some.api.gateway/something/ipfs/QmSomeHash
+ */
 export class UrlResolver {
   private converters: Array<{
-    match: string | RegExp
-    converter: UrlConverter
-  }> = []
+    match: string | RegExp;
+    converter: UrlConverter;
+  }> = [];
   constructor(converters: Array<[string | RegExp, UrlConverter | string]>) {
     for (const item of converters) {
-      const [match, _converter] = item
+      const [match, _converter] = item;
       if (match == undefined) {
-        throw new TypeError('Match criteria not defined')
+        throw new TypeError("Match criteria not defined");
       }
       const converter =
-        typeof _converter === 'string'
+        typeof _converter === "string"
           ? new UrlConverter(_converter)
-          : _converter
+          : _converter;
       if (!(converter instanceof UrlConverter)) {
-        throw new TypeError('Invalid converter')
+        throw new TypeError("Invalid converter");
       }
-      this.converters.push({ match, converter })
+      this.converters.push({ match, converter });
     }
   }
 
@@ -70,23 +76,23 @@ export class UrlResolver {
    */
   resolveUrl(url: string): string {
     const current = new Set<{
-      match: string | RegExp
-      converter: UrlConverter
-    }>(this.converters)
-    let found = true
+      match: string | RegExp;
+      converter: UrlConverter;
+    }>(this.converters);
+    let found = true;
     while (found) {
-      found = false
+      found = false;
       for (const entry of current) {
-        const { match, converter } = entry
+        const { match, converter } = entry;
         if (match instanceof RegExp ? match.test(url) : url.startsWith(match)) {
-          url = converter.resolveUrl(url)
+          url = converter.resolveUrl(match, url);
           // This converter matches, so don't use it again.
-          current.delete(entry)
-          found = true
-          break
+          current.delete(entry);
+          found = true;
+          break;
         }
       }
     }
-    return url
+    return url;
   }
 }

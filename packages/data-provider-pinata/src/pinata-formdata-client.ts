@@ -9,6 +9,7 @@ import {
 export const ERROR_NO_CREDENTIALS_PROVIDED =
   "No credentials provided! Please provide your pinata api key and pinata secret api key or your pinata JWT key as an argument when you start this script";
 
+/** Utility functions from pinata */
 export function validateMetadata(metadata: any) {
   if (
     metadata.name &&
@@ -83,6 +84,12 @@ export function createConfigForAxiosHeadersWithFormData(config: PinataConfig) {
   return requestOptions;
 }
 
+/**
+ * Custom data provider that directly uploads to pinata
+ * It requires the pinata api key, secret key and JWT key to be set
+ * According to their documentation only api and secret should work
+ * or JWT token. However, in our tests only all three worked.
+ */
 export class PinataFormDataProvider extends BaseFormDataProvider {
   constructor(private pinataConfig: PinataConfig) {
     super();
