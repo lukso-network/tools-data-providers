@@ -1,10 +1,17 @@
-# Turborepo Design System starter with Changesets
-
-This is an official React design system starter powered by Turborepo. Versioning and package publishing is handled by [Changesets](https://github.com/changesets/changesets) and fully automated with GitHub Actions.
-
 ## What's inside?
 
-This Turborepo includes the following:
+Data providers for IPFS connectivity
+
+
+## Documentation
+
+[Documentation](https://lukso-network.github.io/tools-data-providers/)
+
+## Status
+
+- ![main](https://github.com/lukso-network/tools-data-providers/actions/workflows/release.yml/badge.svg)
+- ![release](https://github.com/lukso-network/tools-data-providers/actions/workflows/release.yml/badge.svg)
+- ![docs](https://github.com/lukso-network/tools-data-providers/actions/workflows/pages/pages-build-deployment/badge.svg)
 
 ### Apps and Packages
 
