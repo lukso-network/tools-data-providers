@@ -10,7 +10,6 @@ Data providers for IPFS connectivity
 ## Status
 
 - ![main](https://github.com/lukso-network/tools-data-providers/actions/workflows/release.yml/badge.svg)
-- ![release](https://github.com/lukso-network/tools-data-providers/actions/workflows/release.yml/badge.svg)
 - ![docs](https://github.com/lukso-network/tools-data-providers/actions/workflows/pages/pages-build-deployment/badge.svg)
 
 ### Apps and Packages
