@@ -48,6 +48,12 @@ export function validateMetadata(metadata: any) {
   }
 }
 
+/**
+ * Return headers for fetch or axios.
+ * @param config - return header according to pinate config
+ * @returns headers for fetch or axios.
+ * @internal
+ */
 export function createConfigForAxiosHeaders(config: PinataConfig) {
   if (
     config.pinataApiKey &&
@@ -75,6 +81,12 @@ export function createConfigForAxiosHeaders(config: PinataConfig) {
   throw new Error(ERROR_NO_CREDENTIALS_PROVIDED);
 }
 
+/**
+ * Return RequestInit for fetch or axios.
+ * @param config - return header according to pinate config
+ * @returns RequestInit
+ * @internal
+ */
 export function createConfigForAxiosHeadersWithFormData(config: PinataConfig) {
   const requestOptions: FormDataPostHeaders = {
     ...createConfigForAxiosHeaders(config),

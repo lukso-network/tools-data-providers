@@ -5,7 +5,12 @@ import {
   FormDataPostHeaders,
 } from "@lukso/data-providers";
 
-export class HttpIPFSClientUploader extends BaseFormDataProvider {
+/**
+ * Data provider for uploading using the ipfs-http-client
+ * directly
+ * @public
+ */
+export class HttpIPFSClientDataProvider extends BaseFormDataProvider {
   private ipfs: IPFSHTTPClient;
   constructor(gateway: string | URL | Options) {
     super();
