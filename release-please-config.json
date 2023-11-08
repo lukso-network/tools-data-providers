@@ -25,7 +25,7 @@
         },
         {
           "type": "json",
-          "path": "packages/data-provider-pinata/package.json",
+          "path": "packages/data-providers/package.json",
           "jsonpath": "$.version"
         }
       ]
