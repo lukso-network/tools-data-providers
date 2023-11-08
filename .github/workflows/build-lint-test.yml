@@ -9,13 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+
       - name: Use Node.js '18.12.1'
         uses: actions/setup-node@v2
         with:
           node-version: "18.12.1"
-          cache: "pnpm-lock.yaml"
-
-      - uses: pnpm/action-setup@v2
+          cache: "pnpm"
 
       - name: 📦 Install dependencies
         run: pnpm install
