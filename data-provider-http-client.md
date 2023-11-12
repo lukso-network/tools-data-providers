@@ -8,5 +8,5 @@
 
 |  Class | Description |
 |  --- | --- |
-|  [HttpIPFSClientDataProvider](./data-provider-http-client.httpipfsclientdataprovider.md) | Data provider for uploading using the ipfs-http-client directly |
+|  [HttpIPFSClientDataProvider](./data-provider-http-client.httpipfsclientdataprovider.md) | Data provider for uploading using the ipfs-http-client directly. This is backward compatible with the previous ipfs implementation, but ipfs-http-client has been deprecated in favor of Helia see https://github.com/ipfs/js-ipfs/issues/4336 |
 

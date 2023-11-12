@@ -38,6 +38,5 @@ and then forward the request to a pinata or other endpoint for the final upload.
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
 |  [getHeaders(dataContent, meta)](./data-providers.authenticatedformdataprovider.getheaders.md) |  |  |
-|  [getToken()](./data-providers.authenticatedformdataprovider.gettoken.md) |  |  |
-|  [resolveUrl(result)](./data-providers.authenticatedformdataprovider.resolveurl.md) |  |  |
+|  [getToken()](./data-providers.authenticatedformdataprovider.gettoken.md) |  | Exposed function in case this classes it used with an older ipfs-http-client implementation directly. |
 

@@ -4,6 +4,8 @@
 
 ## HttpIPFSClientDataProvider.upload() method
 
+This is the internal upload function compatible with the base ipfs implementation in order to make the different providers interchangeable.
+
 **Signature:**
 
 ```typescript
@@ -14,10 +16,12 @@ upload(data: any, meta?: FormDataPostHeaders): Promise<string>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  data | any |  |
-|  meta | [FormDataPostHeaders](./data-providers.formdatapostheaders.md) | _(Optional)_ |
+|  data | any | FormData to upload |
+|  meta | [FormDataPostHeaders](./data-providers.formdatapostheaders.md) | _(Optional)_ Additional metadata if needed |
 
 **Returns:**
 
 Promise&lt;string&gt;
+
+the URL pointing to the uploaded data (In this case a ipfs:// URL)
 

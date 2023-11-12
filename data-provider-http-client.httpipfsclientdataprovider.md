@@ -4,7 +4,7 @@
 
 ## HttpIPFSClientDataProvider class
 
-Data provider for uploading using the ipfs-http-client directly
+Data provider for uploading using the ipfs-http-client directly. This is backward compatible with the previous ipfs implementation, but ipfs-http-client has been deprecated in favor of Helia see https://github.com/ipfs/js-ipfs/issues/4336
 
 **Signature:**
 
@@ -17,11 +17,11 @@ declare class HttpIPFSClientDataProvider extends BaseFormDataProvider
 
 |  Constructor | Modifiers | Description |
 |  --- | --- | --- |
-|  [(constructor)(gateway)](./data-provider-http-client.httpipfsclientdataprovider._constructor_.md) |  | Constructs a new instance of the <code>HttpIPFSClientDataProvider</code> class |
+|  [(constructor)(gateway)](./data-provider-http-client.httpipfsclientdataprovider._constructor_.md) |  | Construct a provider using the ipfs-http-client |
 
 ## Methods
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
-|  [upload(data, meta)](./data-provider-http-client.httpipfsclientdataprovider.upload.md) |  |  |
+|  [upload(data, meta)](./data-provider-http-client.httpipfsclientdataprovider.upload.md) |  | This is the internal upload function compatible with the base ipfs implementation in order to make the different providers interchangeable. |
 

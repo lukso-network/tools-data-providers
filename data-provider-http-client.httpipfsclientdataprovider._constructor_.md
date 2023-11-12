@@ -4,7 +4,7 @@
 
 ## HttpIPFSClientDataProvider.(constructor)
 
-Constructs a new instance of the `HttpIPFSClientDataProvider` class
+Construct a provider using the ipfs-http-client
 
 **Signature:**
 
@@ -16,5 +16,5 @@ constructor(gateway: string | URL | Options);
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  gateway | string \| URL \| Options |  |
+|  gateway | string \| URL \| Options | accepts a string, URL or options compatible for the create method |
 

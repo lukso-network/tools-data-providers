@@ -16,10 +16,12 @@ getHeaders(dataContent: FormData, meta?: FormDataPostHeaders): Promise<{
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  dataContent | FormData |  |
-|  meta | [FormDataPostHeaders](./data-providers.formdatapostheaders.md) | _(Optional)_ |
+|  dataContent | FormData | FormData content to be sent (ignored in this case) |
+|  meta | [FormDataPostHeaders](./data-providers.formdatapostheaders.md) | _(Optional)_ Optional additional meta data (ignored in this case) |
 
 **Returns:**
 
 Promise&lt;{ Authorization: string; }&gt;
+
+The headers to attach to the FormData POST (in this case containing bearer token)
 

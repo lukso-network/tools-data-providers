@@ -4,6 +4,8 @@
 
 ## AuthenticatedFormDataProvider.getToken() method
 
+Exposed function in case this classes it used with an older ipfs-http-client implementation directly.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getToken(): Promise<string>;
 **Returns:**
 
 Promise&lt;string&gt;
+
+A signed JWT token
 
