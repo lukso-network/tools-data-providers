@@ -29,14 +29,33 @@ import { CustomHeaderFormDataProvider } from "./ipfs-formdata-provider";
  * @public
  */
 export class AuthenticatedFormDataProvider extends CustomHeaderFormDataProvider {
+  /**
+   *
+   * @param dataContent - FormData content to be sent (ignored in this case)
+   * @param meta - Optional additional meta data (ignored in this case)
+   * @returns The headers to attach to the FormData POST (in this case containing bearer token)
+   * @public
+   */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async getHeaders(dataContent: FormData, meta?: FormDataPostHeaders) {
     const jwt = await this.getToken();
     return { Authorization: `Bearer ${jwt}` };
   }
+  /**
+   *
+   * @param result - JSON object returned from FormData post.
+   * @returns URL referring to the uploaded data
+   * @internal
+   */
   resolveUrl(result: any): string {
     return `ipfs://${result.IpfsHash}`;
   }
+  /**
+   * Exposed function in case this classes it used with an older ipfs-http-client
+   * implementation directly.
+   * @returns A signed JWT token
+   * @public
+   */
   async getToken(): Promise<string> {
     const now = Date.now();
     return await sign(

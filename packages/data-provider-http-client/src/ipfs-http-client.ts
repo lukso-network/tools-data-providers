@@ -7,11 +7,17 @@ import {
 
 /**
  * Data provider for uploading using the ipfs-http-client
- * directly
+ * directly. This is backward compatible with the previous ipfs implementation,
+ * but ipfs-http-client has been deprecated in favor of Helia see https://github.com/ipfs/js-ipfs/issues/4336
  * @public
  */
 export class HttpIPFSClientDataProvider extends BaseFormDataProvider {
   private ipfs: IPFSHTTPClient;
+  /**
+   * Construct a provider using the ipfs-http-client
+   * @param gateway - accepts a string, URL or options compatible for the create method
+   * @public
+   */
   constructor(gateway: string | URL | Options) {
     super();
     if (typeof gateway === "string") {
@@ -37,6 +43,13 @@ export class HttpIPFSClientDataProvider extends BaseFormDataProvider {
       this.ipfs = create(gateway);
     }
   }
+  /**
+   * This is the internal upload function compatible with the base ipfs implementation
+   * in order to make the different providers interchangeable.
+   * @param data FormData to upload
+   * @param meta Additional metadata if needed
+   * @returns the URL pointing to the uploaded data (In this case a ipfs:// URL)
+   */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async upload(data: any, meta?: FormDataPostHeaders): Promise<string> {
     const { cid } =
