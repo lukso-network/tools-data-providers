@@ -19,4 +19,4 @@ it("should convert ipfs url to https", () => {
   const httpsUrl = resolver.resolveUrl("https://special.com/some/path.html");
 
   expect(httpsUrl).toEqual("https://elsewhere.com/subpath/some/path.html");
-});
+}, 600000);

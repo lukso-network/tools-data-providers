@@ -26,9 +26,6 @@ export class UrlConverter {
   constructor(destination: string | URL, match?: RegExp | string) {
     this.destination =
       destination instanceof URL ? destination.toString() : destination;
-    if (this.destination.at(-1) != "/") {
-      this.destination += "/";
-    }
     this.match = match;
   }
 

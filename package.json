@@ -10,6 +10,7 @@
     "version-packages": "changeset version",
     "release": "turbo build --filter=docs^... && changeset publish",
     "test": "turbo test",
+    "publish-packages": "turbo run build lint test && changeset version && changeset publish",
     "docs": "turbo docs && mkdir -p temp && cp packages/data-providers/temp/* packages/data-provider-http-client/temp/* packages/data-provider-pinata/temp/* temp/ && api-documenter markdown -i temp -o docs"
   },
   "devDependencies": {
