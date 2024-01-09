@@ -1,34 +1,34 @@
 {
   "packages": {
-    ".": {
-      "changelog-path": "CHANGELOG.md",
+    "packages/data-providers": {
+      "component": "data-providers",
+      "package-name": "@lukso/data-provider",
+      "include-component-in-tag": true,
       "release-type": "node",
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false,
       "draft": false,
-      "prerelease": false,
-      "extra-files": [
-        {
-          "type": "json",
-          "path": "package.json",
-          "jsonpath": "$.version"
-        },
-        {
-          "type": "json",
-          "path": "packages/data-provider-http-client/package.json",
-          "jsonpath": "$.version"
-        },
-        {
-          "type": "json",
-          "path": "packages/data-provider-pinata/package.json",
-          "jsonpath": "$.version"
-        },
-        {
-          "type": "json",
-          "path": "packages/data-providers/package.json",
-          "jsonpath": "$.version"
-        }
-      ]
+      "prerelease": false
+    },
+    "packages/data-provider-http-client": {
+      "component": "data-provider-http-client",
+      "package-name": "@lukso/data-provider-http-client",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    },
+    "packages/data-provider-pinata": {
+      "component": "data-provider-pinata",
+      "package-name": "@lukso/data-provider-pinata",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
     }
   },
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
