@@ -57,8 +57,7 @@ jobs:
           publish_dir: ./docs
           enable_jekyll: true
 
-      - name: Publish on NPM
-        if: ${{ steps.release.outputs.release_created }}
-        run: pnpm turbo publish --access public
+      - run: node ./scripts/publish.js '${{toJSON(steps.release.outputs)}}'
+        if: ${{ steps.release.outputs.releases_created }}
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_KEY }}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
