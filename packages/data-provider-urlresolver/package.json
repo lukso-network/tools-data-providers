@@ -1,6 +1,7 @@
 {
-  "name": "@lukso/data-provider-pinata",
+  "name": "@lukso/data-provider-urlresolver",
   "version": "1.0.0",
+  "type": "module",
   "sideEffects": false,
   "license": "MIT",
   "files": [
@@ -16,7 +17,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "unbuild",
-    "dev": "unbuild --watch",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "docs": "api-extractor run --local --verbose"
@@ -24,13 +25,15 @@
   "devDependencies": {
     "@lukso/tsconfig": "workspace:*",
     "eslint": "^7.32.0",
-    "eslint-config-lukso": "workspace:*"
+    "eslint-config-lukso": "workspace:*",
+    "tsup": "^5.10.1",
+    "typescript": "^4.5.3",
+    "unbuild": "^2.0.0"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@lukso/data-provider-base": "workspace:*",
     "@pinata/sdk": "^2.1.0",
     "@tsndr/cloudflare-worker-jwt": "^2.2.5",
     "@types/isomorphic-fetch": "^0.0.38",

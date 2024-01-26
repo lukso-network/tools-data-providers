@@ -1,0 +1,37 @@
+{
+  "name": "jest-tests-browser",
+  "version": "0.0.1",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "devDependencies": {
+    "@lukso/tsconfig": "workspace:*",
+    "eslint": "^7.32.0",
+    "eslint-config-lukso": "workspace:*",
+    "jest-presets": "workspace:*",
+    "typescript": "^4.5.3"
+  },
+  "scripts": {
+    "test": "cross-env NODE_OPTIONS='${NODE_OPTIONS} --experimental-vm-modules' jest --verbose --detectOpenHandles --runInBand"
+  },
+  "jest": {
+    "preset": "jest-presets/jest/browser"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@lukso/data-provider-ipfs-http-client": "workspace:*",
+    "@lukso/data-provider-pinata": "workspace:*",
+    "@lukso/data-provider-base": "workspace:*",
+    "@lukso/data-provider-urlresolver": "workspace:*",
+    "@types/chrome": "^0.0.248",
+    "@types/jest": "^29.5.7",
+    "@types/node": "^20.8.10",
+    "fetch-blob": "^4.0.0",
+    "ipfs-http-client": "^60.0.1"
+  }
+}

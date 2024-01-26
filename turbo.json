@@ -1,7 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "globalEnv": ["VUE_APP_SHARED_KEY"],
+  "globalEnv": ["VUE_APP_SHARED_KEY", "TEST_PINATAAPIKEY","TEST_PINATASECRETAPIKEY","TEST_PINATAJWTKEY"],
   "pipeline": {
     "build": {
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"],

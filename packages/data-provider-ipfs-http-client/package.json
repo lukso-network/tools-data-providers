@@ -1,6 +1,7 @@
 {
-  "name": "@lukso/data-provider-pinata",
-  "version": "1.0.0",
+  "name": "@lukso/data-provider-ipfs-http-client",
+  "version": "0.0.0",
+  "type": "module",
   "sideEffects": false,
   "license": "MIT",
   "files": [
@@ -8,15 +9,13 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "import": "./dist/index.mjs"
     }
   },
-  "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "unbuild",
-    "dev": "unbuild --watch",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "docs": "api-extractor run --local --verbose"
@@ -31,7 +30,6 @@
   },
   "dependencies": {
     "@lukso/data-provider-base": "workspace:*",
-    "@pinata/sdk": "^2.1.0",
     "@tsndr/cloudflare-worker-jwt": "^2.2.5",
     "@types/isomorphic-fetch": "^0.0.38",
     "cross-blob": "^3.0.2",

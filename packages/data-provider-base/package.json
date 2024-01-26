@@ -1,5 +1,5 @@
 {
-  "name": "@lukso/data-provider-pinata",
+  "name": "@lukso/data-provider-base",
   "version": "1.0.0",
   "sideEffects": false,
   "license": "MIT",
@@ -16,7 +16,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "unbuild",
-    "dev": "unbuild --watch",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "docs": "api-extractor run --local --verbose"
@@ -30,7 +30,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@lukso/data-provider-base": "workspace:*",
     "@pinata/sdk": "^2.1.0",
     "@tsndr/cloudflare-worker-jwt": "^2.2.5",
     "@types/isomorphic-fetch": "^0.0.38",

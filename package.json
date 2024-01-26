@@ -11,7 +11,7 @@
     "test": "turbo test",
     "version-packages": "turbo run build lint test",
     "publish-packages": "turbo run build lint test && changeset version && changeset publish",
-    "docs": "turbo docs && mkdir -p temp && cp packages/data-providers/temp/* packages/data-provider-http-client/temp/* packages/data-provider-pinata/temp/* temp/ && api-documenter markdown -i temp -o docs"
+    "documentation": "turbo docs && mkdir -p temp && cp packages/*/temp/* temp/ && api-documenter markdown -i temp -o docs"
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
@@ -20,7 +20,7 @@
     "jest": "^29.7.0",
     "jest-presets": "workspace:*",
     "prettier": "^2.5.1",
-    "turbo": "^1.10.16"
+    "turbo": "^1.11.3"
   },
   "packageManager": "pnpm@8.6.10",
   "dependencies": {
@@ -32,6 +32,7 @@
     "cross-env": "^7.0.3",
     "eslint-plugin-sonarjs": "^0.23.0",
     "ipfs-http-client": "^60.0.1",
+    "tsup": "^8.0.1",
     "typescript-eslint": "0.0.1-alpha.0",
     "unbuild": "^2.0.0",
     "zx": "^7.2.3"
