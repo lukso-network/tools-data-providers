@@ -52,7 +52,7 @@ import UploadVuePinata from '../components/UploadVuePinata.vue'
       <ReactCard color="white" title="Upload to Infura" client:only="react">
         <Upload client:only="react" gateway={import.meta.env.TEST_INFURA_GATEWAY} options={{
           headers:{
-            authorization: `Basic ${Buffer.from(`${import.meta.env.TEST_INFURA_PROJECT}:${import.meta.env.TEST_INFURA_API_KEY}`).toString('base64')}`
+            authorization: `Basic ${Buffer.from(`${import.meta.env.TEST_INFURA_API_KEY_NAME}:${import.meta.env.TEST_INFURA_API_KEY}`).toString('base64')}`
           }
         }}/>
       </ReactCard>
@@ -67,7 +67,7 @@ import UploadVuePinata from '../components/UploadVuePinata.vue'
       <VueCard color="white" title="Upload to Infura" client:only="vue">
         <UploadVue client:only="vue" gateway={import.meta.env.TEST_INFURA_GATEWAY} options={{
           headers:{
-            authorization: `Basic ${Buffer.from(`${import.meta.env.TEST_INFURA_PROJECT}:${import.meta.env.TEST_INFURA_API_KEY}`).toString('base64')}`
+            authorization: `Basic ${Buffer.from(`${import.meta.env.TEST_INFURA_API_KEY_NAME}:${import.meta.env.TEST_INFURA_API_KEY}`).toString('base64')}`
           }
         }}/>
       </VueCard>

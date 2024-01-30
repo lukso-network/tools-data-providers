@@ -13,7 +13,7 @@ export async function POST({ request }: APIContext) {
     {
       headers: {
         authorization: `Basic ${Buffer.from(
-          `${import.meta.env.TEST_INFURA_PROJECT}:${
+          `${import.meta.env.TEST_INFURA_API_KEY_NAME}:${
             import.meta.env.TEST_INFURA_API_KEY
           }`
         ).toString("base64")}`,
