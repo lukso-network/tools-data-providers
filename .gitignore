@@ -5,3 +5,4 @@ temp
 /docs
 dist
 /packages/*/etc
+.DS_Store

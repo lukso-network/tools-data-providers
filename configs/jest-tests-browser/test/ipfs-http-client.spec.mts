@@ -1,4 +1,4 @@
-import { HttpIPFSClientUploader } from "@lukso/data-provider-ipfs-http-client";
+import { IPFSHttpClientProvider } from "@lukso/data-provider-ipfs-http-client";
 
 it("should pin images", async () => {
   const { upload, uploader, file } = await mockDependencies();
@@ -18,7 +18,7 @@ async function mockDependencies(gateway = "https://api.2eff.lukso.dev") {
     return Buffer.from("");
   };
 
-  const uploader = new HttpIPFSClientUploader(gateway);
+  const uploader = new IPFSHttpClientProvider(gateway);
 
   const upload = jest
     .spyOn(uploader, "uploadFormData")

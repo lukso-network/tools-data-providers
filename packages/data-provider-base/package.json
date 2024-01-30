@@ -9,13 +9,13 @@
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.js"
     }
   },
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "unbuild",
+    "build": "tsup src/index.ts --format esm,cjs --sourcemap --dts-resolve --dts",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
@@ -30,13 +30,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@pinata/sdk": "^2.1.0",
     "@tsndr/cloudflare-worker-jwt": "^2.2.5",
     "@types/isomorphic-fetch": "^0.0.38",
-    "cross-blob": "^3.0.2",
-    "cross-formdata": "^1.0.3",
-    "form-data": "^4.0.0",
+    "@types/jsonwebtoken": "^9.0.5",
+    "formdata-node": "^6.0.3",
     "ipfs-http-client": "^60.0.1",
-    "isomorphic-fetch": "^3.0.0"
+    "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^3.3.2"
   }
 }

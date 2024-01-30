@@ -1,6 +1,7 @@
 {
   "name": "@lukso/data-provider-pinata",
   "version": "1.0.0",
+  "type": "module",
   "sideEffects": false,
   "license": "MIT",
   "files": [
@@ -9,14 +10,14 @@
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.js"
     }
   },
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "unbuild",
-    "dev": "unbuild --watch",
+    "build": "tsup src/index.ts --format esm,cjs --sourcemap --dts-resolve --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "docs": "api-extractor run --local --verbose"

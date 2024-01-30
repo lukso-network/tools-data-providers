@@ -1,7 +1,8 @@
-import { sign } from "@tsndr/cloudflare-worker-jwt";
-
-import { FormDataPostHeaders } from "./formdata-base-provider";
-import { CustomHeaderFormDataProvider } from "./ipfs-formdata-provider";
+import {
+  BaseFormDataProvider,
+  FormDataPostHeaders,
+  FormDataRequestOptions,
+} from "./formdata-base-provider";
 
 /**
  * This is a custom data provider that uses a pre-shared token to sign a short lived
@@ -28,18 +29,35 @@ import { CustomHeaderFormDataProvider } from "./ipfs-formdata-provider";
  * and then forward the request to a pinata or other endpoint for the final upload.
  * @public
  */
-export class AuthenticatedFormDataProvider extends CustomHeaderFormDataProvider {
+export class AuthenticatedFormDataProvider extends BaseFormDataProvider {
   /**
    *
    * @param dataContent - FormData content to be sent (ignored in this case)
    * @param meta - Optional additional meta data (ignored in this case)
-   * @returns The headers to attach to the FormData POST (in this case containing bearer token)
+   * @returns Attaches the headers with bearer token.
    * @public
    */
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async getHeaders(dataContent: FormData, meta?: FormDataPostHeaders) {
+  async getRequestOptions(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    dataContent: FormData,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    meta?: FormDataPostHeaders
+  ): Promise<FormDataRequestOptions> {
+    const { headers, ...rest } = await super.getRequestOptions(
+      dataContent,
+      meta
+    );
     const jwt = await this.getToken();
-    return { Authorization: `Bearer ${jwt}` };
+    return {
+      ...rest,
+      headers: {
+        ...headers,
+        ...(jwt ? { Authorization: `Bearer ${jwt}` } : {}),
+      },
+      maxContentLength: Number.MAX_SAFE_INTEGER,
+      maxBodyLength: Number.MAX_SAFE_INTEGER,
+      withCredentials: true,
+    };
   }
   /**
    *
@@ -50,6 +68,7 @@ export class AuthenticatedFormDataProvider extends CustomHeaderFormDataProvider 
   resolveUrl(result: any): string {
     return `ipfs://${result.IpfsHash}`;
   }
+
   /**
    * Exposed function in case this classes it used with an older ipfs-http-client
    * implementation directly.
@@ -57,6 +76,12 @@ export class AuthenticatedFormDataProvider extends CustomHeaderFormDataProvider 
    * @public
    */
   async getToken(): Promise<string> {
+    if (!process.env.VUE_APP_SHARED_KEY) {
+      return "";
+    }
+    const { sign } = await import("@tsndr/cloudflare-worker-jwt").catch(
+      () => import("jsonwebtoken")
+    );
     const now = Date.now();
     return await sign(
       { iss: "extension", iat: now / 1000, exp: (now + 120_000) / 1000 },

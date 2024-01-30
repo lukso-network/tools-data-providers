@@ -1,10 +1,10 @@
-import { PinataFormDataProvider } from "@lukso/data-provider-pinata";
+import { PinataProvider } from "@lukso/data-provider-pinata";
 
 beforeEach(() => {
   jest.resetAllMocks();
 });
 
-it("should pin images (web)", async () => {
+it("should pin images (node)", async () => {
   const { uploadFormData, uploader, file } = await mockDependencies();
 
   const upload = await uploader.upload(file);
@@ -26,7 +26,7 @@ async function mockDependencies() {
     pinataApiKey: "sample-api-key",
     pinataSecretApiKey: "some-secret-key",
   };
-  const uploader = new PinataFormDataProvider(config);
+  const uploader = new PinataProvider(config);
   const uploadFormData = jest.spyOn(uploader, "uploadFormData");
   (uploadFormData as jest.Mock).mockImplementation(async () => {
     return { IpfsHash: "QmY4Z" };

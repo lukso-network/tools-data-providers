@@ -1,6 +1,4 @@
-import { PinataPinResponse } from "@pinata/sdk";
-import FormData from "cross-formdata";
-import fetch from "isomorphic-fetch";
+import { getFormData, wrapStream } from "./compatability";
 
 const NOT_IMPLEMENTED = "Not implemented";
 
@@ -29,6 +27,7 @@ export type FormDataRequestOptions = {
   maxBodyLength?: number;
   withCredentials?: boolean;
   headers?: FormDataPostHeaders;
+  [key: string]: any;
 };
 
 /**
@@ -73,37 +72,24 @@ export class BaseFormDataProvider {
   // Already refactored several times, but still too complex since it needs
   // to handle both node and browser types.
   // eslint-disable-next-line sonarjs/cognitive-complexity
-  private populate(
+  private async populate(
     dataContent: FormData,
     data: any,
     meta?: FormDataPostHeaders
-  ): FormDataPostHeaders | undefined {
-    if (!("on" in data) && typeof data !== "string") {
-      if ("size" in data && "type" in data) {
-        const blob = data;
-        meta = {
-          "content-type": blob.type,
-          ...(blob.name ? { name: blob.name } : {}),
-        };
-        dataContent.append("file", blob);
-      } else if ("buffer" in data && "mimeType" in data) {
-        const assetBuffer = data as AssetBuffer;
-        meta = { "content-type": assetBuffer.mimeType };
-        dataContent.append(
-          "file",
-          new (global.Blob || Blob)([assetBuffer.buffer])
-        );
-      } else if (Buffer.isBuffer(data)) {
-        dataContent.append("file", new (global.Blob || Blob)([data]));
-      } else if ("on" in data && "pipe" in data) {
-        dataContent.append("file", data);
-      } else {
-        throw new Error("Unknown upload data format");
-      }
-    } else {
-      dataContent.append("file", data);
+  ): Promise<FormDataPostHeaders | undefined> {
+    data = await this.wrapStream(data);
+    dataContent.append("file", data);
+    if ("name" in data) {
+      meta = { ...meta, name: data.name };
+    }
+    if ("type" in data) {
+      meta = { ...meta, type: data.type };
     }
     return meta;
+  }
+
+  protected async wrapStream(data: any): Promise<any> {
+    return wrapStream(data);
   }
 
   /**
@@ -114,8 +100,9 @@ export class BaseFormDataProvider {
    * @internal
    */
   async upload(data: any, meta?: FormDataPostHeaders): Promise<string> {
+    const FormData = await getFormData();
     const dataContent = new FormData();
-    meta = this.populate(dataContent, data, meta);
+    meta = await this.populate(dataContent, data, meta);
     await this.addMetadata(dataContent as FormData, meta);
     const options = await this.getRequestOptions(dataContent as FormData, meta);
     // This needs to be in a different files for testing with jest to work
@@ -188,8 +175,14 @@ export class BaseFormDataProvider {
       method: "POST",
       ...requestOptions,
     } as RequestInit;
-    input.headers = { ...input.headers /* ...headers */ };
-    return (globalThis.fetch || fetch)(this.getEndpoint(), {
+    const url = this.getEndpoint();
+    input.headers = {
+      ...((dataContent as any).getHeaders
+        ? (dataContent as any).getHeaders()
+        : {}),
+      ...input.headers,
+    };
+    return fetch(url, {
       ...input,
       body: dataContent as any,
     })
@@ -210,7 +203,7 @@ export class BaseFormDataProvider {
             );
           });
         }
-        return response.json() as Promise<PinataPinResponse>;
+        return response.json() as Promise<any>;
       })
       .catch(function (error) {
         throw handleError(error);

@@ -2,12 +2,25 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node-terminal",
-      "name": "Run Script: test",
+      "name": "Pinata upload",
+      "program": "${workspaceFolder}/examples/upload-pinata.mjs",
       "request": "launch",
-      "command": "pnpm run test",
-      "cwd": "${workspaceFolder}",
-      "autoAttachChildProcesses": true
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
+      "name": "LocalNode upload",
+      "program": "${workspaceFolder}/examples/upload-local-ipfs.mjs",
+      "request": "launch",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
+      "command": "./node_modules/.bin/astro dev --force",
+      "name": "Astro example server",
+      "cwd": "${workspaceFolder}/examples/astro-example",
+      "request": "launch",
+      "type": "node-terminal"
     }
   ]
 }
