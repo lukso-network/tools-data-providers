@@ -47,7 +47,7 @@ jobs:
 
       - name: Colled documentation
         run: |
-          pnpm run docs
+          pnpm run documentation
 
       - name: Deploy
         # if: ${{ steps.release.outputs.release_created }}
