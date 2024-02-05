@@ -1,4 +1,4 @@
-import { PinataProvider } from "@lukso/data-provider-pinata";
+import { PinataUploader } from "@lukso/data-provider-pinata";
 
 beforeEach(() => {
   jest.resetAllMocks();
@@ -26,7 +26,7 @@ async function mockDependencies() {
     pinataApiKey: "sample-api-key",
     pinataSecretApiKey: "some-secret-key",
   };
-  const uploader = new PinataProvider(config);
+  const uploader = new PinataUploader(config);
   const uploadFormData = jest.spyOn(uploader, "uploadFormData");
   (uploadFormData as jest.Mock).mockImplementation(async () => {
     return { IpfsHash: "QmY4Z" };

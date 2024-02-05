@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useRef, useState } from "react";
-import { IPFSHttpClientProvider } from "@lukso/data-provider-ipfs-http-client";
+import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
 import { urlResolver } from "./shared";
 
 export interface Props {
@@ -9,7 +9,7 @@ export interface Props {
 
 export default function UploadLocal({ gateway, options }: Props) {
   const provider = useMemo(
-    () => new IPFSHttpClientProvider(gateway, options),
+    () => new IPFSHttpClientUploader(gateway, options),
     []
   );
   const fileInput = useRef<HTMLInputElement>(null);

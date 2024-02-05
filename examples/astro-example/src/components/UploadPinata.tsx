@@ -1,11 +1,11 @@
 import React, { useCallback, useMemo, useRef, useState } from "react";
-import { PinataProvider } from "@lukso/data-provider-pinata";
+import { PinataUploader } from "@lukso/data-provider-pinata";
 import { urlResolver } from "./shared";
 
 export default function UploadPinata() {
   const provider = useMemo(
     () =>
-      new PinataProvider({
+      new PinataUploader({
         pinataApiKey: import.meta.env.TEST_PINATAAPIKEY,
         pinataSecretApiKey: import.meta.env.TEST_PINATASECRETAPIKEY,
         pinataJWTKey: import.meta.env.TEST_PINATAJWTKEY,

@@ -59,7 +59,7 @@ export const handleError = (error: any) => {
  * class used by all the custom implementations.
  * @public
  */
-export class BaseFormDataProvider {
+export class BaseFormDataUploader {
   /**
    *
    * @param dataContent - FormData content to be sent

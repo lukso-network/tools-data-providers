@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { IPFSHttpClientProvider } from "@lukso/data-provider-ipfs-http-client";
+import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
 import { urlResolver } from "./shared";
 const props = defineProps<{ gateway: string; options?: any }>();
 
@@ -19,7 +19,7 @@ const url = ref("");
 const imageUrl = ref("");
 const fileInput = ref<HTMLInputElement | null>(null);
 
-const provider = new IPFSHttpClientProvider(props.gateway, props.options);
+const provider = new IPFSHttpClientUploader(props.gateway, props.options);
 
 const upload = async () => {
   const file = fileInput.value?.files?.item(0) as File;

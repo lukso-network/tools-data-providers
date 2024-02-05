@@ -1,5 +1,5 @@
 import {
-  BaseFormDataProvider,
+  BaseFormDataUploader,
   FormDataPostHeaders,
   FormDataRequestOptions,
 } from "@lukso/data-provider-base";
@@ -10,7 +10,7 @@ import {
  * but ipfs-http-client has been deprecated in favor of Helia see https://github.com/ipfs/js-ipfs/issues/4336
  * @public
  */
-export class IPFSHttpClientProvider extends BaseFormDataProvider {
+export class IPFSHttpClientUploader extends BaseFormDataUploader {
   /**
    * Construct a provider using the ipfs-http-client
    * @param gateway - accepts a string, URL or options compatible for the create method
@@ -44,4 +44,4 @@ export class IPFSHttpClientProvider extends BaseFormDataProvider {
   }
 }
 
-export default IPFSHttpClientProvider;
+export default IPFSHttpClientUploader;

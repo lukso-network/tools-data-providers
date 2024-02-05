@@ -1,5 +1,5 @@
 import {
-  BaseFormDataProvider,
+  BaseFormDataUploader,
   FormDataPostHeaders,
   FormDataRequestOptions,
 } from "./formdata-base-provider";
@@ -29,7 +29,7 @@ import {
  * and then forward the request to a pinata or other endpoint for the final upload.
  * @public
  */
-export class AuthenticatedFormDataProvider extends BaseFormDataProvider {
+export class AuthenticatedFormDataUploader extends BaseFormDataUploader {
   /**
    *
    * @param dataContent - FormData content to be sent (ignored in this case)

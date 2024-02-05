@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { PinataProvider } from "@lukso/data-provider-pinata";
+import { PinataUploader } from "@lukso/data-provider-pinata";
 import { urlResolver } from "./shared";
 const props = defineProps<{}>();
 
@@ -19,7 +19,7 @@ const url = ref("");
 const imageUrl = ref("");
 const fileInput = ref<HTMLInputElement | null>(null);
 
-const provider = new PinataProvider({
+const provider = new PinataUploader({
   pinataApiKey: import.meta.env.TEST_PINATAAPIKEY,
   pinataSecretApiKey: import.meta.env.TEST_PINATASECRETAPIKEY,
   pinataJWTKey: import.meta.env.TEST_PINATAJWTKEY,

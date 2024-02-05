@@ -1,7 +1,7 @@
 import { PinataConfig } from "@pinata/sdk";
 
 import {
-  BaseFormDataProvider,
+  BaseFormDataUploader,
   FormDataPostHeaders,
   FormDataRequestOptions,
 } from "@lukso/data-provider-base";
@@ -101,7 +101,7 @@ export function createConfigForAxiosHeadersWithFormData(config: PinataConfig) {
  * According to their documentation only api and secret should work
  * or JWT token. However, in our tests only all three worked.
  */
-export class PinataProvider extends BaseFormDataProvider {
+export class PinataUploader extends BaseFormDataUploader {
   constructor(private pinataConfig: PinataConfig) {
     super();
   }
@@ -134,4 +134,4 @@ export class PinataProvider extends BaseFormDataProvider {
   }
 }
 
-export default PinataProvider;
+export default PinataUploader;

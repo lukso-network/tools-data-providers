@@ -1,5 +1,5 @@
 import type { APIContext } from "astro";
-import { PinataProvider } from "@lukso/data-provider-pinata";
+import { PinataUploader } from "@lukso/data-provider-pinata";
 
 // File routes export a get() function, which gets called to generate the file.
 // Return an object with `body` to save the file contents in your final build.
@@ -8,7 +8,7 @@ export async function POST({ request }: APIContext) {
   const formData = await request.formData();
   const file = formData.get("file");
 
-  const provider = new PinataProvider({
+  const provider = new PinataUploader({
     pinataApiKey: process.env.TEST_PINATAAPIKEY,
     pinataSecretApiKey: process.env.TEST_PINATASECRETAPIKEY,
     pinataJWTKey: process.env.TEST_PINATAJWTKEY,

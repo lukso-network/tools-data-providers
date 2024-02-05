@@ -1,5 +1,5 @@
 import type { APIContext } from "astro";
-import { IPFSHttpClientProvider } from "@lukso/data-provider-ipfs-http-client";
+import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
 
 // File routes export a get() function, which gets called to generate the file.
 // Return an object with `body` to save the file contents in your final build.
@@ -8,7 +8,7 @@ export async function POST({ request }: APIContext) {
   const formData = await request.formData();
   const file = formData.get("file");
 
-  const provider = new IPFSHttpClientProvider(
+  const provider = new IPFSHttpClientUploader(
     import.meta.env.TEST_INFURA_GATEWAY,
     {
       headers: {

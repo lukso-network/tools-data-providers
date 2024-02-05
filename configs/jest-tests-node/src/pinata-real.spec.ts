@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-import { PinataProvider } from "@lukso/data-provider-pinata";
+import { PinataUploader } from "@lukso/data-provider-pinata";
 
 beforeEach(() => {
   jest.resetAllMocks();
@@ -36,7 +36,7 @@ async function mockDependencies() {
     pinataSecretApiKey: process.env.TEST_PINATASECRETAPIKEY,
     pinataJWTKey: process.env.TEST_PINATAJWTKEY,
   };
-  const uploader = new PinataProvider(config);
+  const uploader = new PinataUploader(config);
   return {
     file,
     config,
