@@ -54,6 +54,58 @@ console.log(url);
 
 There are various ways to supply the file content. When using a browser File or Blob objects are much more likely and are compatible with the upload function. Although in theory it's possible to upload folders, this library does not currently have the facility to support folder and multi file pinning as it's not required or planned.
 
+## Local IPFS
+
+```mjs
+const provider = new IPFSHttpClientProvider("http://127.0.0.1:5001/api/v0/add");
+```
+
+### Pinata
+
+```mjs
+const provider = new PinataProvider({
+  pinataApiKey: import.meta.env.TEST_PINATAAPIKEY,
+  pinataSecretApiKey: import.meta.env.TEST_PINATASECRETAPIKEY,
+});
+```
+
+or
+
+```mjs
+const provider = new PinataProvider({
+  pinataJWTKey: import.meta.env.TEST_PINATAJWTKEY,
+});
+```
+
+### Infura
+
+```mjs
+// import.meta.env.VAR is the new way of importing environment within vite and astro and
+// equivalent to the old process.env.VAR
+//
+const provider = new IPFSHttpClientProvider(import.meta.env.INFURA_GATEWAY, {
+  headers: {
+    authorization: `Basic ${Buffer.from(
+      `${import.meta.env.INFURA_API_KEY_NAME}:${import.meta.env.INFURA_API_KEY}`
+    ).toString("base64")}`,
+  },
+});
+```
+
+### API
+
+You can post the data to any API which accepts formData with a file field called "file".
+Some providers like pinata can supply additional fields with other custom information but it's not required
+for standard pinning which is the main use case of this library.
+
+```mjs
+const provider = new IPFSHttpClientProvider(POST_URL, {
+  headers: {
+    ...HEADERS,
+  },
+});
+```
+
 ## Example React View with local upload
 
 > NOTE: The drawback of this kind of approach is that the IPFS configuration (authentication keys and so on are accessible within the frontend) but it can also be compatible with a backend API (which can internally support session cookies or another way to limit access) by just providing an api endpoint for the gateway.
