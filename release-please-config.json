@@ -1,8 +1,8 @@
 {
   "packages": {
-    "packages/data-providers": {
-      "component": "data-providers",
-      "package-name": "@lukso/data-provider",
+    "packages/data-provider-base": {
+      "component": "data-provider-base",
+      "package-name": "@lukso/data-provider-base",
       "include-component-in-tag": true,
       "release-type": "node",
       "bump-minor-pre-major": true,
@@ -10,9 +10,9 @@
       "draft": false,
       "prerelease": false
     },
-    "packages/data-provider-http-client": {
-      "component": "data-provider-http-client",
-      "package-name": "@lukso/data-provider-http-client",
+    "packages/data-provider-ipfs-http-client": {
+      "component": "data-provider-ipfs-http-client",
+      "package-name": "@lukso/data-provider-ipfs-http-client",
       "include-component-in-tag": true,
       "release-type": "node",
       "bump-minor-pre-major": true,
@@ -23,6 +23,16 @@
     "packages/data-provider-pinata": {
       "component": "data-provider-pinata",
       "package-name": "@lukso/data-provider-pinata",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    },
+    "packages/data-provider-urlresolver": {
+      "component": "data-provider-urlresolver",
+      "package-name": "@lukso/data-provider-urlresolver",
       "include-component-in-tag": true,
       "release-type": "node",
       "bump-minor-pre-major": true,
