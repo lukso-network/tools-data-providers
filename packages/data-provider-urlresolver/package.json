@@ -16,7 +16,7 @@
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs",
+    "build": "tsup src/index.ts --format esm,cjs --sourcemap --dts-resolve --dts",
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",

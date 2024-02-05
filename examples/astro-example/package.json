@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
+    "demo": "astro dev",
     "build-web": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -17,6 +17,7 @@
     "@astrojs/vue": "^4.0.8",
     "@lukso/data-provider-ipfs-http-client": "workspace:*",
     "@lukso/data-provider-pinata": "workspace:*",
+    "@lukso/data-provider-urlresolver": "workspace:*",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.2.6",

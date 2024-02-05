@@ -4,30 +4,164 @@ Data providers for IPFS connectivity
 
 ## How to get started
 
+### Resolving URLs
+
+To resolve IPFS and other URLs, there is a UrlResolver utility which is part of this library. The default usage
+of the URL resolver will just replace the string on the left with the string on the right.
+For example `ipfs://<CID>` will become `https://api.universalprofile.cloud/ipfs/<CID>`. The default url replacer
+does not take care of replacing or deleting slashes to enable more flexibility.
+
+```mjs
+import { UrlResolver } from "@lukso/data-provider-urlresolver";
+
+export const urlResolver = new UrlResolver([
+  ["ipfs://", "https://api.universalprofile.cloud/ipfs/"],
+]);
+```
+
+For example if you wanted to put the CID into a query instead of part of the URL, you could do
+
+```mjs
+export const urlResolver = new UrlResolver([
+  ["ipfs://", "https://some.proxy?cid="],
+]);
+```
+
+This would then convert `ipfs://<CID>` to `https://some.proxy?cid=<CID>`
+
+### Pinning files
+
 In order to get started with uploading data to IPFS you will need credentials to a pinning service.
-Currently the pinning service supported by this library is either a local IPFS node or pinata and infura will follow soon after.
-To install the pinata provider you can use please install `@lukso/data-provider-pinata` or `@lukso/data-provider-ipfs-http-client`
+Currently the pinning service supported by this library is either a local IPFS node, pinata, or infura.
+Most providers are compatible with a configured version of `@lukso/data-provider-ipfs-http-client`, the pinata provider `@lukso/data-provider-pinata` allows you to configure it with the same JSON as needed for `@pinata/sdk` but otherwise also uses the standard formdata upload.
 
 For a local IPFS node running as a .mjs file.
 
-```js
-import { createReadStream } from "fs"
-import { IPFSHttpClientProvider } from "@lukso/data-provider-ipfs-http-client"
+```mjs
+import { createReadStream } from "fs";
+import { IPFSHttpClientProvider } from "@lukso/data-provider-ipfs-http-client";
 
-const provider = new IPFSHttpClientProvider("http://127.0.0.1:5001")
+const provider = new IPFSHttpClientProvider("http://127.0.0.1:5001/api/v0/add");
 
-const file = createReadStream('./test-image.png')
+const file = createReadStream("./test-image.png");
 
-const url = await provider.upload(file)
+const url = await provider.upload(file);
 
 console.log(url);
 ```
 
-> NOTE with the current version of the IPFS desktop the file will not show in the UI but can be found inside of the gateway for the local node. Also if your upnp on your router is correctly setup then the file will be available on IPFS proper as long as your local node is running.
+> NOTE: with the current version of the IPFS desktop the file will not show in the UI but can be found inside of the gateway for the local node. Also if your upnp on your router is correctly setup then the file will be available on IPFS proper as long as your local node is running. To run a local node just download the IPFS Desktop app (to allow upload from the browser locally you will need to adjust the `Access-Control-Allow-Origin` header as commented later)
 
-There are various ways to supply the file content. When using a browser File or Blob objects are much more likely and are compatible with the upload function. Although in theory it's possible to upload folders, this library does not currently have the facility to support folder and multi file pinning as it's not required.
+There are various ways to supply the file content. When using a browser File or Blob objects are much more likely and are compatible with the upload function. Although in theory it's possible to upload folders, this library does not currently have the facility to support folder and multi file pinning as it's not required or planned.
 
+## Example React View with local upload
 
+> NOTE: The drawback of this kind of approach is that the IPFS configuration (authentication keys and so on are accessible within the frontend) but it can also be compatible with a backend API (which can internally support session cookies or another way to limit access) by just providing an api endpoint for the gateway.
+
+```tsx
+import React, { useCallback, useMemo, useRef, useState } from "react";
+import { IPFSHttpClientProvider } from "@lukso/data-provider-ipfs-http-client";
+import { urlResolver } from "./shared";
+
+export interface Props {
+  gateway: string;
+  options?: any;
+}
+
+export default function UploadLocal({ gateway, options }: Props) {
+  const provider = useMemo(
+    () => new IPFSHttpClientProvider(gateway, options),
+    []
+  );
+  const fileInput = useRef<HTMLInputElement>(null);
+  const [url, setUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+
+  const upload = useCallback(async () => {
+    const file = fileInput?.current?.files?.item(0) as File;
+    const formData = new FormData();
+    formData.append("file", file); // FormData keys are called fields
+    const url = await provider.upload(file);
+    setUrl(url);
+    const destination = urlResolver.resolveUrl(url);
+    setImageUrl(destination);
+  }, []);
+
+  return (
+    <div>
+      <input ref={fileInput} type="file" accept="image/*" />
+      <button onClick={upload}>Upload</button>
+      <div className="url">{url}</div>
+      <div>
+        <img className="image" src={imageUrl} alt="uploaded image" />
+      </div>
+    </div>
+  );
+}
+```
+
+This is how you would use this component within a page to talk to a local IPFS pinning service
+
+```tsx
+<Upload client:only="react" gateway="http://127.0.0.1:5001/api/v0/add" />
+```
+
+This is how you would use this component within a page to talk to infura. (the client:only="react" is a feature of astro)
+
+```tsx
+<Upload
+  client:only="react"
+  gateway={import.meta.env.TEST_INFURA_GATEWAY}
+  options={{
+    headers: {
+      authorization: `Basic ${Buffer.from(
+        `${import.meta.env.TEST_INFURA_API_KEY_NAME}:${
+          import.meta.env.TEST_INFURA_API_KEY
+        }`
+      ).toString("base64")}`,
+    },
+  }}
+/>
+```
+
+This is how you could use the same view to post to an API endpoint.
+
+```tsx
+<Upload client:only="react" gateway="/api-infura" />
+```
+
+This would connect to this kind of endpoint
+
+```ts
+import type { APIContext } from "astro";
+import { IPFSHttpClientProvider } from "@lukso/data-provider-ipfs-http-client";
+
+export async function POST({ request }: APIContext) {
+  const formData = await request.formData();
+  const file = formData.get("file");
+
+  const provider = new IPFSHttpClientProvider(
+    import.meta.env.TEST_INFURA_GATEWAY,
+    {
+      headers: {
+        authorization: `Basic ${Buffer.from(
+          `${import.meta.env.TEST_INFURA_API_KEY_NAME}:${
+            import.meta.env.TEST_INFURA_API_KEY
+          }`
+        ).toString("base64")}`,
+      },
+    }
+  );
+
+  const url = await provider.upload(file);
+  return new Response(JSON.stringify({ Hash: url }), {
+    headers: { contentType: "application/json" },
+  });
+}
+```
+
+So essentially the remote request is compatible with the incoming formData's File item. The INPUT's event browser File element or the formData File item can be sent.
+The node version of the API also supports createReadStream results (i.e. ReadStream) to be passed into upload.
 
 ## Documentation
 
@@ -41,30 +175,32 @@ There are various ways to supply the file content. When using a browser File or 
 ### Apps and Packages
 
 - `docs`: A placeholder documentation site powered by [Next.js](https://nextjs.org/)
-- `@lukso/data-providers`: Base data providers using formdata and url mapping libraries.
-- `@lukso/data-provider-http-client`: Custom data provider using ipfs-http-client
-- `@lukso/data-provider-pinata`: Custom data provider using `@pinata/sdk`
-- `@lukso/tsconfig`: shared `tsconfig.json`s used throughout the monorepo
-- `eslint-config`: ESLint preset
-- `jest-presets`: Jest presets
-- `jest-tests-node`: Jest tests running in node
-- `jest-tests-browser`: Jest tests running in jsdom
+- `@lukso/data-provider-base`: Base data providers using formdata and url mapping libraries.
+- `@lukso/data-provider-ipfs-http-client`: Custom data provider compatible ipfs-http-client (`POST /api/v0/add` only)
+- `@lukso/data-provider-pinata`: Custom data provider compatible with pinata.
+- `@lukso/data-provider-urlresolver`: URL resolvers to map ipfs://, ar:// and so on to https:// urls.
 
 ### Useful commands
 
-- `pnpm run build` - Build all packages and the docs site
-- `pnpm run lint` - Lint all packages
-- `pnpm run changeset` - Generate a changeset
-- `pnpm run clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
+- `pnpm build` - Build all packages and the docs site
+- `pnpm lint` - Lint all packages
+- `pnpm clean` - Clean up all `node_modules` and `dist` folders (runs each package's clean script)
+- `pnpm demo` - Launch a small astro demo with sample vue and react views to pin data into ipfs.
 
-## Versioning and Publishing packages
+> NOTE: To run the demo you need to setup `.env.test` by copying `.env.test.example` and filling it in. Then you need to install the IPFS desktop app and configure it to allow \* or http://localhost:4321 as the easiest would be to use the ipfs command line, or you can skip using the local upload options in the demo. Pinata and Infura only need the credentials inside of `.env.test`. The local IPFS node is an example how one would use something like [helia](https://github.com/ipfs/helia).
 
-Package publishing has been configured using [Changesets](https://github.com/changesets/changesets). Please review their [documentation](https://github.com/changesets/changesets#documentation) to familiarize yourself with the workflow.
-
-This example comes with automated npm releases setup in a [GitHub Action](https://github.com/changesets/action). To get this working, you will need to create an `NPM_TOKEN` and `GITHUB_TOKEN` in your repository settings. You should also install the [Changesets bot](https://github.com/apps/changeset-bot) on your GitHub repository as well.
-
-For more information about this automation, refer to the official [changesets documentation](https://github.com/changesets/changesets/blob/main/docs/automating-changesets.md)
-
-### GitHub Package Registry
-
-See [Working with the npm registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#publishing-a-package-using-publishconfig-in-the-packagejson-file)
+```json
+"HTTPHeaders": {
+  "Access-Control-Allow-Credentials": [
+    "true"
+  ],
+  "Access-Control-Allow-Methods": [
+    "PUT",
+    "GET",
+    "POST"
+  ],
+  "Access-Control-Allow-Origin": [
+    "*"
+  ]
+}
+```
