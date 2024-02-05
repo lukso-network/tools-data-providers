@@ -11,6 +11,8 @@ of the URL resolver will just replace the string on the left with the string on 
 For example `ipfs://<CID>` will become `https://api.universalprofile.cloud/ipfs/<CID>`. The default url replacer
 does not take care of replacing or deleting slashes to enable more flexibility.
 
+> NOTE: As of 2/5/2024 it's still required to use the lukso proxy in order to see files from both infura and pinata. The infura IPFS support is still broken as per ticket Request #1115524. Any other proxy would need to load both from infura and pinata and possibly other IPFS gateways to reliably gain access to all data stored within IPFS.
+
 ```mjs
 import { UrlResolver } from "@lukso/data-provider-urlresolver";
 
