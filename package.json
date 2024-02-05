@@ -4,7 +4,7 @@
     "build": "turbo build",
     "dev": "turbo dev --no-cache --continue",
     "lint": "turbo run lint",
-    "clean": "turbo clean && rm -rf node_modules",
+    "clean": "turbo clean && rm -rf node_modules temp",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "release": "turbo build --filter=docs^... && changeset publish",
