@@ -20,7 +20,7 @@
     "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo node_modules dist etc",
-    "docs": "mkdir -p ./etc && api-extractor run --local --verbose"
+    "docs": "mkdir -p ./etc ./temp && api-extractor run --local --verbose"
   },
   "devDependencies": {
     "@lukso/tsconfig": "workspace:*",
