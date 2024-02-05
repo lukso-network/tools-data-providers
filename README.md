@@ -41,9 +41,9 @@ For a local IPFS node running as a .mjs file.
 
 ```mjs
 import { createReadStream } from "fs";
-import { IPFSHttpClientProvider } from "@lukso/data-provider-ipfs-http-client";
+import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
 
-const provider = new IPFSHttpClientProvider("http://127.0.0.1:5001/api/v0/add");
+const provider = new IPFSHttpClientUploader("http://127.0.0.1:5001/api/v0/add");
 
 const file = createReadStream("./test-image.png");
 
@@ -59,13 +59,13 @@ There are various ways to supply the file content. When using a browser File or 
 ## Local IPFS
 
 ```mjs
-const provider = new IPFSHttpClientProvider("http://127.0.0.1:5001/api/v0/add");
+const provider = new IPFSHttpClientUploader("http://127.0.0.1:5001/api/v0/add");
 ```
 
 ### Pinata
 
 ```mjs
-const provider = new PinataProvider({
+const provider = new PinataUploader({
   pinataApiKey: import.meta.env.TEST_PINATAAPIKEY,
   pinataSecretApiKey: import.meta.env.TEST_PINATASECRETAPIKEY,
 });
@@ -74,7 +74,7 @@ const provider = new PinataProvider({
 or
 
 ```mjs
-const provider = new PinataProvider({
+const provider = new PinataUploader({
   pinataJWTKey: import.meta.env.TEST_PINATAJWTKEY,
 });
 ```
@@ -85,7 +85,7 @@ const provider = new PinataProvider({
 // import.meta.env.VAR is the new way of importing environment within vite and astro and
 // equivalent to the old process.env.VAR
 //
-const provider = new IPFSHttpClientProvider(import.meta.env.INFURA_GATEWAY, {
+const provider = new IPFSHttpClientUploader(import.meta.env.INFURA_GATEWAY, {
   headers: {
     authorization: `Basic ${Buffer.from(
       `${import.meta.env.INFURA_API_KEY_NAME}:${import.meta.env.INFURA_API_KEY}`
@@ -101,7 +101,7 @@ Some providers like pinata can supply additional fields with other custom inform
 for standard pinning which is the main use case of this library.
 
 ```mjs
-const provider = new IPFSHttpClientProvider(POST_URL, {
+const provider = new IPFSHttpClientUploader(POST_URL, {
   headers: {
     ...HEADERS,
   },
@@ -114,7 +114,7 @@ const provider = new IPFSHttpClientProvider(POST_URL, {
 
 ```tsx
 import React, { useCallback, useMemo, useRef, useState } from "react";
-import { IPFSHttpClientProvider } from "@lukso/data-provider-ipfs-http-client";
+import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
 import { urlResolver } from "./shared";
 
 export interface Props {
@@ -124,7 +124,7 @@ export interface Props {
 
 export default function UploadLocal({ gateway, options }: Props) {
   const provider = useMemo(
-    () => new IPFSHttpClientProvider(gateway, options),
+    () => new IPFSHttpClientUploader(gateway, options),
     []
   );
   const fileInput = useRef<HTMLInputElement>(null);
@@ -188,13 +188,13 @@ This would connect to this kind of endpoint
 
 ```ts
 import type { APIContext } from "astro";
-import { IPFSHttpClientProvider } from "@lukso/data-provider-ipfs-http-client";
+import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
 
 export async function POST({ request }: APIContext) {
   const formData = await request.formData();
   const file = formData.get("file");
 
-  const provider = new IPFSHttpClientProvider(
+  const provider = new IPFSHttpClientUploader(
     import.meta.env.TEST_INFURA_GATEWAY,
     {
       headers: {
