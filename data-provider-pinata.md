@@ -8,7 +8,7 @@
 
 |  Class | Description |
 |  --- | --- |
-|  [PinataFormDataProvider](./data-provider-pinata.pinataformdataprovider.md) | Custom data provider that directly uploads to pinata It requires the pinata api key, secret key and JWT key to be set According to their documentation only api and secret should work or JWT token. However, in our tests only all three worked. |
+|  [PinataProvider](./data-provider-pinata.pinataprovider.md) | Custom data provider that directly uploads to pinata It requires the pinata api key, secret key and JWT key to be set According to their documentation only api and secret should work or JWT token. However, in our tests only all three worked. |
 
 ## Functions
 
