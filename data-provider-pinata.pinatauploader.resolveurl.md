@@ -4,6 +4,8 @@
 
 ## PinataUploader.resolveUrl() method
 
+Decode IPFS URL from POST results.
+
 **Signature:**
 
 ```typescript
@@ -14,9 +16,11 @@ resolveUrl(result: any): string;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  result | any |  |
+|  result | any | JSON result from upload |
 
 **Returns:**
 
 string
+
+ipfs URL
 

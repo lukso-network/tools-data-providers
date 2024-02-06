@@ -22,5 +22,5 @@ declare class BaseFormDataUploader
 |  [getRequestOptions(dataContent, meta)](./data-provider-base.baseformdatauploader.getrequestoptions.md) |  | Construct options for the underlying fetch call. |
 |  [getToken()](./data-provider-base.baseformdatauploader.gettoken.md) |  | Return a token if this provider requires authentication. |
 |  [resolveUrl(result)](./data-provider-base.baseformdatauploader.resolveurl.md) |  | Convert the upload JSON result to a URL. In most of the current cases it will read Hash or IpfsHash and return <code>ipfs://${hash}</code>. |
-|  [wrapStream(data)](./data-provider-base.baseformdatauploader.wrapstream.md) | <code>protected</code> |  |
+|  [wrapStream(data)](./data-provider-base.baseformdatauploader.wrapstream.md) | <code>protected</code> | Wrap ReadStream in a Blob for node if required. |
 

@@ -4,6 +4,8 @@
 
 ## AuthenticatedFormDataUploader.getRequestOptions() method
 
+Return the request options used for the fetch call.
+
 **Signature:**
 
 ```typescript

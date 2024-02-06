@@ -4,6 +4,8 @@
 
 ## PinataUploader.getRequestOptions() method
 
+Extract fetch request options.
+
 **Signature:**
 
 ```typescript
@@ -14,10 +16,12 @@ getRequestOptions(_dataContent: FormData, meta?: FormDataPostHeaders): Promise<F
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  \_dataContent | FormData |  |
-|  meta | [FormDataPostHeaders](./data-provider-base.formdatapostheaders.md) | _(Optional)_ |
+|  \_dataContent | FormData | FormData content to be sent |
+|  meta | [FormDataPostHeaders](./data-provider-base.formdatapostheaders.md) | _(Optional)_ Metadata from File or Blob object |
 
 **Returns:**
 
 Promise&lt;[FormDataRequestOptions](./data-provider-base.formdatarequestoptions.md)<!-- -->&gt;
+
+fetch request options
 

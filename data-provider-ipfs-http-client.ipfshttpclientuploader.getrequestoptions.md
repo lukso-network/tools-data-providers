@@ -4,6 +4,8 @@
 
 ## IPFSHttpClientUploader.getRequestOptions() method
 
+Add additional arguments needed as part of the POST fetch request.
+
 **Signature:**
 
 ```typescript
@@ -20,4 +22,6 @@ getRequestOptions(dataContent: FormData, meta?: FormDataPostHeaders): Promise<Fo
 **Returns:**
 
 Promise&lt;[FormDataRequestOptions](./data-provider-base.formdatarequestoptions.md)<!-- -->&gt;
+
+The request options for the fetch call.
 

@@ -23,8 +23,8 @@ declare class PinataUploader extends BaseFormDataUploader
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
-|  [addMetadata(dataContent, meta)](./data-provider-pinata.pinatauploader.addmetadata.md) |  |  |
-|  [getEndpoint()](./data-provider-pinata.pinatauploader.getendpoint.md) |  |  |
-|  [getRequestOptions(\_dataContent, meta)](./data-provider-pinata.pinatauploader.getrequestoptions.md) |  |  |
-|  [resolveUrl(result)](./data-provider-pinata.pinatauploader.resolveurl.md) |  |  |
+|  [addMetadata(dataContent, meta)](./data-provider-pinata.pinatauploader.addmetadata.md) |  | Add additional pinata specific form item if piniataMetadata is provider. Most of the time this is not necessary and not supported by other uploaders. |
+|  [getEndpoint()](./data-provider-pinata.pinatauploader.getendpoint.md) |  | Return standard pinata pinning endpoint supported for all JWT and API keys. |
+|  [getRequestOptions(\_dataContent, meta)](./data-provider-pinata.pinatauploader.getrequestoptions.md) |  | Extract fetch request options. |
+|  [resolveUrl(result)](./data-provider-pinata.pinatauploader.resolveurl.md) |  | Decode IPFS URL from POST results. |
 

@@ -4,6 +4,8 @@
 
 ## BaseFormDataUploader.wrapStream() method
 
+Wrap ReadStream in a Blob for node if required.
+
 **Signature:**
 
 ```typescript
@@ -14,9 +16,10 @@ protected wrapStream(data: any): Promise<any>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  data | any |  |
+|  data | any | data to wrap |
 
 **Returns:**
 
 Promise&lt;any&gt;
+
 

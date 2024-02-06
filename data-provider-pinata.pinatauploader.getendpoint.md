@@ -4,6 +4,8 @@
 
 ## PinataUploader.getEndpoint() method
 
+Return standard pinata pinning endpoint supported for all JWT and API keys.
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getEndpoint(): string;
 **Returns:**
 
 string
+
+Return the endpoint to be used for pinata
 

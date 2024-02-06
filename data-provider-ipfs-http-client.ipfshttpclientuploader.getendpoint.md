@@ -4,6 +4,8 @@
 
 ## IPFSHttpClientUploader.getEndpoint() method
 
+Get configured endpoint
+
 **Signature:**
 
 ```typescript
@@ -12,4 +14,6 @@ getEndpoint(): string;
 **Returns:**
 
 string
+
+Inject the endpoint this uploader is configued to use.
 

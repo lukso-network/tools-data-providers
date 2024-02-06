@@ -4,7 +4,7 @@
 
 ## IPFSHttpClientUploader class
 
-Data provider for uploading using the ipfs-http-client directly. This is backward compatible with the previous ipfs implementation, but ipfs-http-client has been deprecated in favor of Helia see https://github.com/ipfs/js-ipfs/issues/4336
+Data provider for uploading compatible with the ipfs-http-client directly. This is backward compatible with the most ipfs pinning APIs, but ipfs-http-client has been deprecated in favor of Helia see https://github.com/ipfs/js-ipfs/issues/4336
 
 **Signature:**
 
@@ -23,7 +23,7 @@ declare class IPFSHttpClientUploader extends BaseFormDataUploader
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
-|  [getEndpoint()](./data-provider-ipfs-http-client.ipfshttpclientuploader.getendpoint.md) |  |  |
-|  [getRequestOptions(dataContent, meta)](./data-provider-ipfs-http-client.ipfshttpclientuploader.getrequestoptions.md) |  |  |
-|  [resolveUrl(result)](./data-provider-ipfs-http-client.ipfshttpclientuploader.resolveurl.md) |  |  |
+|  [getEndpoint()](./data-provider-ipfs-http-client.ipfshttpclientuploader.getendpoint.md) |  | Get configured endpoint |
+|  [getRequestOptions(dataContent, meta)](./data-provider-ipfs-http-client.ipfshttpclientuploader.getrequestoptions.md) |  | Add additional arguments needed as part of the POST fetch request. |
+|  [resolveUrl(result)](./data-provider-ipfs-http-client.ipfshttpclientuploader.resolveurl.md) |  | Resolve the URL during uploading |
 

@@ -4,6 +4,8 @@
 
 ## PinataUploader.addMetadata() method
 
+Add additional pinata specific form item if piniataMetadata is provider. Most of the time this is not necessary and not supported by other uploaders.
+
 **Signature:**
 
 ```typescript
@@ -14,8 +16,8 @@ addMetadata(dataContent: FormData, meta?: FormDataPostHeaders): Promise<void>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  dataContent | FormData |  |
-|  meta | [FormDataPostHeaders](./data-provider-base.formdatapostheaders.md) | _(Optional)_ |
+|  dataContent | FormData | FormData content to be send |
+|  meta | [FormDataPostHeaders](./data-provider-base.formdatapostheaders.md) | _(Optional)_ Metadata from File or Blob object |
 
 **Returns:**
 

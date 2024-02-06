@@ -4,6 +4,8 @@
 
 ## IPFSHttpClientUploader.resolveUrl() method
 
+Resolve the URL during uploading
+
 **Signature:**
 
 ```typescript
@@ -14,9 +16,10 @@ resolveUrl(result: any): string;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  result | any |  |
+|  result | any | extract the ipfs URL from the POST result |
 
 **Returns:**
 
 string
+
 
