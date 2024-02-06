@@ -188,7 +188,6 @@ export class BaseFormDataUploader {
       ...input.headers,
     };
     const fetch = await getFetch();
-    console.log(dataContent, input, url, fetch);
     return await fetch(url, {
       ...input,
       body: dataContent as any,

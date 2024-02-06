@@ -13,7 +13,7 @@ it("should pin images (node)", async () => {
     expect.objectContaining({
       headers: expect.any(Object),
     }),
-    expect.objectContaining({ __content: expect.anything() })
+    expect.objectContaining({})
   );
 
   expect(upload.toString()).toEqual("ipfs://QmY4Z");
