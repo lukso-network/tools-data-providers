@@ -192,24 +192,24 @@ export class BaseFormDataUploader {
       ...input,
       body: dataContent as any,
     })
-      .then((response) => {
+      .then(async (response) => {
+        const output = await response.text();
+        const [info] = output.split("\n");
         if (response.status !== 200) {
-          return response.text().then((text) => {
-            let error = text;
-            try {
-              error = JSON.parse(text);
-            } catch {
-              // Ignore
-            }
-            error = (error as any).error || error;
-            throw new Error(
-              `unknown server response while pinning File to IPFS: ${
-                error || response.status
-              }`
-            );
-          });
+          let error = info;
+          try {
+            error = JSON.parse(info);
+          } catch {
+            // Ignore
+          }
+          error = (error as any).error || error;
+          throw new Error(
+            `unknown server response while pinning File to IPFS: ${
+              error || response.status
+            }`
+          );
         }
-        return response.json() as Promise<any>;
+        return JSON.parse(info) as Promise<any>;
       })
       .catch(function (error) {
         throw handleError(error);

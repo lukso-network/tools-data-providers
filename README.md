@@ -2,6 +2,8 @@
 
 Data providers for IPFS connectivity
 
+> ISSUE: When using the bun runtime and using createFileStream, the data has to be stored in memory due to an incompatibility with the FormData implementation. i.e. it will construct a Blob containing an arrayStream with the file data in memory before uploading the resulting array of bytes.
+
 ## How to get started
 
 ### Resolving URLs

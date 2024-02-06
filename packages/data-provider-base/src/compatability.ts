@@ -39,11 +39,22 @@ export async function getBlob(): Promise<typeof Blob> {
 }
 
 /**
+ * Return the file implementation in a way that works in node and browser
+ *
+ * @returns The Blob implementation
+ */
+export async function getFile(): Promise<typeof File> {
+  return typeof File !== "undefined" || "browser" in process
+    ? File
+    : ((await import("formdata-node").then(({ File }) => File)) as typeof File);
+}
+
+/**
  * Wrap a stream so that a readstream can be detected in node without
  * loading the module in the browser.
  */
+// eslint-disable-next-line sonarjs/cognitive-complexity
 export async function wrapStream(data: any): Promise<any> {
-  console.log(isNode);
   if (isNode) {
     const { ReadStream } = await import("node:fs");
     if (data instanceof ReadStream) {
@@ -56,7 +67,17 @@ export async function wrapStream(data: any): Promise<any> {
           }
           output.push(chunk);
         }
+        const Blob = await getBlob();
         return new Blob(output);
+      }
+      // @ts-expect-error - check for browser
+      if (typeof Bun !== "undefined") {
+        // @ts-expect-error - check for browser
+        const file = Bun.file(data.path);
+        const File = await getFile();
+        return new File([await file.arrayBuffer()], "file", {
+          type: "application/octet-stream",
+        });
       }
       const { fileFromPath } = await import("formdata-node/file-from-path");
       return await fileFromPath(data.path);
