@@ -105,6 +105,14 @@ export class PinataUploader extends BaseFormDataUploader {
   constructor(private pinataConfig: PinataConfig) {
     super();
   }
+
+  /**
+   * Extract fetch request options.
+   *
+   * @param _dataContent - FormData content to be sent
+   * @param meta - Metadata from File or Blob object
+   * @returns fetch request options
+   */
   async getRequestOptions(
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     _dataContent: FormData,
@@ -117,6 +125,14 @@ export class PinataUploader extends BaseFormDataUploader {
     );
     return { ...root, ...rest, headers: { ...headers } };
   }
+
+  /**
+   * Add additional pinata specific form item if piniataMetadata is provider.
+   * Most of the time this is not necessary and not supported by other uploaders.
+   *
+   * @param dataContent - FormData content to be send
+   * @param meta - Metadata from File or Blob object
+   */
   async addMetadata(dataContent: FormData, meta?: FormDataPostHeaders) {
     if (meta?.pinataMetadata) {
       validateMetadata(meta);
@@ -126,9 +142,22 @@ export class PinataUploader extends BaseFormDataUploader {
       );
     }
   }
+
+  /**
+   * Return standard pinata pinning endpoint supported for all JWT and API keys.
+   *
+   * @returns Return the endpoint to be used for pinata
+   */
   getEndpoint(): string {
     return "https://api.pinata.cloud/pinning/pinFileToIPFS";
   }
+
+  /**
+   * Decode IPFS URL from POST results.
+   *
+   * @param result - JSON result from upload
+   * @returns ipfs URL
+   */
   resolveUrl(result: any): string {
     return `ipfs://${result.IpfsHash}`;
   }

@@ -31,6 +31,7 @@ import {
  */
 export class AuthenticatedFormDataUploader extends BaseFormDataUploader {
   /**
+   * Return the request options used for the fetch call.
    *
    * @param dataContent - FormData content to be sent (ignored in this case)
    * @param meta - Optional additional meta data (ignored in this case)
@@ -60,6 +61,7 @@ export class AuthenticatedFormDataUploader extends BaseFormDataUploader {
     };
   }
   /**
+   * Extract the IPFS URL from the upload result.
    *
    * @param result - JSON object returned from FormData post.
    * @returns URL referring to the uploaded data

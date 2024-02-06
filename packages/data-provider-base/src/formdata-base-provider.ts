@@ -88,6 +88,11 @@ export class BaseFormDataUploader {
     return meta;
   }
 
+  /**
+   * Wrap ReadStream in a Blob for node if required.
+   * @param data - data to wrap
+   * @returns
+   */
   protected async wrapStream(data: any): Promise<any> {
     return wrapStream(data);
   }
