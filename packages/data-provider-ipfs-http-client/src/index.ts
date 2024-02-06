@@ -57,7 +57,7 @@ export class IPFSHttpClientUploader extends BaseFormDataUploader {
     const root = await super.getRequestOptions(dataContent, meta);
     return {
       ...this.options,
-      headers: { ...meta?.headers, ...this.options?.headers },
+      headers: { ...root?.headers, ...this.options?.headers },
       ...root,
     };
   }

@@ -90,8 +90,8 @@ export function createConfigForAxiosHeaders(config: PinataConfig) {
 export function createConfigForAxiosHeadersWithFormData(config: PinataConfig) {
   return {
     ...createConfigForAxiosHeaders(config),
-    maxContentLength: Number.POSITIVE_INFINITY, //this is needed to prevent axios from erroring out with large files
-    maxBodyLength: Number.POSITIVE_INFINITY,
+    maxContentLength: Number.MAX_SAFE_INTEGER, //this is needed to prevent axios from erroring out with large files
+    maxBodyLength: Number.MAX_SAFE_INTEGER,
   };
 }
 

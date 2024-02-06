@@ -11,11 +11,8 @@ import { FormDataRequestOptions } from '@lukso/data-provider-base';
 // @public
 class IPFSHttpClientUploader extends BaseFormDataUploader {
     constructor(gateway: string, options?: FormDataRequestOptions | undefined);
-    // (undocumented)
     getEndpoint(): string;
-    // (undocumented)
     getRequestOptions(dataContent: FormData, meta?: FormDataPostHeaders): Promise<FormDataRequestOptions>;
-    // (undocumented)
     resolveUrl(result: any): string;
 }
 export { IPFSHttpClientUploader }

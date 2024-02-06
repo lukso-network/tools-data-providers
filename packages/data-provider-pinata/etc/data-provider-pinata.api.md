@@ -57,13 +57,9 @@ export const ERROR_NO_CREDENTIALS_PROVIDED = "No credentials provided! Please pr
 // @public
 class PinataUploader extends BaseFormDataUploader {
     constructor(pinataConfig: PinataConfig);
-    // (undocumented)
     addMetadata(dataContent: FormData, meta?: FormDataPostHeaders): Promise<void>;
-    // (undocumented)
     getEndpoint(): string;
-    // (undocumented)
     getRequestOptions(_dataContent: FormData, meta?: FormDataPostHeaders): Promise<FormDataRequestOptions>;
-    // (undocumented)
     resolveUrl(result: any): string;
 }
 export { PinataUploader }

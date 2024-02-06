@@ -12,10 +12,9 @@ export interface AssetBuffer {
 
 // @public
 export class AuthenticatedFormDataUploader extends BaseFormDataUploader {
-    // (undocumented)
     getRequestOptions(dataContent: FormData, meta?: FormDataPostHeaders): Promise<FormDataRequestOptions>;
     getToken(): Promise<string>;
-    // @internal (undocumented)
+    // @internal
     resolveUrl(result: any): string;
 }
 
@@ -32,7 +31,6 @@ export class BaseFormDataUploader {
     upload(data: any, meta?: FormDataPostHeaders): Promise<string>;
     // @internal
     uploadFormData(requestOptions: FormDataRequestOptions, dataContent: FormData): Promise<any>;
-    // (undocumented)
     protected wrapStream(data: any): Promise<any>;
 }
 

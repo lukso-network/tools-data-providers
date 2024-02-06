@@ -1,4 +1,4 @@
-import { getFormData, wrapStream } from "./compatability";
+import { getFetch, getFormData, wrapStream } from "./compatability";
 
 const NOT_IMPLEMENTED = "Not implemented";
 
@@ -172,7 +172,7 @@ export class BaseFormDataUploader {
    * @returns JSON response from the gateway.
    * @internal
    */
-  uploadFormData(
+  async uploadFormData(
     requestOptions: FormDataRequestOptions,
     dataContent: FormData
   ): Promise<any> {
@@ -187,7 +187,9 @@ export class BaseFormDataUploader {
         : {}),
       ...input.headers,
     };
-    return fetch(url, {
+    const fetch = await getFetch();
+    console.log(dataContent, input, url, fetch);
+    return await fetch(url, {
       ...input,
       body: dataContent as any,
     })
