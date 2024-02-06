@@ -43,21 +43,23 @@ export async function getBlob(): Promise<typeof Blob> {
  * loading the module in the browser.
  */
 export async function wrapStream(data: any): Promise<any> {
+  console.log(isNode);
   if (isNode) {
     const { ReadStream } = await import("node:fs");
     if (data instanceof ReadStream) {
-      const Blob = await getBlob();
-      let options: any = undefined;
-      if (data instanceof ReadStream && data.path) {
-        const { basename } = await import("node:path");
-        options = { name: basename(data.path.toString()) };
+      if (typeof data.path !== "string") {
+        const output = [];
+        let chunk;
+        while ((chunk = data.read(1024)) != null) {
+          if (chunk === null) {
+            break;
+          }
+          output.push(chunk);
+        }
+        return new Blob(output);
       }
-      const blob = new Blob([], {
-        ...options,
-        type: "application/octet-stream",
-      });
-      blob.stream = () => data as any;
-      data = blob;
+      const { fileFromPath } = await import("formdata-node/file-from-path");
+      return await fileFromPath(data.path);
     }
   }
   return data;
