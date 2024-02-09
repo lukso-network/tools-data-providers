@@ -12,6 +12,14 @@ permissions:
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    env:
+      TEST_PINATAAPIKEY: ${{ secrets.TEST_PINATAAPIKEY }}
+      TEST_PINATASECRETAPIKEY: ${{ secrets.TEST_PINATASECRETAPIKEY }}
+      TEST_PINATAJWTKEY: ${{ secrets.TEST_PINATAJWTKEY }}
+      TEST_INFURA_API_KEY_NAME: ${{ secrets.TEST_INFURA_API_KEY_NAME }}
+      TEST_INFURA_API_KEY: ${{ secrets.TEST_INFURA_API_KEY }}
+      TEST_INFURA_GATEWAY: ${{ secrets.TEST_INFURA_GATEWAY }}
+      TEST_SHARED_KEY: ${{ secrets.TEST_SHARED_KEY }}
     steps:
       - uses: actions/checkout@v3
 
