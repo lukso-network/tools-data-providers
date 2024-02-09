@@ -8,7 +8,8 @@
     "TEST_PINATAJWTKEY",
     "TEST_INFURA_API_KEY_NAME",
     "TEST_INFURA_API_KEY",
-    "TEST_INFURA_GATEWAY"
+    "TEST_INFURA_GATEWAY",
+    "TEST_SHARED_KEY"
   ],
   "pipeline": {
     "build": {

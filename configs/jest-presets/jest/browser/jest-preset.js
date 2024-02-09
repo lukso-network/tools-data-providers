@@ -6,7 +6,6 @@ const esModules = [
   "@lukso/data-provider-urlresolver",
   "data-provider-ipfs-http-client",
   "jest-tests-browser",
-  "ipfs-http-client",
 ].join("|");
 
 module.exports = {

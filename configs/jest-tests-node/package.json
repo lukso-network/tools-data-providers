@@ -30,7 +30,6 @@
     "@lukso/tsconfig": "workspace:*",
     "@types/jest": "^29.5.7",
     "@types/node": "^17.0.45",
-    "fetch-blob": "^4.0.0",
-    "ipfs-http-client": "^60.0.1"
+    "fetch-blob": "^4.0.0"
   }
 }

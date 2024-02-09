@@ -9,7 +9,6 @@ const esModules = [
   "data-provider-ipfs-http-client",
   "data-providers",
   "jest-tests-node",
-  "ipfs-http-client",
 ].join("|");
 
 module.exports = {

@@ -1,13 +1,13 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-import { PinataUploader } from "@lukso/data-provider-pinata";
+import { AuthenticatedFormDataUploader } from "@lukso/data-provider-base";
 
 beforeEach(() => {
   jest.resetAllMocks();
 });
 
-it("should pin images (node, pinata)", async () => {
+it.only("should pin images (node, pinata, proxy)", async () => {
   const { uploader, file } = await mockDependencies();
 
   const upload = await uploader.upload(file);
@@ -31,15 +31,12 @@ async function mockDependencies() {
   //   return Buffer.from('123123');
   // };
 
-  const config = {
-    pinataApiKey: process.env.TEST_PINATAAPIKEY,
-    pinataSecretApiKey: process.env.TEST_PINATASECRETAPIKEY,
-    pinataJWTKey: process.env.TEST_PINATAJWTKEY,
-  };
-  const uploader = new PinataUploader(config);
+  const uploader = new AuthenticatedFormDataUploader(
+    "http://127.0.0.1:8787/api/v0/add",
+    process.env.TEST_SHARED_KEY || ""
+  );
   return {
     file,
-    config,
     uploader,
   };
 }

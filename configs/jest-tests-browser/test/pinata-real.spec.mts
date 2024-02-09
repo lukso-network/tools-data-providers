@@ -8,7 +8,7 @@ beforeEach(() => {
   jest.resetAllMocks();
 });
 
-it("should pin images (web)", async () => {
+it("should pin images (web, pinata)", async () => {
   const { uploader, file } = await mockDependencies();
 
   const upload = await uploader.upload(file);

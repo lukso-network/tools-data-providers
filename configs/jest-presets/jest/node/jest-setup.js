@@ -26,6 +26,10 @@ Object.defineProperty(globalThis, "TextDecoder", {
   value: TextDecoder,
 });
 // eslint-disable-next-line unicorn/prefer-module
+Object.defineProperty(globalThis, "TextEncoder", {
+  value: TextEncoder,
+});
+// eslint-disable-next-line unicorn/prefer-module
 Object.defineProperty(globalThis, "ResizeObserver", {
   value: ResizeObserver,
 });

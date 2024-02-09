@@ -1,5 +1,8 @@
 {
   "extends": "@lukso/tsconfig/node.json",
   "include": ["./src"],
-  "exclude": ["dist", "build", "node_modules"]
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "lib": ["dom", "DOM.Iterable"]
+  }
 }

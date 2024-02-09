@@ -31,7 +31,6 @@
     "@types/chrome": "^0.0.248",
     "@types/jest": "^29.5.7",
     "@types/node": "^20.8.10",
-    "fetch-blob": "^4.0.0",
-    "ipfs-http-client": "^60.0.1"
+    "fetch-blob": "^4.0.0"
   }
 }

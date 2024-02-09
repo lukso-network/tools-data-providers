@@ -1,13 +1,13 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-import { PinataUploader } from "@lukso/data-provider-pinata";
+import IPFSHttpClientUploader from "@lukso/data-provider-ipfs-http-client";
 
 beforeEach(() => {
   jest.resetAllMocks();
 });
 
-it("should pin images (node, pinata)", async () => {
+it("should pin images (node, infura)", async () => {
   const { uploader, file } = await mockDependencies();
 
   const upload = await uploader.upload(file);
@@ -32,11 +32,16 @@ async function mockDependencies() {
   // };
 
   const config = {
-    pinataApiKey: process.env.TEST_PINATAAPIKEY,
-    pinataSecretApiKey: process.env.TEST_PINATASECRETAPIKEY,
-    pinataJWTKey: process.env.TEST_PINATAJWTKEY,
+    headers: {
+      authorization: `Basic ${Buffer.from(
+        `${process.env.TEST_INFURA_API_KEY_NAME}:${process.env.TEST_INFURA_API_KEY}`
+      ).toString("base64")}`,
+    },
   };
-  const uploader = new PinataUploader(config);
+  const uploader = new IPFSHttpClientUploader(
+    process.env.TEST_INFURA_GATEWAY || "",
+    config
+  );
   return {
     file,
     config,

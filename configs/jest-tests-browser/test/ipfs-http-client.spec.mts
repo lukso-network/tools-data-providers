@@ -1,6 +1,6 @@
 import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
 
-it("should pin images", async () => {
+it("should pin images (mocked)", async () => {
   const { upload, uploader, file } = await mockDependencies();
 
   const uploaded = await uploader.upload(file);

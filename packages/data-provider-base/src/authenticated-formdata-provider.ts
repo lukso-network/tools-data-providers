@@ -4,6 +4,62 @@ import {
   FormDataRequestOptions,
 } from "./formdata-base-provider";
 
+/** local implementation of HS256 sign */
+async function sign(data: any, key: string) {
+  return crypto.subtle
+    .importKey(
+      "jwk", //can be "jwk" or "raw"
+      {
+        //this is an example jwk key, "raw" would be an ArrayBuffer
+        kty: "oct",
+        k: key,
+        alg: "HS256",
+        ext: true,
+      },
+      {
+        //this is the algorithm options
+        name: "HMAC",
+        hash: { name: "SHA-256" }, //can be "SHA-1", "SHA-256", "SHA-384", or "SHA-512"
+        //length: 256, //optional, if you want your key length to differ from the hash function's block length
+      },
+      true, //whether the key is extractable (i.e. can be used in exportKey)
+      ["sign", "verify"] //can be any combination of "sign" and "verify"
+    )
+    .then((key) => {
+      const jsonString = JSON.stringify(data);
+      const encodedData = new TextEncoder().encode(jsonString);
+      return crypto.subtle.sign(
+        {
+          name: "HMAC",
+        },
+        key, //from generateKey or importKey above
+        encodedData //ArrayBuffer of data you want to sign
+      );
+    })
+    .then((token) => {
+      const u8 = new Uint8Array(token);
+      return btoa(
+        String.fromCharCode.apply(undefined, u8 as unknown as number[])
+      );
+    });
+}
+
+/** local implementation of createToken to create a signd JWT token */
+async function createToken(payload: any, key: string): Promise<string> {
+  const header = { typ: "JWT", alg: "HS256" };
+
+  const segments = [
+    encodeURIComponent(btoa(JSON.stringify(header))),
+    encodeURIComponent(btoa(JSON.stringify(payload))),
+  ];
+
+  const footer = await sign(segments.join("."), key);
+
+  segments.push(footer);
+
+  return segments.join(".");
+}
+
 /**
  * This is a custom data provider that uses a pre-shared token to sign a short lived
  * jwt token and send it as a bearer token to the endpoint. On the server side
@@ -30,6 +86,16 @@ import {
  * @public
  */
 export class AuthenticatedFormDataUploader extends BaseFormDataUploader {
+  /**
+   * Create a new instance of the authenticated form data uploader.
+   *
+   * @param gateway - The gateway to be used for the upload
+   * @param sharedKey - The shared key to be used for the JWT token
+   */
+  constructor(private gateway: string, private sharedKey: string) {
+    super();
+  }
+
   /**
    * Return the request options used for the fetch call.
    *
@@ -72,22 +138,26 @@ export class AuthenticatedFormDataUploader extends BaseFormDataUploader {
   }
 
   /**
+   * Return the endpoint to be used for the upload.
+   */
+  getEndpoint(): string {
+    return this.gateway;
+  }
+
+  /**
    * Exposed function in case this classes it used with an older ipfs-http-client
    * implementation directly.
    * @returns A signed JWT token
    * @public
    */
   async getToken(): Promise<string> {
-    if (!process.env.VUE_APP_SHARED_KEY) {
+    if (!this.sharedKey) {
       return "";
     }
-    const { sign } = await import("@tsndr/cloudflare-worker-jwt").catch(
-      () => import("jsonwebtoken")
-    );
     const now = Date.now();
-    return await sign(
+    return await createToken(
       { iss: "extension", iat: now / 1000, exp: (now + 120_000) / 1000 },
-      process.env.VUE_APP_SHARED_KEY || ""
+      this.sharedKey || ""
     );
   }
 }
