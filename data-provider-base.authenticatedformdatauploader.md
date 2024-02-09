@@ -33,10 +33,17 @@ try {
 ```
 and then forward the request to a pinata or other endpoint for the final upload.
 
+## Constructors
+
+|  Constructor | Modifiers | Description |
+|  --- | --- | --- |
+|  [(constructor)(gateway, sharedKey)](./data-provider-base.authenticatedformdatauploader._constructor_.md) |  | Create a new instance of the authenticated form data uploader. |
+
 ## Methods
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
+|  [getEndpoint()](./data-provider-base.authenticatedformdatauploader.getendpoint.md) |  | Return the endpoint to be used for the upload. |
 |  [getRequestOptions(dataContent, meta)](./data-provider-base.authenticatedformdatauploader.getrequestoptions.md) |  | Return the request options used for the fetch call. |
 |  [getToken()](./data-provider-base.authenticatedformdatauploader.gettoken.md) |  | Exposed function in case this classes it used with an older ipfs-http-client implementation directly. |
 
