@@ -42,8 +42,7 @@ jobs:
       # `npm run build:js` will also generate the auto-generated constants for methods, errors and events,
       # including extracting their devdocs and userdocs
       - name: Prepare artifacts to publish
-        run: |
-          pnpm run build
+        run: pnpm run build
 
       - name: Tests
         run: pnpm run test

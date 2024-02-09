@@ -8,6 +8,7 @@
     "dist/**"
   ],
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "@lukso/tsconfig": "workspace:*",
     "eslint": "^7.32.0",
     "eslint-config-lukso": "workspace:*",
