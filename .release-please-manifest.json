@@ -1,6 +1,6 @@
 {
-  "packages/data-provider-base": "0.0.1",
-  "packages/data-provider-ipfs-http-client": "0.0.1",
-  "packages/data-provider-pinata": "0.0.1",
-  "packages/data-provider-urlresolver": "0.0.1"
+  "packages/data-provider-base": "0.0.2",
+  "packages/data-provider-ipfs-http-client": "0.0.2",
+  "packages/data-provider-pinata": "0.0.2",
+  "packages/data-provider-urlresolver": "0.0.2"
 }
