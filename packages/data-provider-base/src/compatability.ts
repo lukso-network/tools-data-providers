@@ -8,7 +8,7 @@ const isNode = typeof window === "undefined";
  */
 export async function getFormData(): Promise<typeof FormData> {
   // Use the appropriate FormData implementation depending on the environment
-  return typeof FormData !== "undefined" || "browser" in process
+  return typeof FormData !== "undefined"
     ? FormData
     : ((await import("formdata-node").then(
         ({ FormData }) => FormData
@@ -22,9 +22,11 @@ export async function getFormData(): Promise<typeof FormData> {
  */
 export async function getFetch(): Promise<typeof fetch> {
   // Use the browser's fetch if available, otherwise use node-fetch
-  return typeof fetch !== "undefined" || "browser" in process
+  return typeof fetch !== "undefined"
     ? fetch
-    : ((await import("node-fetch")) as unknown as typeof fetch);
+    : ((await import("node-fetch").then(
+        ({ default: fetch }) => fetch
+      )) as unknown as typeof fetch);
 }
 
 /**
@@ -33,7 +35,7 @@ export async function getFetch(): Promise<typeof fetch> {
  * @returns The Blob implementation
  */
 export async function getBlob(): Promise<typeof Blob> {
-  return typeof Blob !== "undefined" || "browser" in process
+  return typeof Blob !== "undefined"
     ? Blob
     : ((await import("formdata-node").then(({ Blob }) => Blob)) as typeof Blob);
 }
@@ -44,7 +46,7 @@ export async function getBlob(): Promise<typeof Blob> {
  * @returns The Blob implementation
  */
 export async function getFile(): Promise<typeof File> {
-  return typeof File !== "undefined" || "browser" in process
+  return typeof File !== "undefined"
     ? File
     : ((await import("formdata-node").then(({ File }) => File)) as typeof File);
 }

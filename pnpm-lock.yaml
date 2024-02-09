@@ -139,6 +139,9 @@ importers:
       fetch-blob:
         specifier: ^4.0.0
         version: 4.0.0
+      web-streams-polyfill:
+        specifier: ^3.3.2
+        version: 3.3.2
     devDependencies:
       '@lukso/tsconfig':
         specifier: workspace:*
@@ -179,6 +182,12 @@ importers:
       '@types/node':
         specifier: ^17.0.45
         version: 17.0.45
+      cross-blob:
+        specifier: ^3.0.2
+        version: 3.0.2
+      cross-formdata:
+        specifier: ^1.0.3
+        version: 1.0.3
       fetch-blob:
         specifier: ^4.0.0
         version: 4.0.0
@@ -5322,7 +5331,7 @@ packages:
     engines: {node: ^12.20 || >= 14.13}
     dependencies:
       node-domexception: 1.0.0
-      web-streams-polyfill: 3.2.1
+      web-streams-polyfill: 3.3.2
     dev: false
 
   /fetch-blob@4.0.0:
@@ -10190,8 +10199,8 @@ packages:
     resolution: {integrity: sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==}
     dev: false
 
-  /web-streams-polyfill@3.2.1:
-    resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
+  /web-streams-polyfill@3.3.2:
+    resolution: {integrity: sha512-3pRGuxRF5gpuZc0W+EpwQRmCD7gRqcDOMt688KmdlDAgAyaB1XlN0zq2njfDNm44XVdIouE7pZ6GzbdyH47uIQ==}
     engines: {node: '>= 8'}
     dev: false
 

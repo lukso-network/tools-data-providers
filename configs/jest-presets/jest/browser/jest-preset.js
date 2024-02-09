@@ -10,9 +10,15 @@ const esModules = [
 
 module.exports = {
   roots: ["<rootDir>"],
+  testMatch: ["**/*.spec.mts", "**/*.spec.ts"],
   testEnvironment: "jsdom", // jest-presets/jest/browser/jest-environment-jsdom.ts",
   transform: {
-    "^.+\\.(ts|tsx|js)?$": "ts-jest",
+    "^.+\\.(ts|tsx|js|mjs)?$": "ts-jest",
+  },
+  globals: {
+    "ts-jest": {
+      useESM: true,
+    },
   },
   moduleFileExtensions: [
     "ts",
@@ -24,7 +30,7 @@ module.exports = {
     "mjs",
     "cjs",
   ],
-  extensionsToTreatAsEsm: [".mts"],
+  extensionsToTreatAsEsm: [".ts"],
   modulePathIgnorePatterns: [
     "<rootDir>/test/__fixtures__",
     "<rootDir>/node_modules",

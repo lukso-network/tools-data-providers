@@ -2,6 +2,7 @@ const crypto = require("node:crypto");
 const { TextEncoder, TextDecoder } = require("util");
 const ResizeObserver = require("resize-observer-polyfill");
 const { config } = require("dotenv");
+require("web-streams-polyfill");
 
 config({ path: "../../.env.test" });
 

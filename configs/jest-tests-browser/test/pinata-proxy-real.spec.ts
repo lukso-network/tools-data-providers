@@ -1,5 +1,11 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { jest } from "@jest/globals";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import Blob from "cross-blob";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 import { AuthenticatedFormDataUploader } from "@lukso/data-provider-base";
 
@@ -7,7 +13,7 @@ beforeEach(() => {
   jest.resetAllMocks();
 });
 
-it.only("should pin images (web, pinata, proxy)", async () => {
+it("should pin images (web, pinata, proxy)", async () => {
   const { uploader, file } = await mockDependencies();
 
   const upload = await uploader.upload(file);
@@ -18,7 +24,7 @@ it.only("should pin images (web, pinata, proxy)", async () => {
 });
 
 async function mockDependencies() {
-  const file = new (global.Blob || Blob)(
+  const file = new Blob(
     // This is only for jest so it's no big deal.
     // eslint-disable-next-line unicorn/prefer-module
     [readFileSync(resolve(__dirname, "./test-image.png"))],
@@ -26,13 +32,9 @@ async function mockDependencies() {
       type: "image/png",
     }
   );
-  // TODO: fix "is not assignable to type IDE error"
-  // file.arrayBuffer = async () => {
-  //   return Buffer.from('123123');
-  // };
 
   const uploader = new AuthenticatedFormDataUploader(
-    "http://127.0.0.1:8787/api/v0/add",
+    "https://api.universalprofile.cloud/api/v0/add",
     process.env.TEST_SHARED_KEY || ""
   );
   return {

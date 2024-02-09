@@ -1,4 +1,5 @@
 import { PinataUploader } from "@lukso/data-provider-pinata";
+import { jest } from "@jest/globals";
 
 beforeEach(() => {
   jest.resetAllMocks();

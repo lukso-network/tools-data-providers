@@ -26,12 +26,17 @@ module.exports = {
     "json",
     "node",
   ],
-  extensionsToTreatAsEsm: [".mts"],
+  extensionsToTreatAsEsm: [".ts"],
   modulePathIgnorePatterns: [
     "<rootDir>/test/__fixtures__",
     "<rootDir>/node_modules",
     "<rootDir>/dist",
   ],
+  globals: {
+    "ts-jest": {
+      useESM: true,
+    },
+  },
   setupFilesAfterEnv: ["jest-presets/jest/node/jest-setup.js"],
   preset: "ts-jest",
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],

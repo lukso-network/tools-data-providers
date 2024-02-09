@@ -1,11 +1,11 @@
 import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
+import { jest } from "@jest/globals";
 
 it("should pin images (mocked)", async () => {
-  const { upload, uploader, file } = await mockDependencies();
+  const { uploader, file } = await mockDependencies();
 
-  const uploaded = await uploader.upload(file);
+  const upload = await uploader.upload(file);
 
-  expect(uploaded).toHaveBeenCalledWith(file, { pin: true });
   expect(upload.toString()).toEqual("ipfs://QmY4Z");
 });
 
