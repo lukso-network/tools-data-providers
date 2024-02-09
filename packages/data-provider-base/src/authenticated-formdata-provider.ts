@@ -6,6 +6,8 @@ import {
 
 /** local implementation of HS256 sign */
 async function sign(data: any, key: string) {
+  const crypto =
+    typeof window !== "undefined" ? window.crypto : await import("node:crypto");
   return crypto.subtle
     .importKey(
       "jwk", //can be "jwk" or "raw"

@@ -32,7 +32,7 @@ async function mockDependencies() {
   // };
 
   const uploader = new AuthenticatedFormDataUploader(
-    "http://127.0.0.1:8787/api/v0/add",
+    "https://api.universalprofile.cloud/api/v0/add",
     process.env.TEST_SHARED_KEY || ""
   );
   return {
