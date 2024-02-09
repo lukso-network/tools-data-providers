@@ -34,7 +34,6 @@
     "@lukso/data-provider-base": "workspace:*",
     "@tsndr/cloudflare-worker-jwt": "^2.2.5",
     "cross-blob": "^3.0.2",
-    "cross-formdata": "^1.0.3",
     "form-data": "^4.0.0"
   }
 }

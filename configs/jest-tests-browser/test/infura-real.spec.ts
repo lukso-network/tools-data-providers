@@ -21,7 +21,7 @@ it("should pin images (web, infura)", async () => {
   expect(upload.toString()).toEqual(
     "ipfs://QmPhT2FsbyQ2p2gmKBt42Voqr9izxhUn8yLPKg2NqtrGWi"
   );
-});
+}, 10000);
 
 async function mockDependencies() {
   const file = new Blob(
