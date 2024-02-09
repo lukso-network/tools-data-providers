@@ -148,6 +148,9 @@ importers:
       '@lukso/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
+      cross-blob:
+        specifier: ^3.0.2
+        version: 3.0.2
       eslint:
         specifier: ^7.32.0
         version: 7.32.0
