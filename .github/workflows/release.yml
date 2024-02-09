@@ -45,6 +45,22 @@ jobs:
         run: |
           pnpm run build
 
+      - name: Tests
+        run: pnpm run test
+
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: 🧪 Run Tests in shell
+        run: |
+          node examples/upload-pinata-proxy.mjs
+          bun examples/upload-pinata-proxy.mjs
+          node examples/upload-pinata.mjs
+          bun examples/upload-pinata.mjs
+          node examples/upload-infura.mjs
+          bun examples/upload-infura.mjs
+
       - name: Colled documentation
         run: |
           pnpm run documentation
