@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { jest } from "@jest/globals";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import Blob from "cross-blob";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -23,7 +24,7 @@ it("should pin images (node, infura)", async () => {
 });
 
 async function mockDependencies() {
-  const file = new global.Blob(
+  const file = new Blob(
     // This is only for jest so it's no big deal.
     // eslint-disable-next-line unicorn/prefer-module
     [readFileSync(resolve(__dirname, "./test-image.png"))],

@@ -6,7 +6,7 @@ config({ path: "./.env.test" });
 
 const provider = new AuthenticatedFormDataUploader(
   "https://api.universalprofile.cloud/api/v0/add",
-  process.env.TEST_SHARED_KEY
+  process.env.TEST_SHARED_KEY || ""
 );
 
 const file = createReadStream("./examples/test-image.png");
