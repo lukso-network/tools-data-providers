@@ -82,9 +82,10 @@ jobs:
           enable_jekyll: true
 
       - run: |
-          cat <<END > outputs.json
+          (cat <<END > outputs.json
           ${{toJSON(steps.release.outputs)}}
           END
+          )
           node ./scripts/publish.js outputs.json
         if: ${{ steps.release.outputs.releases_created }}
         env:
