@@ -1,5 +1,12 @@
 # @lukso/data-providers
 
+## [0.0.5](https://github.com/lukso-network/tools-data-providers/compare/data-provider-base-v0.0.4...data-provider-base-v0.0.5) (2024-02-13)
+
+
+### Bug Fixes
+
+* Remove AssetBuffer typedef for now ([a7a3b0d](https://github.com/lukso-network/tools-data-providers/commit/a7a3b0d6edea7258d3c2e2ff4cfbe2659260d682))
+
 ## [0.0.4](https://github.com/lukso-network/tools-data-providers/compare/data-provider-base-v0.0.3...data-provider-base-v0.0.4) (2024-02-13)
 
 
