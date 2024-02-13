@@ -1,4 +1,3 @@
-// @ts-expect-error - check for browser
 const isNode = typeof window === "undefined";
 
 /**
