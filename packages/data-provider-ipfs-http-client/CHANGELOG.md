@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.5](https://github.com/lukso-network/tools-data-providers/compare/data-provider-ipfs-http-client-v0.0.4...data-provider-ipfs-http-client-v0.0.5) (2024-02-13)
+
+
+### Bug Fixes
+
+* Try again, getting closer pnpm publish command line fix ([8923a25](https://github.com/lukso-network/tools-data-providers/commit/8923a25f810c479f84785a9927547b9ab61f9bc4))
+
 ## [0.0.4](https://github.com/lukso-network/tools-data-providers/compare/data-provider-ipfs-http-client-v0.0.3...data-provider-ipfs-http-client-v0.0.4) (2024-02-13)
 
 
