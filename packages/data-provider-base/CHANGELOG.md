@@ -1,5 +1,12 @@
 # @lukso/data-providers
 
+## [0.0.4](https://github.com/lukso-network/tools-data-providers/compare/data-provider-base-v0.0.3...data-provider-base-v0.0.4) (2024-02-13)
+
+
+### Bug Fixes
+
+* Remove unused ts error ([1100119](https://github.com/lukso-network/tools-data-providers/commit/110011969141912a92fe153d1a5fe4d15fac7cd7))
+
 ## [0.0.3](https://github.com/lukso-network/tools-data-providers/compare/data-provider-base-v0.0.2...data-provider-base-v0.0.3) (2024-02-13)
 
 
