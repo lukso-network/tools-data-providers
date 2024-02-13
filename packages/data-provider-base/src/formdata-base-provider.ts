@@ -55,7 +55,7 @@ export class BaseFormDataUploader {
    * @param data - Data to be sent (this will be added to
    *  FormData and can be a Blob, ReadableStream, Buffer and so on)
    * @param meta - Metadata to be added (could contain name, size, type and so on)
-   * @returns Option header information to be added to the request.
+   * @returns Header information to be added to the request.
    * @internal
    */
   // Already refactored several times, but still too complex since it needs

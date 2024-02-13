@@ -48,7 +48,7 @@ export class IPFSHttpClientUploader extends BaseFormDataUploader {
    *
    * @param dataContent
    * @param meta
-   * @returns The request options for the fetch call.
+   * @returns The request options for the fetch call
    */
   async getRequestOptions(
     dataContent: FormData,

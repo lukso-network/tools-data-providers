@@ -9,7 +9,9 @@ import {
 export const ERROR_NO_CREDENTIALS_PROVIDED =
   "No credentials provided! Please provide your pinata api key and pinata secret api key or your pinata JWT key as an argument when you start this script";
 
-/** Utility functions from pinata */
+/**
+ * Utility functions from pinata
+ */
 export function validateMetadata(metadata: any) {
   if (
     metadata.name &&
