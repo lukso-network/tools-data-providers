@@ -3,17 +3,6 @@ import { getFetch, getFormData, wrapStream } from "./compatability";
 const NOT_IMPLEMENTED = "Not implemented";
 
 /**
- * Manual asset buffer we can support for upload
- * @public
- */
-export interface AssetBuffer {
-  /** buffer Buffer - buffer to the data */
-  buffer: Buffer;
-  /** mimeType string - set mimetype for the buffer */
-  mimeType: string;
-}
-
-/**
  * Type for POST headers
  * @public
  */
@@ -64,7 +53,7 @@ export class BaseFormDataUploader {
    *
    * @param dataContent - FormData content to be sent
    * @param data - Data to be sent (this will be added to
-   *  FormData and can be a Blob, ReadableStream, Buffer, AssetBuffer and so on)
+   *  FormData and can be a Blob, ReadableStream, Buffer and so on)
    * @param meta - Metadata to be added (could contain name, size, type and so on)
    * @returns Option header information to be added to the request.
    * @internal
