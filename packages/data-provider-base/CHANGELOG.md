@@ -1,5 +1,12 @@
 # @lukso/data-providers
 
+## [0.0.7](https://github.com/lukso-network/tools-data-providers/compare/data-provider-base-v0.0.6...data-provider-base-v0.0.7) (2024-02-13)
+
+
+### Bug Fixes
+
+* Bump base ([b441cb6](https://github.com/lukso-network/tools-data-providers/commit/b441cb604a5001cfb1ec7b8369f65de342c332c5))
+
 ## [0.0.6](https://github.com/lukso-network/tools-data-providers/compare/data-provider-base-v0.0.5...data-provider-base-v0.0.6) (2024-02-13)
 
 
