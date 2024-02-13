@@ -86,7 +86,7 @@ jobs:
           ${{toJSON(steps.release.outputs)}}
           END
           )
-          node ./scripts/publish.js outputs.json
+          node ./scripts/publish.mjs outputs.json
         if: ${{ steps.release.outputs.releases_created }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
