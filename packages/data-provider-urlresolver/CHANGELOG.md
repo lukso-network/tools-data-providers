@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4](https://github.com/lukso-network/tools-data-providers/compare/data-provider-urlresolver-v0.0.3...data-provider-urlresolver-v0.0.4) (2024-02-13)
+
+
+### Bug Fixes
+
+* Make some comment changes to force another build ([479a1d7](https://github.com/lukso-network/tools-data-providers/commit/479a1d7a79333727df7a14df2302f5aefe8e4dda))
+
 ## [0.0.3](https://github.com/lukso-network/tools-data-providers/compare/data-provider-urlresolver-v0.0.2...data-provider-urlresolver-v0.0.3) (2024-02-13)
 
 
