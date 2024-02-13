@@ -81,7 +81,11 @@ jobs:
           publish_dir: ./docs
           enable_jekyll: true
 
-      - run: node ./scripts/publish.js '${{toJSON(steps.release.outputs)}}'
+      - run: |
+          cat <<END > outputs.json
+          ${{toJSON(steps.release.outputs)}}
+          <<END
+          node ./scripts/publish.js outputs.json
         if: ${{ steps.release.outputs.releases_created }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
