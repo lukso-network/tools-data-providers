@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readFile } from "fs/promises";
 import { $ } from "zx";
 
 const outputs = JSON.parse(await readFile(process.argv[2], "utf-8"));
