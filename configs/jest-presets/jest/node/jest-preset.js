@@ -14,7 +14,12 @@ const esModules = [
 module.exports = {
   roots: ["<rootDir>"],
   transform: {
-    "^.+\\.(ts|tsx|js)?$": "ts-jest",
+    "^.+\\.(ts|tsx|js)?$": [
+      "ts-jest",
+      {
+        useESM: true,
+      },
+    ],
   },
   moduleFileExtensions: [
     "ts",
@@ -32,11 +37,6 @@ module.exports = {
     "<rootDir>/node_modules",
     "<rootDir>/dist",
   ],
-  globals: {
-    "ts-jest": {
-      useESM: true,
-    },
-  },
   setupFilesAfterEnv: ["jest-presets/jest/node/jest-setup.js"],
   preset: "ts-jest",
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],

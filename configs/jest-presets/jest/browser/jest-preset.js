@@ -13,12 +13,12 @@ module.exports = {
   testMatch: ["**/*.spec.mts", "**/*.spec.ts"],
   testEnvironment: "jsdom", // jest-presets/jest/browser/jest-environment-jsdom.ts",
   transform: {
-    "^.+\\.(ts|tsx|js|mjs)?$": "ts-jest",
-  },
-  globals: {
-    "ts-jest": {
-      useESM: true,
-    },
+    "^.+\\.(ts|tsx|js|mjs)?$": [
+      "ts-jest",
+      {
+        useESM: true,
+      },
+    ],
   },
   moduleFileExtensions: [
     "ts",
