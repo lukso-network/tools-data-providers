@@ -1,5 +1,5 @@
 {
-  "packages/data-provider-base": "0.0.4",
+  "packages/data-provider-base": "0.0.5",
   "packages/data-provider-ipfs-http-client": "0.0.3",
   "packages/data-provider-pinata": "0.0.3",
   "packages/data-provider-urlresolver": "0.0.3"
