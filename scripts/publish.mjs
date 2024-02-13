@@ -8,5 +8,5 @@ for (const key in outputs) {
   const match = key.match(/^(.*\/.*)--release_created$/);
   if (!match || !value) continue;
   const workspace = match[1];
-  await $`pnpm publish --files ./${workspace} --access public`;
+  await $`pnpm publish --filter=./${workspace} --access public`;
 }
