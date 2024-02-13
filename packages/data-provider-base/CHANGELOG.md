@@ -1,5 +1,12 @@
 # @lukso/data-providers
 
+## [0.0.3](https://github.com/lukso-network/tools-data-providers/compare/data-provider-base-v0.0.2...data-provider-base-v0.0.3) (2024-02-13)
+
+
+### Bug Fixes
+
+* Repair docs one more time ([c40afd5](https://github.com/lukso-network/tools-data-providers/commit/c40afd5648f12e4bea6a6acffbc6df10df914a95))
+
 ## [0.0.2](https://github.com/lukso-network/tools-data-providers/compare/data-provider-base-v0.0.1...data-provider-base-v0.0.2) (2024-02-09)
 
 
