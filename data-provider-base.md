@@ -11,12 +11,6 @@
 |  [AuthenticatedFormDataUploader](./data-provider-base.authenticatedformdatauploader.md) | This is a custom data provider that uses a pre-shared token to sign a short lived jwt token and send it as a bearer token to the endpoint. On the server side you can then verify the token using this kind of code: |
 |  [BaseFormDataUploader](./data-provider-base.baseformdatauploader.md) | Base data provider to upload data using a FormData POST. This is a generic class used by all the custom implementations. |
 
-## Interfaces
-
-|  Interface | Description |
-|  --- | --- |
-|  [AssetBuffer](./data-provider-base.assetbuffer.md) | Manual asset buffer we can support for upload |
-
 ## Type Aliases
 
 |  Type Alias | Description |
