@@ -1,5 +1,12 @@
 # @lukso/data-provider-pinata
 
+## [0.0.6](https://github.com/lukso-network/tools-data-providers/compare/data-provider-pinata-v0.0.5...data-provider-pinata-v0.0.6) (2024-02-13)
+
+
+### Bug Fixes
+
+* --no-git-checks is also needed ([25156a0](https://github.com/lukso-network/tools-data-providers/commit/25156a03d22a7807e072c14c36ffa99d7a687a47))
+
 ## [0.0.5](https://github.com/lukso-network/tools-data-providers/compare/data-provider-pinata-v0.0.4...data-provider-pinata-v0.0.5) (2024-02-13)
 
 
