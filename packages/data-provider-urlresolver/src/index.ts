@@ -1,4 +1,4 @@
-// bump 1
+// bump 2
 
 /**
  * It will relatively append pathname or hostname to the desination URL
