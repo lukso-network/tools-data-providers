@@ -21,6 +21,7 @@ const resolver = new UrlResolver([
  ["ar://", "https://some.api.gateway/something/ar"],
  [/^ipfs:\/\/Qm/, new UrlConverter("https://some2.api.gateway/something/ipfs")]
 ])
+
 resolver.resolveUrl("ipfs://QmSomeHash") // https://some.api.gateway/something/ipfs/QmSomeHash
 ```
 

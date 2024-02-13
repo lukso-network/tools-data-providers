@@ -23,5 +23,5 @@ getRequestOptions(dataContent: FormData, meta?: FormDataPostHeaders): Promise<Fo
 
 Promise&lt;[FormDataRequestOptions](./data-provider-base.formdatarequestoptions.md)<!-- -->&gt;
 
-The request options for the fetch call.
+The request options for the fetch call
 
