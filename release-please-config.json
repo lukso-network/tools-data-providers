@@ -8,7 +8,15 @@
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false,
       "draft": false,
-      "prerelease": false
+      "prerelease": false,
+      "extra-files": [
+        "scripts/publish.mjs",
+        "configs/**/*",
+        "meta.json",
+        "turbo.json",
+        "package.json",
+        "pnpm-lock.yaml"
+      ]
     },
     "packages/data-provider-ipfs-http-client": {
       "component": "data-provider-ipfs-http-client",
@@ -18,7 +26,15 @@
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false,
       "draft": false,
-      "prerelease": false
+      "prerelease": false,
+      "extra-files": [
+        "scripts/publish.mjs",
+        "configs/**/*",
+        "meta.json",
+        "turbo.json",
+        "package.json",
+        "pnpm-lock.yaml"
+      ]
     },
     "packages/data-provider-pinata": {
       "component": "data-provider-pinata",
@@ -28,7 +44,15 @@
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false,
       "draft": false,
-      "prerelease": false
+      "prerelease": false,
+      "extra-files": [
+        "scripts/publish.mjs",
+        "configs/**/*",
+        "meta.json",
+        "turbo.json",
+        "package.json",
+        "pnpm-lock.yaml"
+      ]
     },
     "packages/data-provider-urlresolver": {
       "component": "data-provider-urlresolver",
@@ -38,7 +62,15 @@
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false,
       "draft": false,
-      "prerelease": false
+      "prerelease": false,
+      "extra-files": [
+        "scripts/publish.mjs",
+        "configs/**/*",
+        "meta.json",
+        "turbo.json",
+        "package.json",
+        "pnpm-lock.yaml"
+      ]
     }
   },
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
