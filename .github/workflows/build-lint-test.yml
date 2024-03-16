@@ -28,8 +28,16 @@ jobs:
           node-version: "18.19.0"
           cache: "pnpm"
 
-      - name: 📦 Install dependencies
-        run: pnpm install
+      - name: Setup Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - name: Install pnpm/forge
+        run: |
+          git submodule update --init --recursive
+          cd packages/data-providers-fetcher
+          forge install
 
       - name: 🔍 Run Build
         run: pnpm run build
