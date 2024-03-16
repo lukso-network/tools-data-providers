@@ -1,0 +1,18 @@
+[profile.ci.fuzz]
+runs = 10_000
+
+[profile.default]
+src = 'src'
+out = 'out'
+libs = ['lib']
+remappings = [
+  "@lukso/lsp1-contracts/=lib/lsp-smart-contracts/packages/lsp1-contracts/",
+  "@lukso/lsp2-contracts/=lib/lsp-smart-contracts/packages/lsp2-contracts/",
+  "@lukso/lsp3-contracts/=lib/lsp-smart-contracts/packages/lsp3-contracts/",
+  "@lukso/lsp4-contracts/=lib/lsp-smart-contracts/packages/lsp4-contracts/",
+  "@lukso/lsp5-contracts/=lib/lsp-smart-contracts/packages/lsp5-contracts/",
+  "@lukso/lsp6-contracts/=lib/lsp-smart-contracts/packages/lsp6-contracts/",
+  "@openzeppelin/=lib/openzeppelin/",
+  "@erc725/smart-contracts=lib/ERC725/implementations/",
+  "src/=src/",
+]

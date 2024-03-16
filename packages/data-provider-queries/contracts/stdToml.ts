@@ -1,0 +1,89 @@
+export default {
+  "abi": [],
+  "bytecode": {
+    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212202262382977e2de0a1a5cd9407be65ff2a0816e6105a8e5d8e9b734013791037364736f6c63430008180033",
+    "sourceMap": "610:5612:15:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;610:5612:15;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212202262382977e2de0a1a5cd9407be65ff2a0816e6105a8e5d8e9b734013791037364736f6c63430008180033",
+    "sourceMap": "610:5612:15:-:0;;;;;;;;",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/forge-std/src/StdToml.sol\":\"stdToml\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@/=lib/lsp-smart-contracts/node_modules/@/\",\":@erc725/smart-contracts/=lib/ERC725/implementations/\",\":@lukso/lsp1-contracts/=lib/lsp-smart-contracts/packages/lsp1-contracts/\",\":@lukso/lsp2-contracts/=lib/lsp-smart-contracts/packages/lsp2-contracts/\",\":@lukso/lsp3-contracts/=lib/lsp-smart-contracts/packages/lsp3-contracts/\",\":@lukso/lsp4-contracts/=lib/lsp-smart-contracts/packages/lsp4-contracts/\",\":@lukso/lsp5-contracts/=lib/lsp-smart-contracts/packages/lsp5-contracts/\",\":@lukso/lsp6-contracts/=lib/lsp-smart-contracts/packages/lsp6-contracts/\",\":@openzeppelin/=lib/openzeppelin/\",\":@openzeppelin/contracts/=lib/openzeppelin/contracts/\",\":ERC725/=lib/ERC725/\",\":ds-test/=lib/lsp-smart-contracts/lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=lib/lsp-smart-contracts/node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat-deploy/=lib/lsp-smart-contracts/node_modules/hardhat-deploy/\",\":hardhat/=lib/lsp-smart-contracts/node_modules/hardhat/\",\":lsp-smart-contracts/=lib/lsp-smart-contracts/\",\":openzeppelin/=lib/openzeppelin/\",\":solidity-bytes-utils/=lib/lsp-smart-contracts/node_modules/solidity-bytes-utils/\"]},\"sources\":{\"lib/forge-std/src/StdToml.sol\":{\"keccak256\":\"0xc8a57915ace96f5b6a85b57e57690fc038cad9034a3dc368c11828a3707c61ab\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fa880a1a6e5d94005dcf4811b4c0df8d9c06407017ae111bd351483e2b76a72d\",\"dweb:/ipfs/QmcxkEE58gE1vDcZofTr8QpvdjXjgR72yYg7o4vTPSLCsy\"]},\"lib/forge-std/src/Vm.sol\":{\"keccak256\":\"0x30d73c4fea34a791ad7334dd701df60fbb565c643556aadd6621e49e48895d1f\",\"license\":\"MIT OR Apache-2.0\",\"urls\":[\"bzz-raw://be9cf80e55eff0f49ad0ab3c44214e56a3e53b5ecafe311a521f5472fa4bbf59\",\"dweb:/ipfs/QmQHrZZoscvkfKSD2m6jhktrh8ieSLV2fg9DHGDHJiBkjT\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.24+commit.e11b9ed9"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@/=lib/lsp-smart-contracts/node_modules/@/",
+        "@erc725/smart-contracts/=lib/ERC725/implementations/",
+        "@lukso/lsp1-contracts/=lib/lsp-smart-contracts/packages/lsp1-contracts/",
+        "@lukso/lsp2-contracts/=lib/lsp-smart-contracts/packages/lsp2-contracts/",
+        "@lukso/lsp3-contracts/=lib/lsp-smart-contracts/packages/lsp3-contracts/",
+        "@lukso/lsp4-contracts/=lib/lsp-smart-contracts/packages/lsp4-contracts/",
+        "@lukso/lsp5-contracts/=lib/lsp-smart-contracts/packages/lsp5-contracts/",
+        "@lukso/lsp6-contracts/=lib/lsp-smart-contracts/packages/lsp6-contracts/",
+        "@openzeppelin/=lib/openzeppelin/",
+        "@openzeppelin/contracts/=lib/openzeppelin/contracts/",
+        "ERC725/=lib/ERC725/",
+        "ds-test/=lib/lsp-smart-contracts/lib/forge-std/lib/ds-test/src/",
+        "eth-gas-reporter/=lib/lsp-smart-contracts/node_modules/eth-gas-reporter/",
+        "forge-std/=lib/forge-std/src/",
+        "hardhat-deploy/=lib/lsp-smart-contracts/node_modules/hardhat-deploy/",
+        "hardhat/=lib/lsp-smart-contracts/node_modules/hardhat/",
+        "lsp-smart-contracts/=lib/lsp-smart-contracts/",
+        "openzeppelin/=lib/openzeppelin/",
+        "solidity-bytes-utils/=lib/lsp-smart-contracts/node_modules/solidity-bytes-utils/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/forge-std/src/StdToml.sol": "stdToml"
+      },
+      "evmVersion": "paris",
+      "libraries": {}
+    },
+    "sources": {
+      "lib/forge-std/src/StdToml.sol": {
+        "keccak256": "0xc8a57915ace96f5b6a85b57e57690fc038cad9034a3dc368c11828a3707c61ab",
+        "urls": [
+          "bzz-raw://fa880a1a6e5d94005dcf4811b4c0df8d9c06407017ae111bd351483e2b76a72d",
+          "dweb:/ipfs/QmcxkEE58gE1vDcZofTr8QpvdjXjgR72yYg7o4vTPSLCsy"
+        ],
+        "license": "MIT"
+      },
+      "lib/forge-std/src/Vm.sol": {
+        "keccak256": "0x30d73c4fea34a791ad7334dd701df60fbb565c643556aadd6621e49e48895d1f",
+        "urls": [
+          "bzz-raw://be9cf80e55eff0f49ad0ab3c44214e56a3e53b5ecafe311a521f5472fa4bbf59",
+          "dweb:/ipfs/QmQHrZZoscvkfKSD2m6jhktrh8ieSLV2fg9DHGDHJiBkjT"
+        ],
+        "license": "MIT OR Apache-2.0"
+      }
+    },
+    "version": 1
+  },
+  "id": 15
+} as const;

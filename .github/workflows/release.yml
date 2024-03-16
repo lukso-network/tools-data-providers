@@ -44,6 +44,17 @@ jobs:
           scope: "@lukso"
           cache: "pnpm"
 
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - name: Install deps
+        run: |
+          git submodule update --init --recursive
+          cd packages/data-providers-fetcher
+          forge install
+
       - name: Install Dependencies
         run: pnpm install
 
