@@ -52,6 +52,7 @@ jobs:
       - name: Install pnpm/forge
         run: |
           git submodule update --init --recursive
+          pnpm install
           cd packages/data-provider-fetcher
           forge install
 
