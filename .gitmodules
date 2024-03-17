@@ -8,5 +8,5 @@
 	path = packages/data-provider-fetcher/lib/ERC725
 	url = https://github.com/ERC725Alliance/ERC725.git
 [submodule "packages/data-provider-fetcher/lib/openzeppelin"]
-	path = packages/data-providers-fetcher/lib/openzeppelin
+	path = packages/data-provider-fetcher/lib/openzeppelin
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts.git
