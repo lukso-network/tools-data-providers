@@ -1,0 +1,239 @@
+{
+  "abi": [
+    {
+      "type": "function",
+      "name": "owner",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "renounceOwnership",
+      "inputs": [],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "transferOwnership",
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "event",
+      "name": "OwnershipTransferred",
+      "inputs": [
+        {
+          "name": "previousOwner",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        },
+        {
+          "name": "newOwner",
+          "type": "address",
+          "indexed": true,
+          "internalType": "address"
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "error",
+      "name": "OwnableCallerNotTheOwner",
+      "inputs": [
+        {
+          "name": "callerAddress",
+          "type": "address",
+          "internalType": "address"
+        }
+      ]
+    },
+    {
+      "type": "error",
+      "name": "OwnableCannotSetZeroAddressAsOwner",
+      "inputs": []
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "owner()": "8da5cb5b",
+    "renounceOwnership()": "715018a6",
+    "transferOwnership(address)": "f2fde38b"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"callerAddress\",\"type\":\"address\"}],\"name\":\"OwnableCallerNotTheOwner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"OwnableCannotSetZeroAddressAsOwner\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"modified version of OpenZeppelin implementation, where: - _setOwner(address) function is internal, so this function can be used in constructor of contracts implementation (instead of using transferOwnership(address) - the contract does not inherit from Context contract\",\"errors\":{\"OwnableCallerNotTheOwner(address)\":[{\"details\":\"Reverts when only the owner is allowed to call the function.\",\"params\":{\"callerAddress\":\"The address that tried to make the call.\"}}],\"OwnableCannotSetZeroAddressAsOwner()\":[{\"details\":\"Reverts when trying to set `address(0)` as the contract owner when deploying the contract, initializing it or transferring ownership of the contract.\"}]},\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"title\":\"OwnableUnset\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/ERC725/implementations/contracts/custom/OwnableUnset.sol\":\"OwnableUnset\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@/=lib/lsp-smart-contracts/node_modules/@/\",\":@erc725/smart-contracts/=lib/ERC725/implementations/\",\":@lukso/lsp1-contracts/=lib/lsp-smart-contracts/packages/lsp1-contracts/\",\":@lukso/lsp2-contracts/=lib/lsp-smart-contracts/packages/lsp2-contracts/\",\":@lukso/lsp3-contracts/=lib/lsp-smart-contracts/packages/lsp3-contracts/\",\":@lukso/lsp4-contracts/=lib/lsp-smart-contracts/packages/lsp4-contracts/\",\":@lukso/lsp5-contracts/=lib/lsp-smart-contracts/packages/lsp5-contracts/\",\":@lukso/lsp6-contracts/=lib/lsp-smart-contracts/packages/lsp6-contracts/\",\":@openzeppelin/=lib/openzeppelin/\",\":@openzeppelin/contracts/=lib/openzeppelin/contracts/\",\":ERC725/=lib/ERC725/\",\":ds-test/=lib/lsp-smart-contracts/lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=lib/lsp-smart-contracts/node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat-deploy/=lib/lsp-smart-contracts/node_modules/hardhat-deploy/\",\":hardhat/=lib/lsp-smart-contracts/node_modules/hardhat/\",\":lsp-smart-contracts/=lib/lsp-smart-contracts/\",\":openzeppelin/=lib/openzeppelin/\",\":solidity-bytes-utils/=lib/lsp-smart-contracts/node_modules/solidity-bytes-utils/\"]},\"sources\":{\"lib/ERC725/implementations/contracts/custom/OwnableUnset.sol\":{\"keccak256\":\"0xa9c83adb0239b86c0ff6251a03bc70115470c7ae10eb99276d6dd33636054b36\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://95a0109837bdffe887b6568b7f9bbde2b20cfd0c4db638805cf61ada5743b24d\",\"dweb:/ipfs/QmYH2erMtqiEYjRznWnc6NbBbwxvy6ArE45jtXYEyWi3Bc\"]},\"lib/ERC725/implementations/contracts/errors.sol\":{\"keccak256\":\"0xaafdb4370450b8874224b3c0b2b712149da97a50c9a47f56e4b654aa57eb87c5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a4e40b0f64613e5bbd62575facc72d2bcad249595e9397b5bff063dc5a81e757\",\"dweb:/ipfs/QmXx5yDvPxWzKXFYK7HDAbSNDBKRskYLoDwgrThmAimzDL\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.24+commit.e11b9ed9"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "callerAddress",
+              "type": "address"
+            }
+          ],
+          "type": "error",
+          "name": "OwnableCallerNotTheOwner"
+        },
+        {
+          "inputs": [],
+          "type": "error",
+          "name": "OwnableCannotSetZeroAddressAsOwner"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "OwnershipTransferred",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "owner",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "renounceOwnership"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "transferOwnership"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "owner()": {
+            "details": "Returns the address of the current owner."
+          },
+          "renounceOwnership()": {
+            "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+          },
+          "transferOwnership(address)": {
+            "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@/=lib/lsp-smart-contracts/node_modules/@/",
+        "@erc725/smart-contracts/=lib/ERC725/implementations/",
+        "@lukso/lsp1-contracts/=lib/lsp-smart-contracts/packages/lsp1-contracts/",
+        "@lukso/lsp2-contracts/=lib/lsp-smart-contracts/packages/lsp2-contracts/",
+        "@lukso/lsp3-contracts/=lib/lsp-smart-contracts/packages/lsp3-contracts/",
+        "@lukso/lsp4-contracts/=lib/lsp-smart-contracts/packages/lsp4-contracts/",
+        "@lukso/lsp5-contracts/=lib/lsp-smart-contracts/packages/lsp5-contracts/",
+        "@lukso/lsp6-contracts/=lib/lsp-smart-contracts/packages/lsp6-contracts/",
+        "@openzeppelin/=lib/openzeppelin/",
+        "@openzeppelin/contracts/=lib/openzeppelin/contracts/",
+        "ERC725/=lib/ERC725/",
+        "ds-test/=lib/lsp-smart-contracts/lib/forge-std/lib/ds-test/src/",
+        "eth-gas-reporter/=lib/lsp-smart-contracts/node_modules/eth-gas-reporter/",
+        "forge-std/=lib/forge-std/src/",
+        "hardhat-deploy/=lib/lsp-smart-contracts/node_modules/hardhat-deploy/",
+        "hardhat/=lib/lsp-smart-contracts/node_modules/hardhat/",
+        "lsp-smart-contracts/=lib/lsp-smart-contracts/",
+        "openzeppelin/=lib/openzeppelin/",
+        "solidity-bytes-utils/=lib/lsp-smart-contracts/node_modules/solidity-bytes-utils/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "lib/ERC725/implementations/contracts/custom/OwnableUnset.sol": "OwnableUnset"
+      },
+      "evmVersion": "paris",
+      "libraries": {}
+    },
+    "sources": {
+      "lib/ERC725/implementations/contracts/custom/OwnableUnset.sol": {
+        "keccak256": "0xa9c83adb0239b86c0ff6251a03bc70115470c7ae10eb99276d6dd33636054b36",
+        "urls": [
+          "bzz-raw://95a0109837bdffe887b6568b7f9bbde2b20cfd0c4db638805cf61ada5743b24d",
+          "dweb:/ipfs/QmYH2erMtqiEYjRznWnc6NbBbwxvy6ArE45jtXYEyWi3Bc"
+        ],
+        "license": "MIT"
+      },
+      "lib/ERC725/implementations/contracts/errors.sol": {
+        "keccak256": "0xaafdb4370450b8874224b3c0b2b712149da97a50c9a47f56e4b654aa57eb87c5",
+        "urls": [
+          "bzz-raw://a4e40b0f64613e5bbd62575facc72d2bcad249595e9397b5bff063dc5a81e757",
+          "dweb:/ipfs/QmXx5yDvPxWzKXFYK7HDAbSNDBKRskYLoDwgrThmAimzDL"
+        ],
+        "license": "Apache-2.0"
+      }
+    },
+    "version": 1
+  },
+  "id": 2
+}

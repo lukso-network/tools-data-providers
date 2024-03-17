@@ -22,14 +22,23 @@ jobs:
         with:
           version: "8.8.0"
 
-      - name: Use Node.js '18.12.1'
+      - name: Use Node.js '18.19.0'
         uses: actions/setup-node@v2
         with:
-          node-version: "18.12.1"
+          node-version: "18.19.0"
           cache: "pnpm"
 
-      - name: 📦 Install dependencies
-        run: pnpm install
+      - name: Setup Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - name: Install pnpm/forge
+        run: |
+          git submodule update --init --recursive
+          pnpm install
+          cd packages/data-provider-fetcher
+          forge install
 
       - name: 🔍 Run Build
         run: pnpm run build

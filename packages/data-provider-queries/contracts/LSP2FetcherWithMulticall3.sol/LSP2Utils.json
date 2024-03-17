@@ -1,0 +1,241 @@
+{
+  "abi": [],
+  "bytecode": {
+    "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122081e07b1a20901fe9fed5d51031459e4418ae1e7590566d32b42b588e9b49a7f064736f6c63430008180033",
+    "sourceMap": "14880:15762:43:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;14880:15762:43;;;;;;;;;;;;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122081e07b1a20901fe9fed5d51031459e4418ae1e7590566d32b42b588e9b49a7f064736f6c63430008180033",
+    "sourceMap": "14880:15762:43:-:0;;;;;;;;",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {},
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"Jean Cavallera <CJ42>, Yamen Merhi <YamenMerhi>, Daniel Afteni <B00ste>\",\"details\":\"LSP2Utils is a library of utility functions that can be used to encode data key of different key type defined on the LSP2 standard. Based on LSP2 ERC725Y JSON Schema standard.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"LSP2 Utility library.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/LSP2FetcherWithMulticall3.sol\":\"LSP2Utils\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@/=lib/lsp-smart-contracts/node_modules/@/\",\":@erc725/smart-contracts/=lib/ERC725/implementations/\",\":@lukso/lsp1-contracts/=lib/lsp-smart-contracts/packages/lsp1-contracts/\",\":@lukso/lsp2-contracts/=lib/lsp-smart-contracts/packages/lsp2-contracts/\",\":@lukso/lsp3-contracts/=lib/lsp-smart-contracts/packages/lsp3-contracts/\",\":@lukso/lsp4-contracts/=lib/lsp-smart-contracts/packages/lsp4-contracts/\",\":@lukso/lsp5-contracts/=lib/lsp-smart-contracts/packages/lsp5-contracts/\",\":@lukso/lsp6-contracts/=lib/lsp-smart-contracts/packages/lsp6-contracts/\",\":@openzeppelin/=lib/openzeppelin/\",\":@openzeppelin/contracts/=lib/openzeppelin/contracts/\",\":ERC725/=lib/ERC725/\",\":ds-test/=lib/lsp-smart-contracts/lib/forge-std/lib/ds-test/src/\",\":eth-gas-reporter/=lib/lsp-smart-contracts/node_modules/eth-gas-reporter/\",\":forge-std/=lib/forge-std/src/\",\":hardhat-deploy/=lib/lsp-smart-contracts/node_modules/hardhat-deploy/\",\":hardhat/=lib/lsp-smart-contracts/node_modules/hardhat/\",\":lsp-smart-contracts/=lib/lsp-smart-contracts/\",\":openzeppelin/=lib/openzeppelin/\",\":solidity-bytes-utils/=lib/lsp-smart-contracts/node_modules/solidity-bytes-utils/\"]},\"sources\":{\"lib/ERC725/implementations/contracts/ERC725YCore.sol\":{\"keccak256\":\"0xe10e15c0ef7ee99bab505723ab6e16a547b09a95b0c95d0064d1459a624a2e7a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e3b1205b4c8d73d9cc2abea9ec741e44ef3451ddc13875459828bf049bf2ad9b\",\"dweb:/ipfs/Qmf9hVwRf4eDpqLNPS7ZffCsw2sRGsRPmx42VfQBfC3VBb\"]},\"lib/ERC725/implementations/contracts/constants.sol\":{\"keccak256\":\"0x37da1619e580b6af6a68e91b4784f7945ee2344fad3a96b6dfb2592e35fedb60\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fb9436bd587d7b38c532f317dbd4bc5f178b50906b1a5e29adf24908f27b2c47\",\"dweb:/ipfs/QmW2vTCNM7Mr4vW5t9yBK7Zmh1FtaVjPwdAbyFcPNBSZYL\"]},\"lib/ERC725/implementations/contracts/custom/OwnableUnset.sol\":{\"keccak256\":\"0xa9c83adb0239b86c0ff6251a03bc70115470c7ae10eb99276d6dd33636054b36\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://95a0109837bdffe887b6568b7f9bbde2b20cfd0c4db638805cf61ada5743b24d\",\"dweb:/ipfs/QmYH2erMtqiEYjRznWnc6NbBbwxvy6ArE45jtXYEyWi3Bc\"]},\"lib/ERC725/implementations/contracts/errors.sol\":{\"keccak256\":\"0xaafdb4370450b8874224b3c0b2b712149da97a50c9a47f56e4b654aa57eb87c5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a4e40b0f64613e5bbd62575facc72d2bcad249595e9397b5bff063dc5a81e757\",\"dweb:/ipfs/QmXx5yDvPxWzKXFYK7HDAbSNDBKRskYLoDwgrThmAimzDL\"]},\"lib/ERC725/implementations/contracts/interfaces/IERC725Y.sol\":{\"keccak256\":\"0xa47c9e3eba0c733a1685b9fa309f753540c89ad2dca73236a2c953e7f5680e7b\",\"license\":\"CC0-1.0\",\"urls\":[\"bzz-raw://59076395f660838919a2068cb7792c0fa70533642bbc5b4e3cc3cbb2c9ec7b50\",\"dweb:/ipfs/QmQqew3mDuyHCBdd4v1JiwRiKEbzk3LeHchzTHSdyhYg5b\"]},\"lib/lsp-smart-contracts/packages/lsp1-contracts/contracts/ILSP1UniversalReceiver.sol\":{\"keccak256\":\"0x5b8764a678dc9d6673eafa8ad0ee6053cdea30acb58015bdf9c93f9f1788b49b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e26dcf5d66120b7a0895ddcaec92207e17c63344fca885d2b7e3fe953ec027c\",\"dweb:/ipfs/QmetAuz9etfz9BG9oPJCwMthnhfd8XvZYLBmMfrPNUm3qV\"]},\"lib/lsp-smart-contracts/packages/lsp1-contracts/contracts/LSP1Constants.sol\":{\"keccak256\":\"0x0f87fc38243fc70316e22814f5a79d9c0770a39f64077cbc6fb5fddfa1d4c23c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c7d83f054b71dfa5ca48a9a811e6a985ff6b38a9e5f4c220ea2ec3a322cce7cf\",\"dweb:/ipfs/QmaehpHpqc5dtRCm9BoU8vCY59AeEnmGvmmwPirVr47oGp\"]},\"lib/lsp-smart-contracts/packages/lsp1-contracts/contracts/LSP1Utils.sol\":{\"keccak256\":\"0xa81bf1910c3b56b43bf58d0be2105c434ed3b65cfb3674e282b5aba3fd35afb0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://374e7bef39522d65cf8e45c365178eb54d159b9267d0c2a2b97dfea10e52d41f\",\"dweb:/ipfs/QmfVYVnVSTRVAAifFSyFk8icePgw3eeqpjAKWAwfHMu6vX\"]},\"lib/lsp-smart-contracts/packages/lsp2-contracts/contracts/LSP2Utils.sol\":{\"keccak256\":\"0x86ce8a85d12c79b76db5413b05b9bff16cd865b395efdc0e85b06b3b5e17219b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7ebb6d1152f88b459b9e8fc3ef6361a9fb9d03bfa994148e6b125a2ee4025487\",\"dweb:/ipfs/QmX18bCecAtrjqKTyCPqRrUuvVYSW1XZZJUgvjfYnqfmEH\"]},\"lib/lsp-smart-contracts/packages/lsp4-contracts/contracts/LSP4Constants.sol\":{\"keccak256\":\"0xdf9b7c688d39a92cb3238136a9f56554245d5ae9b6568dcd6164d0e15c6f56c7\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://bb36a427cdfa0f394d2d78014f85152ab383499fc3c3d6285d4b801c656e7c3f\",\"dweb:/ipfs/QmZJehfeWKfHLyZLufhs9u4ZyVztGCUNWXzFgfZSU837vU\"]},\"lib/lsp-smart-contracts/packages/lsp4-contracts/contracts/LSP4DigitalAssetMetadataCore.sol\":{\"keccak256\":\"0xc442e52d34bb98acc1494675856b1f1d124af1375d8e23a9bfcc3b6c1865e1fc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://84254359ed929c1991136f9c3e934ddfa74cd85684de6c44cb70afa70d12f837\",\"dweb:/ipfs/QmWfmionUJJYyYDoeSQLGUHhou2sWxhWzwtU5GVjpumiSS\"]},\"lib/lsp-smart-contracts/packages/lsp4-contracts/contracts/LSP4Errors.sol\":{\"keccak256\":\"0x3db7fd252ed02ce27686141125c3d65d3ff682a32601e1e8611becd9357a57b5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5aded62a160ed7f9860996004d1656e8592b3f97d478d8597f8ad6afbe4f34b7\",\"dweb:/ipfs/QmcnmLVt8cmz1iRNaX5c6iNYckRgUXGz8YkjHW9T1KNB5A\"]},\"lib/lsp-smart-contracts/packages/lsp8-contracts/contracts/ILSP8IdentifiableDigitalAsset.sol\":{\"keccak256\":\"0x8fc467010034709cda26f5b4c82a8297a3d3b70e53f76c15f17169196748671f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ae752bf829815fa6a31afc29ad5c392835172cf9ad13ad33f50a382ac65a9302\",\"dweb:/ipfs/QmZc3ojmFoVX5nGtRG3JNMoRsM7AAE12iFy9XCJT2a2iBC\"]},\"lib/lsp-smart-contracts/packages/lsp8-contracts/contracts/LSP8Constants.sol\":{\"keccak256\":\"0x2372e7ec422a13ce3e7968e5fbb081b67816b5de974bd76ec61cfed787abbe1b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6d147e2f290ed60e36e9187dc7cce7d7ee1a62eee1c25c761e6090d88e3fa383\",\"dweb:/ipfs/Qmf9HEYCCjx2xBopvq7WhhtjvL9AEihvNcZ512751Wg6LN\"]},\"lib/lsp-smart-contracts/packages/lsp8-contracts/contracts/LSP8Errors.sol\":{\"keccak256\":\"0xff2c1791043272eb4a7c05bc77fa0a0234678991b0700f84d92edbd31fefd905\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://72b32242e8a4b7c12355de3f1c463437a81d8d5f8d34b3a8d25d726340b891c0\",\"dweb:/ipfs/Qmbhz53zdudSQbPwES2qMHqLHaph4GhigNETC481VWwK6J\"]},\"lib/lsp-smart-contracts/packages/lsp8-contracts/contracts/LSP8IdentifiableDigitalAssetCore.sol\":{\"keccak256\":\"0xa45721f96b3546570415906c729414b6428ac936cdabc412381fe32afaf75cdd\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://68976017896b6046c636f4edd13fdc3e14ac29edaa3597209064068cde1de81d\",\"dweb:/ipfs/QmNhdLRfh4qM7Qn93enUaUHoWxCavN7VkLnKXiqGtkH3QK\"]},\"lib/openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0x6fac27fb1885a1d9fd2ce3f8fac4e44a6596ca4d44207c9ef2541ba8c941291e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2079378abdb36baec15c23bc2353b73a3d28d1d0610b436b0c1c4e6fa61d65c9\",\"dweb:/ipfs/QmVZkRFMzKW7sLaugKSTbMNnUBKWF3QDsoMi5uoQFyVMjf\"]},\"lib/openzeppelin/contracts/utils/introspection/ERC165Checker.sol\":{\"keccak256\":\"0xa2a74d4098651d8729e7a83556077e0597d1ee6e2f03b7c94fe87cb5a3a9ee54\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e389d1cd8e06a8885ca04033dc8008a4268b59aa6841db75349fb736ff227f2f\",\"dweb:/ipfs/QmfFp3Lmvv2d5qGhgTMW5v5msj6dq9rdcK4Yst4GrjFZ9b\"]},\"lib/openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0xc859863e3bda7ec3cddf6dafe2ffe91bcbe648d1395b856b839c32ee9617c44c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a9d5417888b873cf2225ed5d50b2a67be97c1504134a2a580512168d587ad82e\",\"dweb:/ipfs/QmNr5fTb2heFW658NZn7dDnofZgFvQTnNxKRJ3wdnR1skX\"]},\"lib/openzeppelin/contracts/utils/structs/EnumerableSet.sol\":{\"keccak256\":\"0x86c1470cbfd878491e5de030072b647352d36bd27122cffb928970b1945282aa\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ad85dd393ee0a1917c57046abc5155f51f77844b2c6a42c05c1b8dd26d6ff3c1\",\"dweb:/ipfs/QmNqYc8To2NdnpP6E1tGz7t6A7beuENde5yovwov5pW1fA\"]},\"src/LSP2FetcherWithMulticall3.sol\":{\"keccak256\":\"0x8c034930dd8da9eed145b98f3b79b3a8a3742e559d4ade652cd385ebda038a92\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b9685af2939f6e8442eb6431ed8afa2949200760f539f296ee925ea2e3fd30be\",\"dweb:/ipfs/QmUh8QqQBcCvg7P5VtC2z9PVswSDnMeicKqpLgh2wz1TJq\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.24+commit.e11b9ed9"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@/=lib/lsp-smart-contracts/node_modules/@/",
+        "@erc725/smart-contracts/=lib/ERC725/implementations/",
+        "@lukso/lsp1-contracts/=lib/lsp-smart-contracts/packages/lsp1-contracts/",
+        "@lukso/lsp2-contracts/=lib/lsp-smart-contracts/packages/lsp2-contracts/",
+        "@lukso/lsp3-contracts/=lib/lsp-smart-contracts/packages/lsp3-contracts/",
+        "@lukso/lsp4-contracts/=lib/lsp-smart-contracts/packages/lsp4-contracts/",
+        "@lukso/lsp5-contracts/=lib/lsp-smart-contracts/packages/lsp5-contracts/",
+        "@lukso/lsp6-contracts/=lib/lsp-smart-contracts/packages/lsp6-contracts/",
+        "@openzeppelin/=lib/openzeppelin/",
+        "@openzeppelin/contracts/=lib/openzeppelin/contracts/",
+        "ERC725/=lib/ERC725/",
+        "ds-test/=lib/lsp-smart-contracts/lib/forge-std/lib/ds-test/src/",
+        "eth-gas-reporter/=lib/lsp-smart-contracts/node_modules/eth-gas-reporter/",
+        "forge-std/=lib/forge-std/src/",
+        "hardhat-deploy/=lib/lsp-smart-contracts/node_modules/hardhat-deploy/",
+        "hardhat/=lib/lsp-smart-contracts/node_modules/hardhat/",
+        "lsp-smart-contracts/=lib/lsp-smart-contracts/",
+        "openzeppelin/=lib/openzeppelin/",
+        "solidity-bytes-utils/=lib/lsp-smart-contracts/node_modules/solidity-bytes-utils/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/LSP2FetcherWithMulticall3.sol": "LSP2Utils"
+      },
+      "evmVersion": "paris",
+      "libraries": {}
+    },
+    "sources": {
+      "lib/ERC725/implementations/contracts/ERC725YCore.sol": {
+        "keccak256": "0xe10e15c0ef7ee99bab505723ab6e16a547b09a95b0c95d0064d1459a624a2e7a",
+        "urls": [
+          "bzz-raw://e3b1205b4c8d73d9cc2abea9ec741e44ef3451ddc13875459828bf049bf2ad9b",
+          "dweb:/ipfs/Qmf9hVwRf4eDpqLNPS7ZffCsw2sRGsRPmx42VfQBfC3VBb"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/ERC725/implementations/contracts/constants.sol": {
+        "keccak256": "0x37da1619e580b6af6a68e91b4784f7945ee2344fad3a96b6dfb2592e35fedb60",
+        "urls": [
+          "bzz-raw://fb9436bd587d7b38c532f317dbd4bc5f178b50906b1a5e29adf24908f27b2c47",
+          "dweb:/ipfs/QmW2vTCNM7Mr4vW5t9yBK7Zmh1FtaVjPwdAbyFcPNBSZYL"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/ERC725/implementations/contracts/custom/OwnableUnset.sol": {
+        "keccak256": "0xa9c83adb0239b86c0ff6251a03bc70115470c7ae10eb99276d6dd33636054b36",
+        "urls": [
+          "bzz-raw://95a0109837bdffe887b6568b7f9bbde2b20cfd0c4db638805cf61ada5743b24d",
+          "dweb:/ipfs/QmYH2erMtqiEYjRznWnc6NbBbwxvy6ArE45jtXYEyWi3Bc"
+        ],
+        "license": "MIT"
+      },
+      "lib/ERC725/implementations/contracts/errors.sol": {
+        "keccak256": "0xaafdb4370450b8874224b3c0b2b712149da97a50c9a47f56e4b654aa57eb87c5",
+        "urls": [
+          "bzz-raw://a4e40b0f64613e5bbd62575facc72d2bcad249595e9397b5bff063dc5a81e757",
+          "dweb:/ipfs/QmXx5yDvPxWzKXFYK7HDAbSNDBKRskYLoDwgrThmAimzDL"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/ERC725/implementations/contracts/interfaces/IERC725Y.sol": {
+        "keccak256": "0xa47c9e3eba0c733a1685b9fa309f753540c89ad2dca73236a2c953e7f5680e7b",
+        "urls": [
+          "bzz-raw://59076395f660838919a2068cb7792c0fa70533642bbc5b4e3cc3cbb2c9ec7b50",
+          "dweb:/ipfs/QmQqew3mDuyHCBdd4v1JiwRiKEbzk3LeHchzTHSdyhYg5b"
+        ],
+        "license": "CC0-1.0"
+      },
+      "lib/lsp-smart-contracts/packages/lsp1-contracts/contracts/ILSP1UniversalReceiver.sol": {
+        "keccak256": "0x5b8764a678dc9d6673eafa8ad0ee6053cdea30acb58015bdf9c93f9f1788b49b",
+        "urls": [
+          "bzz-raw://0e26dcf5d66120b7a0895ddcaec92207e17c63344fca885d2b7e3fe953ec027c",
+          "dweb:/ipfs/QmetAuz9etfz9BG9oPJCwMthnhfd8XvZYLBmMfrPNUm3qV"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/lsp-smart-contracts/packages/lsp1-contracts/contracts/LSP1Constants.sol": {
+        "keccak256": "0x0f87fc38243fc70316e22814f5a79d9c0770a39f64077cbc6fb5fddfa1d4c23c",
+        "urls": [
+          "bzz-raw://c7d83f054b71dfa5ca48a9a811e6a985ff6b38a9e5f4c220ea2ec3a322cce7cf",
+          "dweb:/ipfs/QmaehpHpqc5dtRCm9BoU8vCY59AeEnmGvmmwPirVr47oGp"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/lsp-smart-contracts/packages/lsp1-contracts/contracts/LSP1Utils.sol": {
+        "keccak256": "0xa81bf1910c3b56b43bf58d0be2105c434ed3b65cfb3674e282b5aba3fd35afb0",
+        "urls": [
+          "bzz-raw://374e7bef39522d65cf8e45c365178eb54d159b9267d0c2a2b97dfea10e52d41f",
+          "dweb:/ipfs/QmfVYVnVSTRVAAifFSyFk8icePgw3eeqpjAKWAwfHMu6vX"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/lsp-smart-contracts/packages/lsp2-contracts/contracts/LSP2Utils.sol": {
+        "keccak256": "0x86ce8a85d12c79b76db5413b05b9bff16cd865b395efdc0e85b06b3b5e17219b",
+        "urls": [
+          "bzz-raw://7ebb6d1152f88b459b9e8fc3ef6361a9fb9d03bfa994148e6b125a2ee4025487",
+          "dweb:/ipfs/QmX18bCecAtrjqKTyCPqRrUuvVYSW1XZZJUgvjfYnqfmEH"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/lsp-smart-contracts/packages/lsp4-contracts/contracts/LSP4Constants.sol": {
+        "keccak256": "0xdf9b7c688d39a92cb3238136a9f56554245d5ae9b6568dcd6164d0e15c6f56c7",
+        "urls": [
+          "bzz-raw://bb36a427cdfa0f394d2d78014f85152ab383499fc3c3d6285d4b801c656e7c3f",
+          "dweb:/ipfs/QmZJehfeWKfHLyZLufhs9u4ZyVztGCUNWXzFgfZSU837vU"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/lsp-smart-contracts/packages/lsp4-contracts/contracts/LSP4DigitalAssetMetadataCore.sol": {
+        "keccak256": "0xc442e52d34bb98acc1494675856b1f1d124af1375d8e23a9bfcc3b6c1865e1fc",
+        "urls": [
+          "bzz-raw://84254359ed929c1991136f9c3e934ddfa74cd85684de6c44cb70afa70d12f837",
+          "dweb:/ipfs/QmWfmionUJJYyYDoeSQLGUHhou2sWxhWzwtU5GVjpumiSS"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/lsp-smart-contracts/packages/lsp4-contracts/contracts/LSP4Errors.sol": {
+        "keccak256": "0x3db7fd252ed02ce27686141125c3d65d3ff682a32601e1e8611becd9357a57b5",
+        "urls": [
+          "bzz-raw://5aded62a160ed7f9860996004d1656e8592b3f97d478d8597f8ad6afbe4f34b7",
+          "dweb:/ipfs/QmcnmLVt8cmz1iRNaX5c6iNYckRgUXGz8YkjHW9T1KNB5A"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/lsp-smart-contracts/packages/lsp8-contracts/contracts/ILSP8IdentifiableDigitalAsset.sol": {
+        "keccak256": "0x8fc467010034709cda26f5b4c82a8297a3d3b70e53f76c15f17169196748671f",
+        "urls": [
+          "bzz-raw://ae752bf829815fa6a31afc29ad5c392835172cf9ad13ad33f50a382ac65a9302",
+          "dweb:/ipfs/QmZc3ojmFoVX5nGtRG3JNMoRsM7AAE12iFy9XCJT2a2iBC"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/lsp-smart-contracts/packages/lsp8-contracts/contracts/LSP8Constants.sol": {
+        "keccak256": "0x2372e7ec422a13ce3e7968e5fbb081b67816b5de974bd76ec61cfed787abbe1b",
+        "urls": [
+          "bzz-raw://6d147e2f290ed60e36e9187dc7cce7d7ee1a62eee1c25c761e6090d88e3fa383",
+          "dweb:/ipfs/Qmf9HEYCCjx2xBopvq7WhhtjvL9AEihvNcZ512751Wg6LN"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/lsp-smart-contracts/packages/lsp8-contracts/contracts/LSP8Errors.sol": {
+        "keccak256": "0xff2c1791043272eb4a7c05bc77fa0a0234678991b0700f84d92edbd31fefd905",
+        "urls": [
+          "bzz-raw://72b32242e8a4b7c12355de3f1c463437a81d8d5f8d34b3a8d25d726340b891c0",
+          "dweb:/ipfs/Qmbhz53zdudSQbPwES2qMHqLHaph4GhigNETC481VWwK6J"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/lsp-smart-contracts/packages/lsp8-contracts/contracts/LSP8IdentifiableDigitalAssetCore.sol": {
+        "keccak256": "0xa45721f96b3546570415906c729414b6428ac936cdabc412381fe32afaf75cdd",
+        "urls": [
+          "bzz-raw://68976017896b6046c636f4edd13fdc3e14ac29edaa3597209064068cde1de81d",
+          "dweb:/ipfs/QmNhdLRfh4qM7Qn93enUaUHoWxCavN7VkLnKXiqGtkH3QK"
+        ],
+        "license": "Apache-2.0"
+      },
+      "lib/openzeppelin/contracts/utils/introspection/ERC165.sol": {
+        "keccak256": "0x6fac27fb1885a1d9fd2ce3f8fac4e44a6596ca4d44207c9ef2541ba8c941291e",
+        "urls": [
+          "bzz-raw://2079378abdb36baec15c23bc2353b73a3d28d1d0610b436b0c1c4e6fa61d65c9",
+          "dweb:/ipfs/QmVZkRFMzKW7sLaugKSTbMNnUBKWF3QDsoMi5uoQFyVMjf"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin/contracts/utils/introspection/ERC165Checker.sol": {
+        "keccak256": "0xa2a74d4098651d8729e7a83556077e0597d1ee6e2f03b7c94fe87cb5a3a9ee54",
+        "urls": [
+          "bzz-raw://e389d1cd8e06a8885ca04033dc8008a4268b59aa6841db75349fb736ff227f2f",
+          "dweb:/ipfs/QmfFp3Lmvv2d5qGhgTMW5v5msj6dq9rdcK4Yst4GrjFZ9b"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin/contracts/utils/introspection/IERC165.sol": {
+        "keccak256": "0xc859863e3bda7ec3cddf6dafe2ffe91bcbe648d1395b856b839c32ee9617c44c",
+        "urls": [
+          "bzz-raw://a9d5417888b873cf2225ed5d50b2a67be97c1504134a2a580512168d587ad82e",
+          "dweb:/ipfs/QmNr5fTb2heFW658NZn7dDnofZgFvQTnNxKRJ3wdnR1skX"
+        ],
+        "license": "MIT"
+      },
+      "lib/openzeppelin/contracts/utils/structs/EnumerableSet.sol": {
+        "keccak256": "0x86c1470cbfd878491e5de030072b647352d36bd27122cffb928970b1945282aa",
+        "urls": [
+          "bzz-raw://ad85dd393ee0a1917c57046abc5155f51f77844b2c6a42c05c1b8dd26d6ff3c1",
+          "dweb:/ipfs/QmNqYc8To2NdnpP6E1tGz7t6A7beuENde5yovwov5pW1fA"
+        ],
+        "license": "MIT"
+      },
+      "src/LSP2FetcherWithMulticall3.sol": {
+        "keccak256": "0x8c034930dd8da9eed145b98f3b79b3a8a3742e559d4ade652cd385ebda038a92",
+        "urls": [
+          "bzz-raw://b9685af2939f6e8442eb6431ed8afa2949200760f539f296ee925ea2e3fd30be",
+          "dweb:/ipfs/QmUh8QqQBcCvg7P5VtC2z9PVswSDnMeicKqpLgh2wz1TJq"
+        ],
+        "license": "Apache-2.0"
+      }
+    },
+    "version": 1
+  },
+  "id": 43
+}

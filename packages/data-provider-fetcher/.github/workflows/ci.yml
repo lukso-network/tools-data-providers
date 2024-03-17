@@ -1,0 +1,35 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+env:
+  FOUNDRY_PROFILE: ci
+
+jobs:
+  run-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - name: Install deps
+        run: |
+          cd packages/data-provider-fetcher
+          forge install
+
+      - name: Check gas snapshots
+        run: |
+          cd packages/data-provider-fetcher
+          forge snapshot --check
+
+      - name: Run tests
+        run: |
+          cd packages/data-provider-fetcher
+          forge test
