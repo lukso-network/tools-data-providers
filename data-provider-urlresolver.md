@@ -6,8 +6,37 @@
 
 ## Classes
 
-|  Class | Description |
-|  --- | --- |
-|  [UrlConverter](./data-provider-urlresolver.urlconverter.md) | It will relatively append pathname or hostname to the desination URL |
-|  [UrlResolver](./data-provider-urlresolver.urlresolver.md) | UrlResolver resolved URLs to gateway URLs. |
+<table><thead><tr><th>
 
+Class
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[UrlConverter](./data-provider-urlresolver.urlconverter.md)
+
+
+</td><td>
+
+It will relatively append pathname or hostname to the desination URL
+
+
+</td></tr>
+<tr><td>
+
+[UrlResolver](./data-provider-urlresolver.urlresolver.md)
+
+
+</td><td>
+
+UrlResolver resolved URLs to gateway URLs.
+
+
+</td></tr>
+</tbody></table>

@@ -14,7 +14,34 @@ constructor(pinataConfig: PinataConfig);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  pinataConfig | PinataConfig |  |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+pinataConfig
+
+
+</td><td>
+
+PinataConfig
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

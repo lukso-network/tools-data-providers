@@ -15,15 +15,96 @@ declare class IPFSHttpClientUploader extends BaseFormDataUploader
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(gateway, options)](./data-provider-ipfs-http-client.ipfshttpclientuploader._constructor_.md) |  | Construct a provider using the ipfs-http-client |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(gateway, options)](./data-provider-ipfs-http-client.ipfshttpclientuploader._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Construct a provider using the ipfs-http-client
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [getEndpoint()](./data-provider-ipfs-http-client.ipfshttpclientuploader.getendpoint.md) |  | Get configured endpoint |
-|  [getRequestOptions(dataContent, meta)](./data-provider-ipfs-http-client.ipfshttpclientuploader.getrequestoptions.md) |  | Add additional arguments needed as part of the POST fetch request. |
-|  [resolveUrl(result)](./data-provider-ipfs-http-client.ipfshttpclientuploader.resolveurl.md) |  | Resolve the URL during uploading |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[getEndpoint()](./data-provider-ipfs-http-client.ipfshttpclientuploader.getendpoint.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Get configured endpoint
+
+
+</td></tr>
+<tr><td>
+
+[getRequestOptions(dataContent, meta)](./data-provider-ipfs-http-client.ipfshttpclientuploader.getrequestoptions.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Add additional arguments needed as part of the POST fetch request.
+
+
+</td></tr>
+<tr><td>
+
+[resolveUrl(result)](./data-provider-ipfs-http-client.ipfshttpclientuploader.resolveurl.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Resolve the URL during uploading
+
+
+</td></tr>
+</tbody></table>

@@ -14,11 +14,55 @@ addMetadata(dataContent: FormData, meta?: FormDataPostHeaders): Promise<void>;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  dataContent | FormData | FormData content to be send |
-|  meta | [FormDataPostHeaders](./data-provider-base.formdatapostheaders.md) | _(Optional)_ Metadata from File or Blob object |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+dataContent
+
+
+</td><td>
+
+FormData
+
+
+</td><td>
+
+FormData content to be send
+
+
+</td></tr>
+<tr><td>
+
+meta
+
+
+</td><td>
+
+[FormDataPostHeaders](./data-provider-base.formdatapostheaders.md)
+
+
+</td><td>
+
+_(Optional)_ Metadata from File or Blob object
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 Promise&lt;void&gt;

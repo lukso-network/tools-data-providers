@@ -9,15 +9,42 @@ Resolves a URL to a gateway URL. Supports possible multiple converters transform
 **Signature:**
 
 ```typescript
-resolveUrl(url: string): string;
+resolveUrl(_url: string): string;
 ```
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  url | string | url to resolve |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+\_url
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 string

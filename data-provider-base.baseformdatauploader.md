@@ -14,13 +14,118 @@ declare class BaseFormDataUploader
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [addMetadata(dataContent, meta)](./data-provider-base.baseformdatauploader.addmetadata.md) |  |  |
-|  [getEndpoint()](./data-provider-base.baseformdatauploader.getendpoint.md) |  | Return the endpoint to allow this be used with an old ipfs-http-client implementation. If the proxy is running at /api/v0/add for pinning then you can use the ipfs-http-client pointed to /api/v0 and it will add /add to the end before sending the FormData to the server. This allows you to create a proxy that can be used with the ipfs-http-client. |
-|  [getPostEndpoint()](./data-provider-base.baseformdatauploader.getpostendpoint.md) |  | Return the fetch endpoint this is going to. Must be overridden by a more specific implementation. |
-|  [getRequestOptions(dataContent, meta)](./data-provider-base.baseformdatauploader.getrequestoptions.md) |  | Construct options for the underlying fetch call. |
-|  [getToken()](./data-provider-base.baseformdatauploader.gettoken.md) |  | Return a token if this provider requires authentication. |
-|  [resolveUrl(result)](./data-provider-base.baseformdatauploader.resolveurl.md) |  | Convert the upload JSON result to a URL. In most of the current cases it will read Hash or IpfsHash and return <code>ipfs://${hash}</code>. |
-|  [wrapStream(data)](./data-provider-base.baseformdatauploader.wrapstream.md) | <code>protected</code> | Wrap ReadStream in a Blob for node if required. |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[addMetadata(dataContent, meta)](./data-provider-base.baseformdatauploader.addmetadata.md)
+
+
+</td><td>
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[getEndpoint()](./data-provider-base.baseformdatauploader.getendpoint.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Return the endpoint to allow this be used with an old ipfs-http-client implementation. If the proxy is running at /api/v0/add for pinning then you can use the ipfs-http-client pointed to /api/v0 and it will add /add to the end before sending the FormData to the server. This allows you to create a proxy that can be used with the ipfs-http-client.
+
+
+</td></tr>
+<tr><td>
+
+[getPostEndpoint()](./data-provider-base.baseformdatauploader.getpostendpoint.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Return the fetch endpoint this is going to. Must be overridden by a more specific implementation.
+
+
+</td></tr>
+<tr><td>
+
+[getRequestOptions(dataContent, meta)](./data-provider-base.baseformdatauploader.getrequestoptions.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Construct options for the underlying fetch call.
+
+
+</td></tr>
+<tr><td>
+
+[getToken()](./data-provider-base.baseformdatauploader.gettoken.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Return a token if this provider requires authentication.
+
+
+</td></tr>
+<tr><td>
+
+[resolveUrl(result)](./data-provider-base.baseformdatauploader.resolveurl.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Convert the upload JSON result to a URL. In most of the current cases it will read Hash or IpfsHash and return `ipfs://${hash}`<!-- -->.
+
+
+</td></tr>
+<tr><td>
+
+[wrapStream(data)](./data-provider-base.baseformdatauploader.wrapstream.md)
+
+
+</td><td>
+
+`protected`
+
+
+</td><td>
+
+Wrap ReadStream in a Blob for node if required.
+
+
+</td></tr>
+</tbody></table>

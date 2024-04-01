@@ -14,8 +14,52 @@ constructor(gateway: string, sharedKey: string);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  gateway | string | The gateway to be used for the upload |
-|  sharedKey | string | The shared key to be used for the JWT token |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+gateway
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The gateway to be used for the upload
+
+
+</td></tr>
+<tr><td>
+
+sharedKey
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+The shared key to be used for the JWT token
+
+
+</td></tr>
+</tbody></table>

@@ -6,19 +6,76 @@
 
 ## Classes
 
-|  Class | Description |
-|  --- | --- |
-|  [PinataUploader](./data-provider-pinata.pinatauploader.md) | Custom data provider that directly uploads to pinata It requires the pinata api key, secret key and JWT key to be set According to their documentation only api and secret should work or JWT token. However, in our tests only all three worked. |
+<table><thead><tr><th>
+
+Class
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[PinataUploader](./data-provider-pinata.pinatauploader.md)
+
+
+</td><td>
+
+Custom data provider that directly uploads to pinata It requires the pinata api key, secret key and JWT key to be set According to their documentation only api and secret should work or JWT token. However, in our tests only all three worked.
+
+
+</td></tr>
+</tbody></table>
 
 ## Functions
 
-|  Function | Description |
-|  --- | --- |
-|  [validateMetadata(metadata)](./data-provider-pinata.validatemetadata.md) | Utility functions from pinata |
+<table><thead><tr><th>
+
+Function
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[validateMetadata(metadata)](./data-provider-pinata.validatemetadata.md)
+
+
+</td><td>
+
+Utility functions from pinata
+
+
+</td></tr>
+</tbody></table>
 
 ## Variables
 
-|  Variable | Description |
-|  --- | --- |
-|  [ERROR\_NO\_CREDENTIALS\_PROVIDED](./data-provider-pinata.error_no_credentials_provided.md) |  |
+<table><thead><tr><th>
 
+Variable
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[ERROR\_NO\_CREDENTIALS\_PROVIDED](./data-provider-pinata.error_no_credentials_provided.md)
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

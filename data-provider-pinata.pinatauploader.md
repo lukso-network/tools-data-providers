@@ -15,16 +15,110 @@ declare class PinataUploader extends BaseFormDataUploader
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(pinataConfig)](./data-provider-pinata.pinatauploader._constructor_.md) |  | Constructs a new instance of the <code>PinataUploader</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(pinataConfig)](./data-provider-pinata.pinatauploader._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `PinataUploader` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [addMetadata(dataContent, meta)](./data-provider-pinata.pinatauploader.addmetadata.md) |  | Add additional pinata specific form item if piniataMetadata is provider. Most of the time this is not necessary and not supported by other uploaders. |
-|  [getEndpoint()](./data-provider-pinata.pinatauploader.getendpoint.md) |  | Return standard pinata pinning endpoint supported for all JWT and API keys. |
-|  [getRequestOptions(\_dataContent, meta)](./data-provider-pinata.pinatauploader.getrequestoptions.md) |  | Extract fetch request options. |
-|  [resolveUrl(result)](./data-provider-pinata.pinatauploader.resolveurl.md) |  | Decode IPFS URL from POST results. |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[addMetadata(dataContent, meta)](./data-provider-pinata.pinatauploader.addmetadata.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Add additional pinata specific form item if piniataMetadata is provider. Most of the time this is not necessary and not supported by other uploaders.
+
+
+</td></tr>
+<tr><td>
+
+[getEndpoint()](./data-provider-pinata.pinatauploader.getendpoint.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Return standard pinata pinning endpoint supported for all JWT and API keys.
+
+
+</td></tr>
+<tr><td>
+
+[getRequestOptions(\_dataContent, meta)](./data-provider-pinata.pinatauploader.getrequestoptions.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Extract fetch request options.
+
+
+</td></tr>
+<tr><td>
+
+[resolveUrl(result)](./data-provider-pinata.pinatauploader.resolveurl.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Decode IPFS URL from POST results.
+
+
+</td></tr>
+</tbody></table>

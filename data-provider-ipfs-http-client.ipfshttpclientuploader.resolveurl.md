@@ -14,10 +14,39 @@ resolveUrl(result: any): string;
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  result | any | extract the ipfs URL from the POST result |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+result
+
+
+</td><td>
+
+any
+
+
+</td><td>
+
+extract the ipfs URL from the POST result
+
+
+</td></tr>
+</tbody></table>
 **Returns:**
 
 string

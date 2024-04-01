@@ -27,20 +27,131 @@ output=https://some.api.gateway/something/ipfs/somewhere
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(destination, match)](./data-provider-urlresolver.urlconverter._constructor_.md) |  | Constructs a new instance of the <code>UrlConverter</code> class |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(destination, match)](./data-provider-urlresolver.urlconverter._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Constructs a new instance of the `UrlConverter` class
+
+
+</td></tr>
+</tbody></table>
 
 ## Properties
 
-|  Property | Modifiers | Type | Description |
-|  --- | --- | --- | --- |
-|  [destination](./data-provider-urlresolver.urlconverter.destination.md) | <code>protected</code> | string |  |
-|  [match?](./data-provider-urlresolver.urlconverter.match.md) | <code>protected</code> | RegExp \| string | _(Optional)_ |
+<table><thead><tr><th>
+
+Property
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[destination](./data-provider-urlresolver.urlconverter.destination.md)
+
+
+</td><td>
+
+`protected`
+
+
+</td><td>
+
+string
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+[match?](./data-provider-urlresolver.urlconverter.match.md)
+
+
+</td><td>
+
+`protected`
+
+
+</td><td>
+
+RegExp \| string
+
+
+</td><td>
+
+_(Optional)_
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [resolveUrl(match, url)](./data-provider-urlresolver.urlconverter.resolveurl.md) |  |  |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[resolveUrl(\_match, url)](./data-provider-urlresolver.urlconverter.resolveurl.md)
+
+
+</td><td>
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>

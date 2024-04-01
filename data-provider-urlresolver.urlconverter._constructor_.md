@@ -14,8 +14,50 @@ constructor(destination: string | URL, match?: RegExp | string);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  destination | string \| URL |  |
-|  match | RegExp \| string | _(Optional)_ |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+destination
+
+
+</td><td>
+
+string \| URL
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
+match
+
+
+</td><td>
+
+RegExp \| string
+
+
+</td><td>
+
+_(Optional)_
+
+
+</td></tr>
+</tbody></table>

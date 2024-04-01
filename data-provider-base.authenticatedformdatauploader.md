@@ -35,15 +35,96 @@ and then forward the request to a pinata or other endpoint for the final upload.
 
 ## Constructors
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(gateway, sharedKey)](./data-provider-base.authenticatedformdatauploader._constructor_.md) |  | Create a new instance of the authenticated form data uploader. |
+<table><thead><tr><th>
+
+Constructor
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[(constructor)(gateway, sharedKey)](./data-provider-base.authenticatedformdatauploader._constructor_.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Create a new instance of the authenticated form data uploader.
+
+
+</td></tr>
+</tbody></table>
 
 ## Methods
 
-|  Method | Modifiers | Description |
-|  --- | --- | --- |
-|  [getEndpoint()](./data-provider-base.authenticatedformdatauploader.getendpoint.md) |  | Return the endpoint to be used for the upload. |
-|  [getRequestOptions(dataContent, meta)](./data-provider-base.authenticatedformdatauploader.getrequestoptions.md) |  | Return the request options used for the fetch call. |
-|  [getToken()](./data-provider-base.authenticatedformdatauploader.gettoken.md) |  | Exposed function in case this classes it used with an older ipfs-http-client implementation directly. |
+<table><thead><tr><th>
 
+Method
+
+
+</th><th>
+
+Modifiers
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[getEndpoint()](./data-provider-base.authenticatedformdatauploader.getendpoint.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Return the endpoint to be used for the upload.
+
+
+</td></tr>
+<tr><td>
+
+[getRequestOptions(dataContent, meta)](./data-provider-base.authenticatedformdatauploader.getrequestoptions.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Return the request options used for the fetch call.
+
+
+</td></tr>
+<tr><td>
+
+[getToken()](./data-provider-base.authenticatedformdatauploader.gettoken.md)
+
+
+</td><td>
+
+
+</td><td>
+
+Exposed function in case this classes it used with an older ipfs-http-client implementation directly.
+
+
+</td></tr>
+</tbody></table>

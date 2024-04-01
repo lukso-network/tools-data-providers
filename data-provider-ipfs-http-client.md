@@ -6,7 +6,26 @@
 
 ## Classes
 
-|  Class | Description |
-|  --- | --- |
-|  [IPFSHttpClientUploader](./data-provider-ipfs-http-client.ipfshttpclientuploader.md) | Data provider for uploading compatible with the ipfs-http-client directly. This is backward compatible with the most ipfs pinning APIs, but ipfs-http-client has been deprecated in favor of Helia see https://github.com/ipfs/js-ipfs/issues/4336 |
+<table><thead><tr><th>
 
+Class
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+[IPFSHttpClientUploader](./data-provider-ipfs-http-client.ipfshttpclientuploader.md)
+
+
+</td><td>
+
+Data provider for uploading compatible with the ipfs-http-client directly. This is backward compatible with the most ipfs pinning APIs, but ipfs-http-client has been deprecated in favor of Helia see https://github.com/ipfs/js-ipfs/issues/4336
+
+
+</td></tr>
+</tbody></table>

@@ -14,7 +14,34 @@ constructor(converters: Array<[string | RegExp, UrlConverter | string]>);
 
 ## Parameters
 
-|  Parameter | Type | Description |
-|  --- | --- | --- |
-|  converters | Array&lt;\[string \| RegExp, [UrlConverter](./data-provider-urlresolver.urlconverter.md) \| string\]&gt; |  |
+<table><thead><tr><th>
 
+Parameter
+
+
+</th><th>
+
+Type
+
+
+</th><th>
+
+Description
+
+
+</th></tr></thead>
+<tbody><tr><td>
+
+converters
+
+
+</td><td>
+
+Array&lt;\[string \| RegExp, [UrlConverter](./data-provider-urlresolver.urlconverter.md) \| string\]&gt;
+
+
+</td><td>
+
+
+</td></tr>
+</tbody></table>
