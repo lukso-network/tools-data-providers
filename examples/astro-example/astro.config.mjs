@@ -1,8 +1,8 @@
+import node from "@astrojs/node";
+import react from "@astrojs/react";
+import vue from "@astrojs/vue";
 import { defineConfig } from "astro/config";
 import { config } from "dotenv";
-import react from "@astrojs/react";
-import node from "@astrojs/node";
-import vue from "@astrojs/vue";
 
 config({ path: "../../.env.test" });
 
@@ -27,9 +27,6 @@ export default defineConfig({
       "import.meta.env.TEST_PINATAJWTKEY": JSON.stringify(
         process.env.TEST_PINATAJWTKEY
       ),
-    },
-    optimizeDeps: {
-      include: ["cross-blob", "fetch-blob"],
     },
     build: {
       build: {

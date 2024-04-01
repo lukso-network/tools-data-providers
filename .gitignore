@@ -6,3 +6,5 @@ dist
 .DS_Store
 /packages/*/temp
 /temp
+/packages/data-provider-queries/contracts
+/packages/data-provider-fetcher/out

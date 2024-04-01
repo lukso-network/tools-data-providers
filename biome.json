@@ -1,0 +1,21 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.6.1/schema.json",
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "suspicious": {
+        "noExplicitAny": "off"
+      }
+    }
+  },
+  "files": {
+    "ignore": [
+      "api-extractor.json",
+      "dist",
+      "*.cjs",
+      "./packages/data-provider-fetcher/lib/**/*",
+      "./packages/data-provider-fetcher/out/**/*",
+      "./packages/data-provider-queries/contracts/**/*"
+    ]
+  }
+}

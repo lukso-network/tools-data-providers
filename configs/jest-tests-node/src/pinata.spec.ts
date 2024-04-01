@@ -1,5 +1,6 @@
-import { PinataUploader } from "@lukso/data-provider-pinata";
 import { jest } from "@jest/globals";
+import { PinataUploader } from "@lukso/data-provider-pinata";
+import Blob from "cross-blob";
 
 beforeEach(() => {
   jest.resetAllMocks();
@@ -17,7 +18,10 @@ it("should pin images (node, pinata, mocked)", async () => {
     expect.objectContaining({})
   );
 
-  expect(upload.toString()).toEqual("ipfs://QmY4Z");
+  expect(upload).toEqual({
+    url: "ipfs://QmY4Z",
+    hash: "0x43244635c14605fdbe23fa89b5cf12bd14a14bfb9420f66788dd6914a31d8c7b",
+  });
 });
 
 async function mockDependencies() {

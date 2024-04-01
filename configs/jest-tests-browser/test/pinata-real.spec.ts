@@ -1,9 +1,9 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
-import Blob from "cross-blob";
-import { jest } from "@jest/globals";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { jest } from "@jest/globals";
+import Blob from "cross-blob";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -18,9 +18,10 @@ it("should pin images (web, pinata)", async () => {
 
   const upload = await uploader.upload(file);
 
-  expect(upload.toString()).toEqual(
-    "ipfs://QmPhT2FsbyQ2p2gmKBt42Voqr9izxhUn8yLPKg2NqtrGWi"
-  );
+  expect(upload).toEqual({
+    url: "ipfs://QmPhT2FsbyQ2p2gmKBt42Voqr9izxhUn8yLPKg2NqtrGWi",
+    hash: "0x3666bb759bd6ffaa030e698433721c8c089e319fa11440613a33bcd9f656298a",
+  });
 });
 
 async function mockDependencies() {

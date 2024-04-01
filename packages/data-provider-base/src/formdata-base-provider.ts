@@ -1,4 +1,5 @@
 import { getFetch, getFormData, wrapStream } from "./compatability";
+import { keccak256 } from "@ethersproject/keccak256";
 
 const NOT_IMPLEMENTED = "Not implemented";
 
@@ -27,17 +28,13 @@ export type FormDataRequestOptions = {
  * @internal
  */
 export const handleError = (error: any) => {
-  if (
-    error &&
-    error.response &&
-    error.response &&
-    error.response.data &&
-    error.response.data.error
-  ) {
+  if (error?.response?.data?.error) {
     return error.response.data.error;
-  } else if (error.data && error.data.error) {
+  }
+  if (error?.data?.error) {
     return error.data.error;
-  } else if (error.response && error.response.error) {
+  }
+  if (error?.response?.error) {
     return error.response.error;
   }
   return error;
@@ -63,10 +60,34 @@ export class BaseFormDataUploader {
   // eslint-disable-next-line sonarjs/cognitive-complexity
   private async populate(
     dataContent: FormData,
-    data: any,
-    meta?: FormDataPostHeaders
-  ): Promise<FormDataPostHeaders | undefined> {
-    data = await this.wrapStream(data);
+    _data: any,
+    _meta?: FormDataPostHeaders
+  ): Promise<{ meta: FormDataPostHeaders | undefined; hash: string }> {
+    const data = await this.wrapStream(_data);
+    let buffer: Buffer;
+    if (data.arrayBuffer) {
+      buffer = Buffer.from(await data.arrayBuffer());
+    } else {
+      const arrayBuffer: ArrayBuffer = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        console.log("starting");
+        reader.onload = (ev: ProgressEvent<FileReader>) => {
+          console.log(ev, ev.type);
+          if (ev.type === "load") {
+            resolve(reader.result as ArrayBuffer);
+          }
+        };
+        reader.onerror = (error) => {
+          console.log(error);
+          reject(error);
+        };
+        console.log("kicking");
+        reader.readAsArrayBuffer(data);
+      });
+      buffer = Buffer.from(arrayBuffer);
+    }
+    const hash = keccak256(buffer);
+    let meta = _meta;
     dataContent.append("file", data);
     if ("name" in data) {
       meta = { ...meta, name: data.name };
@@ -74,7 +95,7 @@ export class BaseFormDataUploader {
     if ("type" in data) {
       meta = { ...meta, type: data.type };
     }
-    return meta;
+    return { meta, hash };
   }
 
   /**
@@ -93,17 +114,25 @@ export class BaseFormDataUploader {
    * @param meta - optional metadata to send with the upload
    * @internal
    */
-  async upload(data: any, meta?: FormDataPostHeaders): Promise<string> {
+  async upload(
+    data: any,
+    _meta?: FormDataPostHeaders
+  ): Promise<{ url: string; hash: string }> {
+    let meta = _meta;
     const FormData = await getFormData();
     const dataContent = new FormData();
-    meta = await this.populate(dataContent, data, meta);
+    const { meta: __meta, hash } = await this.populate(dataContent, data, meta);
+    meta = __meta;
     await this.addMetadata(dataContent as FormData, meta);
     const options = await this.getRequestOptions(dataContent as FormData, meta);
     // This needs to be in a different files for testing with jest to work
     // property. Internal access to internal methods in a file cannot be patched.
-    return this.resolveUrl(
-      await this.uploadFormData(options, dataContent as FormData)
-    );
+    return {
+      url: this.resolveUrl(
+        await this.uploadFormData(options, dataContent as FormData)
+      ),
+      hash,
+    };
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -200,7 +229,7 @@ export class BaseFormDataUploader {
         }
         return JSON.parse(info) as Promise<any>;
       })
-      .catch(function (error) {
+      .catch((error) => {
         throw handleError(error);
       });
   }

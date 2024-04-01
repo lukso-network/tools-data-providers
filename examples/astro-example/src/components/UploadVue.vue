@@ -2,7 +2,8 @@
   <div>
     <input ref="fileInput" type="file" accept="image/*" />
     <button @click="upload">Upload</button>
-    <div className="url">{{ url }}</div>
+    <div className="url">Url: {{ url }}</div>
+    <div className="hash">Hash: {{ hash }}</div>
     <div>
       <img className="image" :src="imageUrl" alt="uploaded image" />
     </div>
@@ -10,12 +11,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
+import { ref } from "vue";
 import { urlResolver } from "./shared";
+import { Hash } from "node:crypto";
 const props = defineProps<{ gateway: string; options?: any }>();
 
 const url = ref("");
+const hash = ref("");
 const imageUrl = ref("");
 const fileInput = ref<HTMLInputElement | null>(null);
 
@@ -25,7 +28,9 @@ const upload = async () => {
   const file = fileInput.value?.files?.item(0) as File;
   const formData = new FormData();
   formData.append("file", file); // FormData keys are called fields
-  url.value = await provider.upload(file);
+  const info = await provider.upload(file);
+  url.value = info.url;
+  hash.value = info.hash;
   imageUrl.value = urlResolver.resolveUrl(url.value);
 };
 </script>

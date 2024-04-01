@@ -3,6 +3,7 @@
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
-    "module": "es2022"
+    "module": "es2022",
+    "esModuleInterop": true
   }
 }

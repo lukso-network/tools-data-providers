@@ -1,0 +1,52 @@
+{
+  "name": "@lukso/data-provider-queries",
+  "version": "0.0.5",
+  "type": "module",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "pnpm run contracts && tsup src/index.ts --format esm,cjs --sourcemap --dts-resolve --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "clean": "rm -rf .turbo node_modules dist etc",
+    "docs": "mkdir -p ./etc ./temp && api-extractor run --local --verbose",
+    "contracts": "node scripts/convert.mjs -o contracts/ -i ../data-provider-fetcher/out"
+  },
+  "devDependencies": {
+    "@lukso/data-provider-fetcher": "workspace:*",
+    "@lukso/tsconfig": "workspace:*",
+    "@types/debug": "^4.1.12",
+    "@types/yargs": "^17.0.32",
+    "eslint": "^7.32.0",
+    "eslint-config-lukso": "workspace:*",
+    "walkdir": "^0.4.1",
+    "web3": "^4.6.0",
+    "web3-types": "^1.5.0",
+    "yargs": "^17.7.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@erc725/erc725.js": "^0.23.1",
+    "@lukso/lsp-smart-contracts": "0.15.0-rc.0",
+    "@lukso/lsp-smart-contracts-12": "npm:@lukso/lsp-smart-contracts@^0.12",
+    "@tanstack/query-core": "^5.25.0",
+    "debug": "^4.3.4",
+    "limiter": "^2.1.0",
+    "web3-eth-abi": "^4.2.0",
+    "web3-eth-accounts": "^4.1.1",
+    "web3-utils": "^4.2.1"
+  }
+}

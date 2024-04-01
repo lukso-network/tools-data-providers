@@ -40,6 +40,8 @@ module.exports = {
   preset: "ts-jest",
   transformIgnorePatterns: [
     `/node_modules/(?!${esModules})`,
-    `lukso-data-providers`,
+    "lukso-data-providers",
   ],
+  silent: false,
+  verbose: true,
 };

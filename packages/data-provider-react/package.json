@@ -1,0 +1,37 @@
+{
+	"name": "@lukso/data-provider-metadata",
+	"version": "0.0.7",
+	"sideEffects": false,
+	"license": "MIT",
+	"files": ["dist/**"],
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
+		}
+	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "tsup src/index.ts --format esm,cjs --sourcemap --dts-resolve --dts",
+		"dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+		"lint": "eslint \"src/**/*.ts*\"",
+		"clean": "rm -rf .turbo node_modules dist temp etc",
+		"docs": "mkdir -p ./temp ./etc && api-extractor run --local --verbose"
+	},
+	"devDependencies": {
+		"@lukso/tsconfig": "workspace:*",
+		"eslint": "^7.32.0",
+		"eslint-config-lukso": "workspace:*",
+		"typescript": "^4.9.5"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@types/jsonwebtoken": "^9.0.5",
+		"formdata-node": "^6.0.3",
+		"jsonwebtoken": "^9.0.2",
+		"node-fetch": "^3.3.2"
+	}
+}

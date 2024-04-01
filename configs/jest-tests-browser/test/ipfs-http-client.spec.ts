@@ -1,22 +1,25 @@
-import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
 import { jest } from "@jest/globals";
+import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
+import { getFile } from "@lukso/data-provider-base";
 
 it("should pin images (mocked)", async () => {
   const { uploader, file } = await mockDependencies();
 
   const upload = await uploader.upload(file);
 
-  expect(upload.toString()).toEqual("ipfs://QmY4Z");
+  expect(upload).toEqual({
+    url: "ipfs://QmY4Z",
+    hash: "0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470",
+  });
 });
 
 async function mockDependencies(gateway = "https://api.2eff.lukso.dev") {
+  const File = await getFile();
   const file = new File(["123123"], "test-image.jpg", {
     type: "image/jpg",
   });
   // TODO: fix "is not assignable to type IDE error"
-  file.arrayBuffer = async function () {
-    return Buffer.from("");
-  };
+  file.arrayBuffer = async () => Buffer.from("");
 
   const uploader = new IPFSHttpClientUploader(gateway);
 

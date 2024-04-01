@@ -1,37 +1,37 @@
-import React from "react";
+import type React from "react";
 export interface Props {
-  title: string;
-  children?: React.ReactNode;
-  body?: string;
-  href?: string;
-  color?: string;
+	title: string;
+	children?: React.ReactNode;
+	body?: string;
+	href?: string;
+	color?: string;
 }
 
 export default function ReactCard({
-  title,
-  children,
-  body,
-  href,
-  color,
+	title,
+	children,
+	body,
+	href,
+	color,
 }: Props) {
-  return (
-    <>
-      <li
-        className="link-card"
-        {...(color ? { style: { backgroundColor: color } } : {})}
-      >
-        <a href={href}>
-          <h2>
-            {title}
-            <span>&rarr;</span>
-          </h2>
-          <p>
-            {body || ""}
-            {children}
-          </p>
-        </a>
-      </li>
-      <style>{`
+	return (
+		<>
+			<li
+				className="link-card"
+				{...(color ? { style: { backgroundColor: color } } : {})}
+			>
+				<a href={href}>
+					<h2>
+						{title}
+						<span>&rarr;</span>
+					</h2>
+					<p>
+						{body || ""}
+						{children}
+					</p>
+				</a>
+			</li>
+			<style>{`
       .link-card {
         list-style: none;
         display: flex;
@@ -70,6 +70,6 @@ export default function ReactCard({
       .link-card:is(:hover, :focus-within) h2 {
         color: rgb(var(--accent-light));
       }`}</style>
-    </>
-  );
+		</>
+	);
 }

@@ -1,6 +1,5 @@
 const esModules = [
   "cross-blob",
-  "fetch-blob",
   "is-ipfs",
   "is-ip",
   "@lukso/data-provider-base",

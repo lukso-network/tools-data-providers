@@ -2,6 +2,15 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "pnpm test",
+      "request": "launch",
+      "runtimeArgs": ["test"],
+      "runtimeExecutable": "pnpm",
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal",
+      "type": "node"
+    },
+    {
       "name": "Pinata upload",
       "program": "${workspaceFolder}/examples/upload-pinata.mjs",
       "request": "launch",
