@@ -76,7 +76,6 @@ jobs:
 
       - name: 🧪 Run Tests in shell
         run: |
-          bun install
           node examples/upload-pinata-proxy.mjs
           bun examples/upload-pinata-proxy.mjs
           node examples/upload-pinata.mjs
