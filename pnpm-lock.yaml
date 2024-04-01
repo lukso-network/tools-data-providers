@@ -383,6 +383,9 @@ importers:
         specifier: ^4.2.1
         version: 4.2.1
     devDependencies:
+      '@lukso/data-provider-fetcher':
+        specifier: workspace:*
+        version: link:../data-provider-fetcher
       '@lukso/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
