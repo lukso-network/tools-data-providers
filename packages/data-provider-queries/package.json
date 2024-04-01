@@ -31,7 +31,7 @@
     "eslint": "^7.32.0",
     "eslint-config-lukso": "workspace:*",
     "walkdir": "^0.4.1",
-    "web3": "^4.6.0",
+    "web3": "^4.7.0",
     "web3-types": "^1.5.0",
     "yargs": "^17.7.2"
   },
@@ -41,12 +41,12 @@
   "dependencies": {
     "@erc725/erc725.js": "^0.23.1",
     "@lukso/lsp-smart-contracts": "0.15.0-rc.0",
-    "@lukso/lsp-smart-contracts-12": "npm:@lukso/lsp-smart-contracts@^0.12",
-    "@tanstack/query-core": "^5.25.0",
+    "@lukso/lsp-smart-contracts-12": "npm:@lukso/lsp-smart-contracts@^0.12.1",
+    "@tanstack/query-core": "^5.28.9",
     "debug": "^4.3.4",
     "limiter": "^2.1.0",
     "web3-eth-abi": "^4.2.0",
     "web3-eth-accounts": "^4.1.1",
-    "web3-utils": "^4.2.1"
+    "web3-utils": "^4.2.2"
   }
 }

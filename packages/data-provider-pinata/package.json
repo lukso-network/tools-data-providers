@@ -33,7 +33,7 @@
   "dependencies": {
     "@lukso/data-provider-base": "workspace:*",
     "@pinata/sdk": "^2.1.0",
-    "@tsndr/cloudflare-worker-jwt": "^2.2.5",
+    "@tsndr/cloudflare-worker-jwt": "^2.5.3",
     "cross-blob": "^3.0.2",
     "form-data": "^4.0.0"
   }

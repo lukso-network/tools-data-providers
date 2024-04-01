@@ -14,7 +14,7 @@
 		"eslint": "^7.32.0",
 		"eslint-config-lukso": "workspace:*",
 		"jest-presets": "workspace:*",
-		"typescript": "^4.5.3"
+		"typescript": "^4.9.5"
 	},
 	"scripts": {
 		"test": "cross-env NODE_OPTIONS='${NODE_OPTIONS} --experimental-vm-modules' jest --verbose --detectOpenHandles --runInBand"
@@ -31,8 +31,8 @@
 		"@lukso/data-provider-pinata": "workspace:*",
 		"@lukso/data-provider-urlresolver": "workspace:*",
 		"@types/chrome": "^0.0.248",
-		"@types/jest": "^29.5.7",
-		"@types/node": "^20.8.10",
-		"web-streams-polyfill": "^3.3.2"
+		"@types/jest": "^29.5.12",
+		"@types/node": "^20.12.2",
+		"web-streams-polyfill": "^3.3.3"
 	}
 }

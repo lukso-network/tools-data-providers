@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@ethersproject/keccak256": "^5.7.0",
-    "@types/jsonwebtoken": "^9.0.5",
+    "@types/jsonwebtoken": "^9.0.6",
     "formdata-node": "^6.0.3",
     "jsonwebtoken": "^9.0.2",
     "node-fetch": "^3.3.2"

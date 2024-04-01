@@ -3,7 +3,9 @@
 	"version": "0.0.7",
 	"sideEffects": false,
 	"license": "MIT",
-	"files": ["dist/**"],
+	"files": [
+		"dist/**"
+	],
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
@@ -29,7 +31,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@types/jsonwebtoken": "^9.0.5",
+		"@types/jsonwebtoken": "^9.0.6",
 		"formdata-node": "^6.0.3",
 		"jsonwebtoken": "^9.0.2",
 		"node-fetch": "^3.3.2"

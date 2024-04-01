@@ -3,7 +3,9 @@
 	"version": "0.0.7",
 	"sideEffects": false,
 	"license": "MIT",
-	"files": ["dist/**"],
+	"files": [
+		"dist/**"
+	],
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
@@ -29,9 +31,9 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@tanstack/query-core": "^5.25.0",
-		"@tanstack/vue-query": "^5.25.0",
-		"@types/jsonwebtoken": "^9.0.5",
+		"@tanstack/query-core": "^5.28.9",
+		"@tanstack/vue-query": "^5.28.9",
+		"@types/jsonwebtoken": "^9.0.6",
 		"formdata-node": "^6.0.3",
 		"jsonwebtoken": "^9.0.2",
 		"node-fetch": "^3.3.2"
