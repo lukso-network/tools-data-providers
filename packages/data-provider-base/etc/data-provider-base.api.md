@@ -5,12 +5,6 @@
 ```ts
 
 // @public
-export interface AssetBuffer {
-    buffer: Buffer;
-    mimeType: string;
-}
-
-// @public
 export class AuthenticatedFormDataUploader extends BaseFormDataUploader {
     constructor(gateway: string, sharedKey: string);
     getEndpoint(): string;
@@ -30,7 +24,10 @@ export class BaseFormDataUploader {
     getToken(): Promise<string>;
     resolveUrl(result: any): string;
     // @internal
-    upload(data: any, meta?: FormDataPostHeaders): Promise<string>;
+    upload(data: any, _meta?: FormDataPostHeaders): Promise<{
+        url: string;
+        hash: string;
+    }>;
     // @internal
     uploadFormData(requestOptions: FormDataRequestOptions, dataContent: FormData): Promise<any>;
     protected wrapStream(data: any): Promise<any>;
@@ -48,10 +45,25 @@ export type FormDataRequestOptions = {
     [key: string]: any;
 };
 
+// @public
+export function getBlob(): Promise<typeof Blob>;
+
+// @public
+export function getFetch(): Promise<typeof fetch>;
+
+// @public
+export function getFile(): Promise<typeof File>;
+
+// @public
+export function getFormData(): Promise<typeof FormData>;
+
 // Warning: (ae-internal-missing-underscore) The name "handleError" should be prefixed with an underscore because the declaration is marked as @internal
 //
 // @internal
 export const handleError: (error: any) => any;
+
+// @public
+export function wrapStream(data: any): Promise<any>;
 
 // (No @packageDocumentation comment for this package)
 

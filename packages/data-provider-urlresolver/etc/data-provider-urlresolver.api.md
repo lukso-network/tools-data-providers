@@ -12,13 +12,13 @@ export class UrlConverter {
     // (undocumented)
     protected match?: RegExp | string;
     // (undocumented)
-    resolveUrl(match: RegExp | string, url: string): string;
+    resolveUrl(_match: RegExp | string, url: string): string;
 }
 
 // @public
 class UrlResolver {
     constructor(converters: Array<[string | RegExp, UrlConverter | string]>);
-    resolveUrl(url: string): string;
+    resolveUrl(_url: string): string;
 }
 export { UrlResolver }
 export default UrlResolver;
