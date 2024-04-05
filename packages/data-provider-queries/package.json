@@ -26,8 +26,6 @@
 		"@lukso/tsconfig": "workspace:*",
 		"@types/debug": "^4.1.12",
 		"@types/yargs": "^17.0.32",
-		"eslint": "^7.32.0",
-		"eslint-config-lukso": "workspace:*",
 		"walkdir": "^0.4.1",
 		"web3": "^4.7.0",
 		"web3-types": "^1.5.0",

@@ -21,12 +21,9 @@
 	},
 	"devDependencies": {
 		"@lukso/tsconfig": "workspace:*",
-		"eslint": "^7.32.0",
-		"eslint-config-lukso": "workspace:*",
 		"typescript": "^4.9.5"
 	},
 	"publishConfig": {
 		"access": "public"
-	},
-	"dependencies": {}
+	}
 }
