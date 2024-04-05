@@ -49,9 +49,9 @@ const provider = new IPFSHttpClientUploader("http://127.0.0.1:5001/api/v0/add");
 
 const file = createReadStream("./test-image.png");
 
-const url = await provider.upload(file);
+const { url, hash } = await provider.upload(file);
 
-console.log(url);
+console.log(url, hash);
 ```
 
 > NOTE: with the current version of the IPFS desktop the file will not show in the UI but can be found inside of the gateway for the local node. Also if your upnp on your router is correctly setup then the file will be available on IPFS proper as long as your local node is running. To run a local node just download the IPFS Desktop app (to allow upload from the browser locally you will need to adjust the `Access-Control-Allow-Origin` header as commented later)
@@ -131,14 +131,16 @@ export default function UploadLocal({ gateway, options }: Props) {
   );
   const fileInput = useRef<HTMLInputElement>(null);
   const [url, setUrl] = useState("");
+  const [hash, setHash] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
   const upload = useCallback(async () => {
     const file = fileInput?.current?.files?.item(0) as File;
     const formData = new FormData();
     formData.append("file", file); // FormData keys are called fields
-    const url = await provider.upload(file);
+    const { hash, url } = await provider.upload(file);
     setUrl(url);
+    setHash(hash);
     const destination = urlResolver.resolveUrl(url);
     setImageUrl(destination);
   }, []);
@@ -209,7 +211,7 @@ export async function POST({ request }: APIContext) {
     }
   );
 
-  const url = await provider.upload(file);
+  const { hash, url } = await provider.upload(file);
   return new Response(JSON.stringify({ Hash: url }), {
     headers: { contentType: "application/json" },
   });

@@ -4,9 +4,7 @@
 	"type": "module",
 	"sideEffects": false,
 	"license": "MIT",
-	"files": [
-		"dist/**"
-	],
+	"files": ["dist/**"],
 	"devDependencies": {
 		"@jest/globals": "^29.7.0",
 		"@lukso/tsconfig": "workspace:*",

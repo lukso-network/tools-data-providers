@@ -1,9 +1,9 @@
 {
-  "extends": "@lukso/tsconfig/browser.json",
-  "include": [".", "*.cjs", "*.mjs"],
-  "exclude": ["dist", "build", "node_modules"],
-  "compilerOptions": {
-    "module": "es2022",
-    "esModuleInterop": true
-  }
+	"extends": "@lukso/tsconfig/browser.json",
+	"include": [".", "*.cjs", "*.mjs"],
+	"exclude": ["dist", "build", "node_modules"],
+	"compilerOptions": {
+		"module": "es2022",
+		"esModuleInterop": true
+	}
 }

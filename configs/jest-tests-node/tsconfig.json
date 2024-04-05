@@ -1,9 +1,9 @@
 {
-  "extends": "@lukso/tsconfig/node.json",
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"],
-  "compilerOptions": {
-    "module": "es2022",
-    "esModuleInterop": true
-  }
+	"extends": "@lukso/tsconfig/node.json",
+	"include": ["."],
+	"exclude": ["dist", "build", "node_modules"],
+	"compilerOptions": {
+		"module": "es2022",
+		"esModuleInterop": true
+	}
 }

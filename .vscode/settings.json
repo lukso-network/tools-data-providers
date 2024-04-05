@@ -1,5 +1,20 @@
 {
-	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
-	"solidity.defaultCompiler": "localFile"
+	"editor.formatOnPaste": true,
+	"editor.defaultFormatter": "biomejs.biome",
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"typescript.format.enable": false,
+	"javascript.format.enable": false,
+	"editor.codeActionsOnSave": {
+		"quickfix.biome": "explicit",
+		"source.organizeImports.biome": "explicit"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	}
 }
