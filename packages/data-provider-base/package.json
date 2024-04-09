@@ -1,9 +1,11 @@
 {
 	"name": "@lukso/data-provider-base",
-	"version": "0.0.7",
+	"version": "0.1.0",
 	"sideEffects": false,
 	"license": "MIT",
-	"files": ["dist/**"],
+	"files": [
+		"dist/**"
+	],
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
