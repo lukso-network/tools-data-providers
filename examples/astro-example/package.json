@@ -1,29 +1,29 @@
 {
-  "name": "astro-example",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "demo": "astro dev",
-    "build-web": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.4.1",
-    "@astrojs/node": "^8.1.0",
-    "@astrojs/react": "^3.0.9",
-    "@astrojs/ts-plugin": "^1.4.0",
-    "@astrojs/vue": "^4.0.8",
-    "@lukso/data-provider-ipfs-http-client": "workspace:*",
-    "@lukso/data-provider-pinata": "workspace:*",
-    "@lukso/data-provider-urlresolver": "workspace:*",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
-    "astro": "^4.2.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.3.3",
-    "vue": "^3.4.15"
-  }
+	"name": "astro-example",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"demo": "astro dev",
+		"build-web": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.4.1",
+		"@astrojs/node": "^8.2.5",
+		"@astrojs/react": "^3.1.0",
+		"@astrojs/ts-plugin": "^1.6.1",
+		"@astrojs/vue": "^4.0.9",
+		"@lukso/data-provider-ipfs-http-client": "workspace:*",
+		"@lukso/data-provider-pinata": "workspace:*",
+		"@lukso/data-provider-urlresolver": "workspace:*",
+		"@types/react": "^18.2.73",
+		"@types/react-dom": "^18.2.23",
+		"astro": "^4.5.12",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"typescript": "^5.4.3",
+		"vue": "^3.4.21"
+	}
 }

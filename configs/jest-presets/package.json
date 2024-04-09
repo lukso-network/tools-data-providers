@@ -1,15 +1,15 @@
 {
-  "name": "jest-presets",
-  "version": "0.0.0",
-  "private": true,
-  "license": "MIT",
-  "dependencies": {
-    "dotenv": "^16.3.1",
-    "ts-jest": "^29.1.1"
-  },
-  "devDependencies": {
-    "@jest/environment": "^29.7.0",
-    "jest-environment-jsdom": "^29.6.4",
-    "resize-observer-polyfill": "^1.5.1"
-  }
+	"name": "jest-presets",
+	"version": "0.0.0",
+	"private": true,
+	"license": "MIT",
+	"dependencies": {
+		"dotenv": "^16.4.5",
+		"ts-jest": "^29.1.2"
+	},
+	"devDependencies": {
+		"@jest/environment": "^29.7.0",
+		"jest-environment-jsdom": "^29.7.0",
+		"resize-observer-polyfill": "^1.5.1"
+	}
 }

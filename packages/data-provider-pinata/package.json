@@ -1,40 +1,36 @@
 {
-  "name": "@lukso/data-provider-pinata",
-  "version": "0.0.6",
-  "type": "module",
-  "sideEffects": false,
-  "license": "MIT",
-  "files": [
-    "dist/**"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --sourcemap --dts-resolve --dts",
-    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
-    "lint": "eslint \"src/**/*.ts*\"",
-    "clean": "rm -rf .turbo node_modules dist temp etc",
-    "docs": "mkdir -p ./etc ./temp && api-extractor run --local --verbose"
-  },
-  "devDependencies": {
-    "@lukso/tsconfig": "workspace:*",
-    "eslint": "^7.32.0",
-    "eslint-config-lukso": "workspace:*"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@lukso/data-provider-base": "workspace:*",
-    "@pinata/sdk": "^2.1.0",
-    "@tsndr/cloudflare-worker-jwt": "^2.2.5",
-    "cross-blob": "^3.0.2",
-    "form-data": "^4.0.0"
-  }
+	"name": "@lukso/data-provider-pinata",
+	"version": "0.0.5",
+	"type": "module",
+	"sideEffects": false,
+	"license": "MIT",
+	"files": ["dist/**"],
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"main": "./dist/index.cjs",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "tsup src/index.ts --format esm,cjs --sourcemap --dts-resolve --dts",
+		"dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+		"lint": "eslint \"src/**/*.ts*\"",
+		"clean": "rm -rf .turbo node_modules dist temp etc",
+		"docs": "mkdir -p ./etc ./temp && api-extractor run --local --verbose"
+	},
+	"devDependencies": {
+		"@lukso/tsconfig": "workspace:*"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@lukso/data-provider-base": "workspace:*",
+		"@pinata/sdk": "^2.1.0",
+		"@tsndr/cloudflare-worker-jwt": "^2.5.3",
+		"cross-blob": "^3.0.2",
+		"form-data": "^4.0.0"
+	}
 }

@@ -1,26 +1,35 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Pinata upload",
-      "program": "${workspaceFolder}/examples/upload-pinata.mjs",
-      "request": "launch",
-      "skipFiles": ["<node_internals>/**"],
-      "type": "node"
-    },
-    {
-      "name": "LocalNode upload",
-      "program": "${workspaceFolder}/examples/upload-local-ipfs.mjs",
-      "request": "launch",
-      "skipFiles": ["<node_internals>/**"],
-      "type": "node"
-    },
-    {
-      "command": "./node_modules/.bin/astro dev --force",
-      "name": "Astro example server",
-      "cwd": "${workspaceFolder}/examples/astro-example",
-      "request": "launch",
-      "type": "node-terminal"
-    }
-  ]
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "pnpm test",
+			"request": "launch",
+			"runtimeArgs": ["test"],
+			"runtimeExecutable": "pnpm",
+			"skipFiles": ["<node_internals>/**"],
+			"console": "integratedTerminal",
+			"type": "node"
+		},
+		{
+			"name": "Pinata upload",
+			"program": "${workspaceFolder}/examples/upload-pinata.mjs",
+			"request": "launch",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node"
+		},
+		{
+			"name": "LocalNode upload",
+			"program": "${workspaceFolder}/examples/upload-local-ipfs.mjs",
+			"request": "launch",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node"
+		},
+		{
+			"command": "./node_modules/.bin/astro dev --force",
+			"name": "Astro example server",
+			"cwd": "${workspaceFolder}/examples/astro-example",
+			"request": "launch",
+			"type": "node-terminal"
+		}
+	]
 }

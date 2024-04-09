@@ -1,0 +1,12 @@
+[submodule "packages/data-provider-fetcher/lib/forge-std"]
+	path = packages/data-provider-fetcher/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "packages/data-provider-fetcher/lib/lsp-smart-contracts"]
+	path = packages/data-provider-fetcher/lib/lsp-smart-contracts
+	url = https://github.com/lukso-network/lsp-smart-contracts
+[submodule "packages/data-provider-fetcher/lib/ERC725"]
+	path = packages/data-provider-fetcher/lib/ERC725
+	url = https://github.com/ERC725Alliance/ERC725.git
+[submodule "packages/data-provider-fetcher/lib/openzeppelin"]
+	path = packages/data-provider-fetcher/lib/openzeppelin
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts.git
