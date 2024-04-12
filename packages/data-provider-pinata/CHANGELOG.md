@@ -1,5 +1,12 @@
 # @lukso/data-provider-pinata
 
+## [0.1.0](https://github.com/lukso-network/tools-data-providers/compare/data-provider-pinata-v0.0.6...data-provider-pinata-v0.1.0) (2024-04-09)
+
+
+### Features
+
+* Add tanstack and so on ([#9](https://github.com/lukso-network/tools-data-providers/issues/9)) ([a18ca42](https://github.com/lukso-network/tools-data-providers/commit/a18ca423363b7a2fd04ee0daffdce4fbb3a8e496))
+
 ## [0.0.6](https://github.com/lukso-network/tools-data-providers/compare/data-provider-pinata-v0.0.5...data-provider-pinata-v0.0.6) (2024-02-13)
 
 

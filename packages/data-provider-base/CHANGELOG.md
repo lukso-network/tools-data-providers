@@ -1,5 +1,12 @@
 # @lukso/data-providers
 
+## [0.1.0](https://github.com/lukso-network/tools-data-providers/compare/data-provider-base-v0.0.8...data-provider-base-v0.1.0) (2024-04-09)
+
+
+### Features
+
+* Add tanstack and so on ([#9](https://github.com/lukso-network/tools-data-providers/issues/9)) ([a18ca42](https://github.com/lukso-network/tools-data-providers/commit/a18ca423363b7a2fd04ee0daffdce4fbb3a8e496))
+
 ## [0.0.8](https://github.com/lukso-network/tools-data-providers/compare/data-provider-base-v0.0.7...data-provider-base-v0.0.8) (2024-02-13)
 
 

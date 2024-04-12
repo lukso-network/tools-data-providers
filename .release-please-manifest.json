@@ -1,6 +1,10 @@
 {
-	"packages/data-provider-base": "0.0.8",
-	"packages/data-provider-ipfs-http-client": "0.0.6",
-	"packages/data-provider-pinata": "0.0.6",
-	"packages/data-provider-urlresolver": "0.0.6"
+	"packages/data-provider-base": "0.1.0",
+	"packages/data-provider-ipfs-http-client": "0.1.0",
+	"packages/data-provider-pinata": "0.1.0",
+	"packages/data-provider-urlresolver": "0.1.0",
+	"packages/data-provider-react": "1.0.0",
+	"packages/data-provider-vue": "1.0.0",
+	"packages/data-provider-metadata": "1.0.0",
+	"packages/data-provider-queries": "1.0.0"
 }

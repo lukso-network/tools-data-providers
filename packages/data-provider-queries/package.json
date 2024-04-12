@@ -1,10 +1,12 @@
 {
 	"name": "@lukso/data-provider-queries",
-	"version": "0.0.5",
+	"version": "1.0.0",
 	"type": "module",
 	"sideEffects": false,
 	"license": "MIT",
-	"files": ["dist/**"],
+	"files": [
+		"dist/**"
+	],
 	"exports": {
 		".": {
 			"import": "./dist/index.js",

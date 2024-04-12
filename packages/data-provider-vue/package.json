@@ -1,9 +1,11 @@
 {
 	"name": "@lukso/data-provider-vue",
-	"version": "0.0.7",
+	"version": "1.0.0",
 	"sideEffects": false,
 	"license": "MIT",
-	"files": ["dist/**"],
+	"files": [
+		"dist/**"
+	],
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
