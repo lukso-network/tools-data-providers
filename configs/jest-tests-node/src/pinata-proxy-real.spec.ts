@@ -22,7 +22,7 @@ it.only("should pin images (node, pinata, proxy)", async () => {
 		url: "ipfs://QmPhT2FsbyQ2p2gmKBt42Voqr9izxhUn8yLPKg2NqtrGWi",
 		hash: "0x3666bb759bd6ffaa030e698433721c8c089e319fa11440613a33bcd9f656298a",
 	});
-});
+}, 20000);
 
 async function mockDependencies() {
 	const file = new Blob(
