@@ -25,6 +25,7 @@
     }
   },
   "files": {
+    "maxSize": 1048576,
     "ignore": [
 			"api-extractor.json",
 			"dist",

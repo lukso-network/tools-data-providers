@@ -1,85 +1,105 @@
 {
-	"packages": {
-		"packages/data-provider-base": {
-			"component": "data-provider-base",
-			"package-name": "@lukso/data-provider-base",
-			"include-component-in-tag": true,
-			"release-type": "node",
-			"bump-minor-pre-major": true,
-			"bump-patch-for-minor-pre-major": false,
-			"draft": false,
-			"prerelease": false
-		},
-		"packages/data-provider-ipfs-http-client": {
-			"component": "data-provider-ipfs-http-client",
-			"package-name": "@lukso/data-provider-ipfs-http-client",
-			"include-component-in-tag": true,
-			"release-type": "node",
-			"bump-minor-pre-major": true,
-			"bump-patch-for-minor-pre-major": false,
-			"draft": false,
-			"prerelease": false
-		},
-		"packages/data-provider-pinata": {
-			"component": "data-provider-pinata",
-			"package-name": "@lukso/data-provider-pinata",
-			"include-component-in-tag": true,
-			"release-type": "node",
-			"bump-minor-pre-major": true,
-			"bump-patch-for-minor-pre-major": false,
-			"draft": false,
-			"prerelease": false
-		},
-		"packages/data-provider-urlresolver": {
-			"component": "data-provider-urlresolver",
-			"package-name": "@lukso/data-provider-urlresolver",
-			"include-component-in-tag": true,
-			"release-type": "node",
-			"bump-minor-pre-major": true,
-			"bump-patch-for-minor-pre-major": false,
-			"draft": false,
-			"prerelease": false
-		},
-		"packages/data-provider-react": {
-			"component": "data-provider-react",
-			"package-name": "@lukso/data-provider-react",
-			"include-component-in-tag": true,
-			"release-type": "node",
-			"bump-minor-pre-major": true,
-			"bump-patch-for-minor-pre-major": false,
-			"draft": false,
-			"prerelease": false
-		},
-		"packages/data-provider-vue": {
-			"component": "data-provider-vue",
-			"package-name": "@lukso/data-provider-vue",
-			"include-component-in-tag": true,
-			"release-type": "node",
-			"bump-minor-pre-major": true,
-			"bump-patch-for-minor-pre-major": false,
-			"draft": false,
-			"prerelease": false
-		},
-		"packages/data-provider-metadata": {
-			"component": "data-provider-metadata",
-			"package-name": "@lukso/data-provider-metadata",
-			"include-component-in-tag": true,
-			"release-type": "node",
-			"bump-minor-pre-major": true,
-			"bump-patch-for-minor-pre-major": false,
-			"draft": false,
-			"prerelease": false
-		},
-		"packages/data-provider-queries": {
-			"component": "data-provider-queries",
-			"package-name": "@lukso/data-provider-queries",
-			"include-component-in-tag": true,
-			"release-type": "node",
-			"bump-minor-pre-major": true,
-			"bump-patch-for-minor-pre-major": false,
-			"draft": false,
-			"prerelease": false
-		}
-	},
-	"$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+  "packages": {
+    "packages/data-provider-base": {
+      "component": "data-provider-base",
+      "package-name": "@lukso/data-provider-base",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    },
+    "packages/data-provider-ipfs-http-client": {
+      "component": "data-provider-ipfs-http-client",
+      "package-name": "@lukso/data-provider-ipfs-http-client",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    },
+    "packages/data-provider-pinata": {
+      "component": "data-provider-pinata",
+      "package-name": "@lukso/data-provider-pinata",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    },
+    "packages/data-provider-urlresolver": {
+      "component": "data-provider-urlresolver",
+      "package-name": "@lukso/data-provider-urlresolver",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    },
+    "packages/data-provider-react": {
+      "component": "data-provider-react",
+      "package-name": "@lukso/data-provider-react",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    },
+    "packages/data-provider-vue": {
+      "component": "data-provider-vue",
+      "package-name": "@lukso/data-provider-vue",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    },
+    "packages/data-provider-metadata": {
+      "component": "data-provider-metadata",
+      "package-name": "@lukso/data-provider-metadata",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    },
+    "packages/data-provider-queries": {
+      "component": "data-provider-queries",
+      "package-name": "@lukso/data-provider-queries",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    },
+    "packages/data-provider-cascade": {
+      "component": "data-provider-cascade",
+      "package-name": "@lukso/data-provider-cascade",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    },
+    "packages/data-provider-fetcher": {
+      "component": "data-provider-fetcher",
+      "package-name": "@lukso/data-provider-fetcher",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
 }

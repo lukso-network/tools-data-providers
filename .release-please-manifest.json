@@ -6,5 +6,7 @@
 	"packages/data-provider-react": "1.0.0",
 	"packages/data-provider-vue": "1.0.0",
 	"packages/data-provider-metadata": "1.0.0",
-	"packages/data-provider-queries": "1.0.0"
+	"packages/data-provider-queries": "1.0.0",
+  "packages/data-provider-cascade": "0.1.0",
+  "packages/data-provider-fetcher": "0.1.0"
 }
