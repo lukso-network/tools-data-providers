@@ -1,9 +1,11 @@
 {
 	"name": "@lukso/data-provider-fetcher",
-	"version": "0.0.7",
+	"version": "0.2.0",
 	"sideEffects": false,
 	"license": "MIT",
-	"files": ["out/**"],
+	"files": [
+		"out/**"
+	],
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
