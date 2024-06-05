@@ -225,6 +225,19 @@ importers:
         specifier: workspace:*
         version: link:../../configs/tsconfig
 
+  packages/data-provider-cascade:
+    dependencies:
+      '@lukso/data-provider-base':
+        specifier: workspace:*
+        version: link:../data-provider-base
+      form-data:
+        specifier: ^4.0.0
+        version: 4.0.0
+    devDependencies:
+      '@lukso/tsconfig':
+        specifier: workspace:*
+        version: link:../../configs/tsconfig
+
   packages/data-provider-fetcher:
     devDependencies:
       '@lukso/tsconfig':
