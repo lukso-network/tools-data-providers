@@ -28,6 +28,15 @@ Description
 </td></tr>
 <tr><td>
 
+[@lukso/data-provider-cascade](./data-provider-cascade.md)
+
+
+</td><td>
+
+
+</td></tr>
+<tr><td>
+
 [@lukso/data-provider-ipfs-http-client](./data-provider-ipfs-http-client.md)
 
 
