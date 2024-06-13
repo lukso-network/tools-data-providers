@@ -12,7 +12,7 @@
 		"test": "turbo test",
 		"version-packages": "turbo run build lint test",
 		"publish-packages": "turbo run build lint test && changeset version && changeset publish",
-		"documentation": "turbo run docs && mkdir -p temp && cp packages/*/temp/* temp/ && api-documenter markdown -i temp -o docs",
+		"documentation": "turbo run docs && mkdir -p temp && cp packages/*/temp/* temp/ && api-documenter markdown -i temp -o docs && cp _config.yml docs",
 		"demo": "turbo run demo"
 	},
 	"devDependencies": {

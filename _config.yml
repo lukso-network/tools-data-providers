@@ -1,0 +1,16 @@
+title: Tools Data Providers
+description: Tools Data Providers API Documentation
+baseurl: "/tools-data-providers"
+url: "https://lukso-network.github.io/tools-data-providers"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+theme: minima
