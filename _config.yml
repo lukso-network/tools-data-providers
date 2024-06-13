@@ -3,9 +3,20 @@ description: Tools Data Providers API Documentation
 baseurl: "/tools-data-providers"
 url: "https://lukso-network.github.io/tools-data-providers"
 
-markdown: kramdown
-kramdown:
-  input: GFM
+markdown: redcarpet
+
+redcarpet:
+  extensions:
+    - no_intra_emphasis
+    - fenced_code_blocks
+    - autolink
+    - tables
+    - underline
+    - highlight
+
+# markdown: kramdown
+# kramdown:
+#   input: GFM
 
 plugins:
   - jekyll-feed
