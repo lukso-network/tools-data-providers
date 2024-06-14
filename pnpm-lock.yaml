@@ -365,6 +365,19 @@ importers:
         specifier: ^4.9.5
         version: 4.9.5
 
+  packages/data-provider-sense:
+    dependencies:
+      '@lukso/data-provider-base':
+        specifier: workspace:*
+        version: link:../data-provider-base
+      form-data:
+        specifier: ^4.0.0
+        version: 4.0.0
+    devDependencies:
+      '@lukso/tsconfig':
+        specifier: workspace:*
+        version: link:../../configs/tsconfig
+
   packages/data-provider-urlresolver:
     dependencies:
       '@pinata/sdk':
