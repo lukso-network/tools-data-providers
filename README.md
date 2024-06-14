@@ -36,9 +36,9 @@ This would then convert `ipfs://<CID>` to `https://some.proxy?cid=<CID>`
 ### Pinning files
 
 In order to get started with uploading data to IPFS you will need credentials to a pinning service.
-Currently the pinning service supported by this library is either a local IPFS node, cascade, pinata, or infura.
+Currently the pinning service supported by this library is either a local IPFS node, cascade, sense, pinata, or infura.
 Most providers are compatible with a configured version of `@lukso/data-provider-ipfs-http-client`, the pinata provider `@lukso/data-provider-pinata` allows you to configure it with the same JSON as needed for `@pinata/sdk` but otherwise also uses the standard formdata upload.
-And also the cascade provider `@lukso/data-provider-cascade` is used to upload files to Cascade protocol.
+And also the providers `@lukso/data-provider-cascade` and `@lukso/data-provider-sense` are used to upload files to Cascade and Sense protocol.
 
 For a local IPFS node running as a .mjs file.
 
@@ -101,6 +101,12 @@ const provider = new IPFSHttpClientUploader(import.meta.env.INFURA_GATEWAY, {
 
 ```mjs
 const provider = new CascadeUploader(import.meta.env.CASCADE_API_KEY);
+```
+
+### Sense
+
+```mjs
+const provider = new SenseUploader(import.meta.env.SENSE_API_KEY);
 ```
 
 ### API
@@ -244,6 +250,7 @@ The node version of the API also supports createReadStream results (i.e. ReadStr
 - `@lukso/data-provider-ipfs-http-client`: Custom data provider compatible ipfs-http-client (`POST /api/v0/add` only)
 - `@lukso/data-provider-pinata`: Custom data provider compatible with pinata.
 - `@lukso/data-provider-cascade`: Custom data provider compatible with [Cascade](https://cascade.pastel.network/).
+- `@lukso/data-provider-sense`: Custom data provider compatible with [Sense](https://sense.pastel.network/).
 - `@lukso/data-provider-urlresolver`: URL resolvers to map ipfs://, ar:// and so on to https:// urls.
 
 ### Useful commands
