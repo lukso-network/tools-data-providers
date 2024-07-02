@@ -10,3 +10,6 @@
 [submodule "packages/data-provider-fetcher/lib/openzeppelin"]
 	path = packages/data-provider-fetcher/lib/openzeppelin
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts.git
+[submodule "docs-theme"]
+	path = docs-theme
+	url = https://github.com/tomjoht/documentation-theme-jekyll.git
