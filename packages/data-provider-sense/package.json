@@ -1,0 +1,35 @@
+{
+	"name": "@lukso/data-provider-sense",
+	"version": "0.1.0",
+	"type": "module",
+	"sideEffects": false,
+	"license": "MIT",
+	"files": [
+		"dist/**"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"main": "./dist/index.cjs",
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "tsup src/index.ts --format esm,cjs --sourcemap --dts-resolve --dts",
+		"dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+		"lint": "eslint \"src/**/*.ts*\"",
+		"clean": "rm -rf .turbo node_modules dist temp etc",
+		"docs": "mkdir -p ./etc ./temp && api-extractor run --local --verbose"
+	},
+	"devDependencies": {
+		"@lukso/tsconfig": "workspace:*"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@lukso/data-provider-base": "workspace:*",
+		"form-data": "^4.0.0"
+	}
+}
