@@ -7,7 +7,7 @@
 	"packages/data-provider-vue": "1.0.0",
 	"packages/data-provider-metadata": "1.0.0",
 	"packages/data-provider-queries": "1.0.0",
-	"packages/data-provider-cascade": "0.1.1",
-	"packages/data-provider-sense": "0.0.1",
+	"packages/data-provider-cascade": "0.1.2",
+	"packages/data-provider-sense": "0.0.2",
 	"packages/data-provider-fetcher": "0.2.0"
 }
