@@ -90,6 +90,16 @@
       "draft": false,
       "prerelease": false
     },
+    "packages/data-provider-sense": {
+      "component": "data-provider-sense",
+      "package-name": "@lukso/data-provider-sense",
+      "include-component-in-tag": true,
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "prerelease": false
+    },
     "packages/data-provider-fetcher": {
       "component": "data-provider-fetcher",
       "package-name": "@lukso/data-provider-fetcher",
