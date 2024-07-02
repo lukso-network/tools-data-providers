@@ -13,96 +13,15 @@ declare class CascadeUploader extends BaseFormDataUploader
 
 ## Constructors
 
-<table><thead><tr><th>
-
-Constructor
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[(constructor)(apiKey)](./data-provider-cascade.cascadeuploader._constructor_.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Constructs a new instance of the `CascadeUploader` class
-
-
-</td></tr>
-</tbody></table>
+|  Constructor | Modifiers | Description |
+|  --- | --- | --- |
+|  [(constructor)(apiKey)](./data-provider-cascade.cascadeuploader._constructor_.md) |  | Constructs a new instance of the <code>CascadeUploader</code> class |
 
 ## Methods
 
-<table><thead><tr><th>
+|  Method | Modifiers | Description |
+|  --- | --- | --- |
+|  [getEndpoint()](./data-provider-cascade.cascadeuploader.getendpoint.md) |  | Return standard cascade protocol endpoint supported for all JWT and API keys. |
+|  [getRequestOptions(\_dataContent, meta)](./data-provider-cascade.cascadeuploader.getrequestoptions.md) |  | Extract fetch request options. |
+|  [resolveUrl(result)](./data-provider-cascade.cascadeuploader.resolveurl.md) |  | Decode IPFS URL from POST results. |
 
-Method
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[getEndpoint()](./data-provider-cascade.cascadeuploader.getendpoint.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Return standard cascade protocol endpoint supported for all JWT and API keys.
-
-
-</td></tr>
-<tr><td>
-
-[getRequestOptions(\_dataContent, meta)](./data-provider-cascade.cascadeuploader.getrequestoptions.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Extract fetch request options.
-
-
-</td></tr>
-<tr><td>
-
-[resolveUrl(result)](./data-provider-cascade.cascadeuploader.resolveurl.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Decode IPFS URL from POST results.
-
-
-</td></tr>
-</tbody></table>

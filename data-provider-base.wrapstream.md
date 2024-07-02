@@ -14,37 +14,10 @@ declare function wrapStream(data: any): Promise<any>;
 
 ## Parameters
 
-<table><thead><tr><th>
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  data | any |  |
 
-Parameter
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-data
-
-
-</td><td>
-
-any
-
-
-</td><td>
-
-
-</td></tr>
-</tbody></table>
 **Returns:**
 
 Promise&lt;any&gt;

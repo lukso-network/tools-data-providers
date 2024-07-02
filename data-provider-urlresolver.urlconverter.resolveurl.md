@@ -12,51 +12,11 @@ resolveUrl(_match: RegExp | string, url: string): string;
 
 ## Parameters
 
-<table><thead><tr><th>
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  \_match | RegExp \| string |  |
+|  url | string |  |
 
-Parameter
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-\_match
-
-
-</td><td>
-
-RegExp \| string
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-url
-
-
-</td><td>
-
-string
-
-
-</td><td>
-
-
-</td></tr>
-</tbody></table>
 **Returns:**
 
 string

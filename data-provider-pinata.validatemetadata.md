@@ -14,37 +14,10 @@ declare function validateMetadata(metadata: any): void;
 
 ## Parameters
 
-<table><thead><tr><th>
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  metadata | any |  |
 
-Parameter
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-metadata
-
-
-</td><td>
-
-any
-
-
-</td><td>
-
-
-</td></tr>
-</tbody></table>
 **Returns:**
 
 void

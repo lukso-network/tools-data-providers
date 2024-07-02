@@ -6,24 +6,7 @@
 
 ## Classes
 
-<table><thead><tr><th>
+|  Class | Description |
+|  --- | --- |
+|  [CascadeUploader](./data-provider-cascade.cascadeuploader.md) |  |
 
-Class
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[CascadeUploader](./data-provider-cascade.cascadeuploader.md)
-
-
-</td><td>
-
-
-</td></tr>
-</tbody></table>

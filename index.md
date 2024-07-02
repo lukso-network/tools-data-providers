@@ -6,87 +6,14 @@
 
 ## Packages
 
-<table><thead><tr><th>
+|  Package | Description |
+|  --- | --- |
+|  [@lukso/data-provider-base](./data-provider-base.md) |  |
+|  [@lukso/data-provider-cascade](./data-provider-cascade.md) |  |
+|  [@lukso/data-provider-ipfs-http-client](./data-provider-ipfs-http-client.md) |  |
+|  [@lukso/data-provider-metadata](./data-provider-metadata.md) |  |
+|  [@lukso/data-provider-pinata](./data-provider-pinata.md) |  |
+|  [@lukso/data-provider-queries](./data-provider-queries.md) |  |
+|  [@lukso/data-provider-urlresolver](./data-provider-urlresolver.md) |  |
+|  [@lukso/data-provider-vue](./data-provider-vue.md) |  |
 
-Package
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[@lukso/data-provider-base](./data-provider-base.md)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[@lukso/data-provider-cascade](./data-provider-cascade.md)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[@lukso/data-provider-ipfs-http-client](./data-provider-ipfs-http-client.md)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[@lukso/data-provider-metadata](./data-provider-metadata.md)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[@lukso/data-provider-pinata](./data-provider-pinata.md)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[@lukso/data-provider-queries](./data-provider-queries.md)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[@lukso/data-provider-urlresolver](./data-provider-urlresolver.md)
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-[@lukso/data-provider-vue](./data-provider-vue.md)
-
-
-</td><td>
-
-
-</td></tr>
-</tbody></table>

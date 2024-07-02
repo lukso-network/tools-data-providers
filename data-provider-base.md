@@ -6,144 +6,25 @@
 
 ## Classes
 
-<table><thead><tr><th>
-
-Class
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[AuthenticatedFormDataUploader](./data-provider-base.authenticatedformdatauploader.md)
-
-
-</td><td>
-
-This is a custom data provider that uses a pre-shared token to sign a short lived jwt token and send it as a bearer token to the endpoint. On the server side you can then verify the token using this kind of code:
-
-
-</td></tr>
-<tr><td>
-
-[BaseFormDataUploader](./data-provider-base.baseformdatauploader.md)
-
-
-</td><td>
-
-Base data provider to upload data using a FormData POST. This is a generic class used by all the custom implementations.
-
-
-</td></tr>
-</tbody></table>
+|  Class | Description |
+|  --- | --- |
+|  [AuthenticatedFormDataUploader](./data-provider-base.authenticatedformdatauploader.md) | This is a custom data provider that uses a pre-shared token to sign a short lived jwt token and send it as a bearer token to the endpoint. On the server side you can then verify the token using this kind of code: |
+|  [BaseFormDataUploader](./data-provider-base.baseformdatauploader.md) | Base data provider to upload data using a FormData POST. This is a generic class used by all the custom implementations. |
 
 ## Functions
 
-<table><thead><tr><th>
-
-Function
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[getBlob()](./data-provider-base.getblob.md)
-
-
-</td><td>
-
-Return the blob implementation in a way that works in node and browser
-
-
-</td></tr>
-<tr><td>
-
-[getFetch()](./data-provider-base.getfetch.md)
-
-
-</td><td>
-
-Return the fetch implementation in a way that works in node and browser
-
-
-</td></tr>
-<tr><td>
-
-[getFile()](./data-provider-base.getfile.md)
-
-
-</td><td>
-
-Return the file implementation in a way that works in node and browser
-
-
-</td></tr>
-<tr><td>
-
-[getFormData()](./data-provider-base.getformdata.md)
-
-
-</td><td>
-
-Return the FormData implementation in a way that works in node and browser
-
-
-</td></tr>
-<tr><td>
-
-[wrapStream(data)](./data-provider-base.wrapstream.md)
-
-
-</td><td>
-
-Wrap a stream so that a readstream can be detected in node without loading the module in the browser.
-
-
-</td></tr>
-</tbody></table>
+|  Function | Description |
+|  --- | --- |
+|  [getBlob()](./data-provider-base.getblob.md) | Return the blob implementation in a way that works in node and browser |
+|  [getFetch()](./data-provider-base.getfetch.md) | Return the fetch implementation in a way that works in node and browser |
+|  [getFile()](./data-provider-base.getfile.md) | Return the file implementation in a way that works in node and browser |
+|  [getFormData()](./data-provider-base.getformdata.md) | Return the FormData implementation in a way that works in node and browser |
+|  [wrapStream(data)](./data-provider-base.wrapstream.md) | Wrap a stream so that a readstream can be detected in node without loading the module in the browser. |
 
 ## Type Aliases
 
-<table><thead><tr><th>
+|  Type Alias | Description |
+|  --- | --- |
+|  [FormDataPostHeaders](./data-provider-base.formdatapostheaders.md) | Type for POST headers |
+|  [FormDataRequestOptions](./data-provider-base.formdatarequestoptions.md) | Request options for fetch (RequestInit) |
 
-Type Alias
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[FormDataPostHeaders](./data-provider-base.formdatapostheaders.md)
-
-
-</td><td>
-
-Type for POST headers
-
-
-</td></tr>
-<tr><td>
-
-[FormDataRequestOptions](./data-provider-base.formdatarequestoptions.md)
-
-
-</td><td>
-
-Request options for fetch (RequestInit)
-
-
-</td></tr>
-</tbody></table>

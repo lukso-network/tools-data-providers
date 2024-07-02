@@ -14,53 +14,11 @@ getRequestOptions(dataContent: FormData, meta?: FormDataPostHeaders): Promise<Fo
 
 ## Parameters
 
-<table><thead><tr><th>
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  dataContent | FormData |  |
+|  meta | [FormDataPostHeaders](./data-provider-base.formdatapostheaders.md) | _(Optional)_ |
 
-Parameter
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-dataContent
-
-
-</td><td>
-
-FormData
-
-
-</td><td>
-
-
-</td></tr>
-<tr><td>
-
-meta
-
-
-</td><td>
-
-[FormDataPostHeaders](./data-provider-base.formdatapostheaders.md)
-
-
-</td><td>
-
-_(Optional)_
-
-
-</td></tr>
-</tbody></table>
 **Returns:**
 
 Promise&lt;[FormDataRequestOptions](./data-provider-base.formdatarequestoptions.md)<!-- -->&gt;

@@ -14,39 +14,10 @@ resolveUrl(result: any): string;
 
 ## Parameters
 
-<table><thead><tr><th>
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  result | any | JSON result from the upload |
 
-Parameter
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-result
-
-
-</td><td>
-
-any
-
-
-</td><td>
-
-JSON result from the upload
-
-
-</td></tr>
-</tbody></table>
 **Returns:**
 
 string

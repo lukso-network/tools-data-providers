@@ -6,24 +6,7 @@
 
 ## Variables
 
-<table><thead><tr><th>
+|  Variable | Description |
+|  --- | --- |
+|  [version](./data-provider-vue.version.md) |  |
 
-Variable
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[version](./data-provider-vue.version.md)
-
-
-</td><td>
-
-
-</td></tr>
-</tbody></table>

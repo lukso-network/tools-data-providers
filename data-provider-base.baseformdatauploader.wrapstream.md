@@ -14,39 +14,10 @@ protected wrapStream(data: any): Promise<any>;
 
 ## Parameters
 
-<table><thead><tr><th>
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  data | any | data to wrap |
 
-Parameter
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-data
-
-
-</td><td>
-
-any
-
-
-</td><td>
-
-data to wrap
-
-
-</td></tr>
-</tbody></table>
 **Returns:**
 
 Promise&lt;any&gt;

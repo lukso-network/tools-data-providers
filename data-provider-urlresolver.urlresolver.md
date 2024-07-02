@@ -27,68 +27,13 @@ resolver.resolveUrl("ipfs://QmSomeHash") // https://some.api.gateway/something/i
 
 ## Constructors
 
-<table><thead><tr><th>
-
-Constructor
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[(constructor)(converters)](./data-provider-urlresolver.urlresolver._constructor_.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Constructs a new instance of the `UrlResolver` class
-
-
-</td></tr>
-</tbody></table>
+|  Constructor | Modifiers | Description |
+|  --- | --- | --- |
+|  [(constructor)(converters)](./data-provider-urlresolver.urlresolver._constructor_.md) |  | Constructs a new instance of the <code>UrlResolver</code> class |
 
 ## Methods
 
-<table><thead><tr><th>
+|  Method | Modifiers | Description |
+|  --- | --- | --- |
+|  [resolveUrl(\_url)](./data-provider-urlresolver.urlresolver.resolveurl.md) |  | Resolves a URL to a gateway URL. Supports possible multiple converters transforming the URL in sequence until no converter matches. |
 
-Method
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[resolveUrl(\_url)](./data-provider-urlresolver.urlresolver.resolveurl.md)
-
-
-</td><td>
-
-
-</td><td>
-
-Resolves a URL to a gateway URL. Supports possible multiple converters transforming the URL in sequence until no converter matches.
-
-
-</td></tr>
-</tbody></table>

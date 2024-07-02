@@ -14,52 +14,8 @@ constructor(gateway: string, options?: FormDataRequestOptions | undefined);
 
 ## Parameters
 
-<table><thead><tr><th>
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  gateway | string | accepts a string, URL or options compatible for the create method |
+|  options | [FormDataRequestOptions](./data-provider-base.formdatarequestoptions.md) \| undefined | _(Optional)_ additional options for the fetch call |
 
-Parameter
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-gateway
-
-
-</td><td>
-
-string
-
-
-</td><td>
-
-accepts a string, URL or options compatible for the create method
-
-
-</td></tr>
-<tr><td>
-
-options
-
-
-</td><td>
-
-[FormDataRequestOptions](./data-provider-base.formdatarequestoptions.md) \| undefined
-
-
-</td><td>
-
-_(Optional)_ additional options for the fetch call
-
-
-</td></tr>
-</tbody></table>
