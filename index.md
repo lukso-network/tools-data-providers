@@ -14,6 +14,7 @@
 |  [@lukso/data-provider-metadata](./data-provider-metadata.md) |  |
 |  [@lukso/data-provider-pinata](./data-provider-pinata.md) |  |
 |  [@lukso/data-provider-queries](./data-provider-queries.md) |  |
+|  [@lukso/data-provider-sense](./data-provider-sense.md) |  |
 |  [@lukso/data-provider-urlresolver](./data-provider-urlresolver.md) |  |
 |  [@lukso/data-provider-vue](./data-provider-vue.md) |  |
 
