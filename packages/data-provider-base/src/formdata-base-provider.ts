@@ -1,5 +1,5 @@
 import { keccak256 } from "@ethersproject/keccak256";
-import { getFetch, getFormData, wrapStream } from "./compatability";
+import { compatibility } from "./compatibility";
 
 const NOT_IMPLEMENTED = "Not implemented";
 
@@ -104,7 +104,7 @@ export class BaseFormDataUploader {
 	 * @returns
 	 */
 	protected async wrapStream(data: any): Promise<any> {
-		return wrapStream(data);
+		return compatibility.wrapStream(data);
 	}
 
 	/**
@@ -119,7 +119,7 @@ export class BaseFormDataUploader {
 		_meta?: FormDataPostHeaders,
 	): Promise<{ url: string; hash: string }> {
 		let meta = _meta;
-		const FormData = await getFormData();
+		const FormData = compatibility.getFormData();
 		const dataContent = new FormData();
 		const { meta: __meta, hash } = await this.populate(dataContent, data, meta);
 		meta = __meta;
@@ -205,7 +205,7 @@ export class BaseFormDataUploader {
 				: {}),
 			...input.headers,
 		};
-		const fetch = await getFetch();
+		const fetch = compatibility.getFetch();
 		return await fetch(url, {
 			...input,
 			body: dataContent as any,

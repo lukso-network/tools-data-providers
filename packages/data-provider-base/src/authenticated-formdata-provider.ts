@@ -1,3 +1,4 @@
+import { compatibility } from "./compatibility";
 import {
 	BaseFormDataUploader,
 	type FormDataPostHeaders,
@@ -6,8 +7,7 @@ import {
 
 /** local implementation of HS256 sign */
 async function sign(data: any, key: string) {
-	const crypto =
-		typeof window !== "undefined" ? window.crypto : await import("node:crypto");
+	const crypto = compatibility.getCrypto();
 	return crypto.subtle
 		.importKey(
 			"jwk", //can be "jwk" or "raw"
@@ -27,7 +27,7 @@ async function sign(data: any, key: string) {
 			true, //whether the key is extractable (i.e. can be used in exportKey)
 			["sign", "verify"], //can be any combination of "sign" and "verify"
 		)
-		.then((key) => {
+		.then((key: any) => {
 			const jsonString = JSON.stringify(data);
 			const encodedData = new TextEncoder().encode(jsonString);
 			return crypto.subtle.sign(
@@ -38,7 +38,7 @@ async function sign(data: any, key: string) {
 				encodedData, //ArrayBuffer of data you want to sign
 			);
 		})
-		.then((token) => {
+		.then((token: any) => {
 			const u8 = new Uint8Array(token);
 			return btoa(
 				String.fromCharCode.apply(undefined, u8 as unknown as number[]),
