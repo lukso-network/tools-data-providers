@@ -1,54 +1,26 @@
 const isNode = false;
 
 export const compatibility = {
-  getCrypto,
-  getFormData,
-  getFetch,
-  getBlob,
-  getFile,
+  crypto,
+  FormData,
+  fetch: typeof fetch === "undefined" ? async () => {
+    throw new Error("Fetch not supported");
+  } : fetch,
+  Blob,
+  File,
   wrapStream,
+  encodeBase64,
+  stringToArrayBuffer,
 }
 
-function getCrypto(): typeof window.crypto {
-  return window.crypto;
+function stringToArrayBuffer(str: string): ArrayBuffer {
+  const encoder = new window.TextEncoder();
+  const arrayBuffer = encoder.encode(str);
+  return arrayBuffer.buffer;
 }
 
-/**
- * Return the FormData implementation in a way that works in node and browser
- *
- * @returns FormData implementation
- */
-function getFormData(): typeof FormData {
-	// Use the appropriate FormData implementation depending on the environment
-	return FormData;
-}
-
-/**
- * Return the fetch implementation in a way that works in node and browser
- *
- * @returns The fetch implementation
- */
-function getFetch(): typeof fetch {
-	// Use the browser's fetch if available, otherwise use node-fetch
-	return fetch
-}
-
-/**
- * Return the blob implementation in a way that works in node and browser
- *
- * @returns The Blob implementation
- */
-function getBlob(): typeof Blob {
-	return Blob;
-}
-
-/**
- * Return the file implementation in a way that works in node and browser
- *
- * @returns The Blob implementation
- */
-function getFile(): typeof File {
-	return File
+function encodeBase64(data: string): string {
+  return btoa(data);
 }
 
 /**

@@ -6,16 +6,16 @@
 	"files": [
 		"dist/**"
 	],
-  "types": "./dist/index.d.ts",
+	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.js"
 		},
-    "./compatibility-node": {
-      "import": "./dist/compatibility-node.mjs",
-      "require": "./dist/compatibility-node.js"
-    }
+		"./compatibility-node": {
+			"import": "./dist/compatibility-node.mjs",
+			"require": "./dist/compatibility-node.js"
+		}
 	},
 	"scripts": {
 		"build": "tsup --entry src/index.ts --entry src/compatibility-node.ts --format esm,cjs --sourcemap --dts-resolve --dts",

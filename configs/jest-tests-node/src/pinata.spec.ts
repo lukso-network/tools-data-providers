@@ -1,6 +1,7 @@
 import { jest } from "@jest/globals";
 import { PinataUploader } from "@lukso/data-provider-pinata";
 import Blob from "cross-blob";
+import "@lukso/data-provider-base/compatibility-node";
 
 beforeEach(() => {
 	jest.resetAllMocks();

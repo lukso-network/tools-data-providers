@@ -4,6 +4,7 @@ import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { jest } from "@jest/globals";
 import Blob from "cross-blob";
+import "@lukso/data-provider-base/compatibility-node"; // jest is running node and jsdom doesn't support fetch.
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

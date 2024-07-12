@@ -1,5 +1,5 @@
 import { jest } from "@jest/globals";
-import { getFile } from "@lukso/data-provider-base";
+import { compatibility } from "@lukso/data-provider-base";
 import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
 
 it("should pin images (mocked)", async () => {
@@ -14,12 +14,11 @@ it("should pin images (mocked)", async () => {
 });
 
 async function mockDependencies(gateway = "https://api.2eff.lukso.dev") {
-	const File = await getFile();
-	const file = new File(["123123"], "test-image.jpg", {
+	const file = new compatibility.File(["123123"], "test-image.jpg", {
 		type: "image/jpg",
 	});
 	// TODO: fix "is not assignable to type IDE error"
-	file.arrayBuffer = async () => Buffer.from("");
+	file.arrayBuffer = async () => new ArrayBuffer(0);
 
 	const uploader = new IPFSHttpClientUploader(gateway);
 

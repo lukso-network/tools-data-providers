@@ -7,8 +7,7 @@ import {
 
 /** local implementation of HS256 sign */
 async function sign(data: any, key: string) {
-	const crypto = compatibility.getCrypto();
-	return crypto.subtle
+	return compatibility.crypto.subtle
 		.importKey(
 			"jwk", //can be "jwk" or "raw"
 			{
@@ -30,7 +29,7 @@ async function sign(data: any, key: string) {
 		.then((key: any) => {
 			const jsonString = JSON.stringify(data);
 			const encodedData = new TextEncoder().encode(jsonString);
-			return crypto.subtle.sign(
+			return compatibility.crypto.subtle.sign(
 				{
 					name: "HMAC",
 				},
@@ -40,8 +39,9 @@ async function sign(data: any, key: string) {
 		})
 		.then((token: any) => {
 			const u8 = new Uint8Array(token);
-			return btoa(
-				String.fromCharCode.apply(undefined, u8 as unknown as number[]),
+      const str = String.fromCharCode.apply(undefined, u8 as unknown as number[]);
+			return compatibility.encodeBase64(
+				str,
 			);
 		});
 }
@@ -50,12 +50,12 @@ async function sign(data: any, key: string) {
 async function createToken(payload: any, key: string): Promise<string> {
 	const header = { typ: "JWT", alg: "HS256" };
 
-	const segments = [
+  const segments = [
 		encodeURIComponent(btoa(JSON.stringify(header))),
 		encodeURIComponent(btoa(JSON.stringify(payload))),
 	];
 
-	const footer = await sign(segments.join("."), key);
+  const footer = await sign(segments.join("."), key);
 
 	segments.push(footer);
 

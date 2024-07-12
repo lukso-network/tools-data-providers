@@ -1,5 +1,6 @@
 import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
 import type { APIContext } from "astro";
+import "@lukso/data-provider-base/compatibility-node"
 
 // File routes export a get() function, which gets called to generate the file.
 // Return an object with `body` to save the file contents in your final build.

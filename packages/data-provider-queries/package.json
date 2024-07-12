@@ -38,7 +38,7 @@
 	},
 	"dependencies": {
 		"@erc725/erc725.js": "^0.23.1",
-		"@lukso/lsp-smart-contracts": "0.15.0-rc.1",
+		"@lukso/lsp-smart-contracts": "0.15.0",
 		"@lukso/lsp-smart-contracts-12": "npm:@lukso/lsp-smart-contracts@^0.12.1",
 		"@tanstack/query-core": "^5.28.9",
 		"debug": "^4.3.4",
