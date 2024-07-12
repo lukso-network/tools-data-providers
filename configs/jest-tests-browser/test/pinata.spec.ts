@@ -1,4 +1,5 @@
 import { jest } from "@jest/globals";
+import { compatibility } from "@lukso/data-provider-base";
 import { PinataUploader } from "@lukso/data-provider-pinata";
 
 beforeEach(() => {
@@ -24,7 +25,7 @@ it("should pin images (web, pinata, mocked)", async () => {
 }, 20000);
 
 async function mockDependencies() {
-	const file = new Blob([Buffer.from("123123")], { type: "image/png" });
+	const file = new Blob([compatibility.stringToArrayBuffer("123123")], { type: "image/png" });
 
 	const config = {
 		pinataApiKey: "sample-api-key",

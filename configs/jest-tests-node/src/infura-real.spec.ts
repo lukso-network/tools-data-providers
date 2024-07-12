@@ -4,9 +4,11 @@ import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { jest } from "@jest/globals";
 import Blob from "cross-blob";
+import "@lukso/data-provider-base/compatibility-node";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+import { compatibility } from "@lukso/data-provider-base";
 import IPFSHttpClientUploader from "@lukso/data-provider-ipfs-http-client";
 
 beforeEach(() => {
@@ -40,9 +42,9 @@ async function mockDependencies() {
 
 	const config = {
 		headers: {
-			authorization: `Basic ${Buffer.from(
+			authorization: `Basic ${compatibility.encodeBase64(
 				`${process.env.TEST_INFURA_API_KEY_NAME}:${process.env.TEST_INFURA_API_KEY}`,
-			).toString("base64")}`,
+			)}`,
 		},
 	};
 	const uploader = new IPFSHttpClientUploader(

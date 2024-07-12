@@ -1,5 +1,5 @@
 import { keccak256 } from "@ethersproject/keccak256";
-import { getFetch, getFormData, wrapStream } from "./compatability";
+import { compatibility } from "./compatibility";
 
 const NOT_IMPLEMENTED = "Not implemented";
 
@@ -64,9 +64,9 @@ export class BaseFormDataUploader {
 		_meta?: FormDataPostHeaders,
 	): Promise<{ meta: FormDataPostHeaders | undefined; hash: string }> {
 		const data = await this.wrapStream(_data);
-		let buffer: Buffer;
+		let buffer: ArrayBuffer;
 		if (data.arrayBuffer) {
-			buffer = Buffer.from(await data.arrayBuffer());
+			buffer = await data.arrayBuffer();
 		} else {
 			const arrayBuffer: ArrayBuffer = await new Promise((resolve, reject) => {
 				const reader = new FileReader();
@@ -84,9 +84,9 @@ export class BaseFormDataUploader {
 				console.log("kicking");
 				reader.readAsArrayBuffer(data);
 			});
-			buffer = Buffer.from(arrayBuffer);
+			buffer = arrayBuffer;
 		}
-		const hash = keccak256(buffer);
+		const hash = keccak256(new Uint8Array(buffer));
 		let meta = _meta;
 		dataContent.append("file", data);
 		if ("name" in data) {
@@ -104,7 +104,7 @@ export class BaseFormDataUploader {
 	 * @returns
 	 */
 	protected async wrapStream(data: any): Promise<any> {
-		return wrapStream(data);
+		return compatibility.wrapStream(data);
 	}
 
 	/**
@@ -119,8 +119,7 @@ export class BaseFormDataUploader {
 		_meta?: FormDataPostHeaders,
 	): Promise<{ url: string; hash: string }> {
 		let meta = _meta;
-		const FormData = await getFormData();
-		const dataContent = new FormData();
+		const dataContent = new compatibility.FormData();
 		const { meta: __meta, hash } = await this.populate(dataContent, data, meta);
 		meta = __meta;
 		await this.addMetadata(dataContent as FormData, meta);
@@ -205,8 +204,7 @@ export class BaseFormDataUploader {
 				: {}),
 			...input.headers,
 		};
-		const fetch = await getFetch();
-		return await fetch(url, {
+		return await compatibility.fetch(url, {
 			...input,
 			body: dataContent as any,
 		})

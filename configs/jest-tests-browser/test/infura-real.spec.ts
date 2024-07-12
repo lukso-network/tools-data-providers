@@ -3,10 +3,11 @@ import { resolve } from "node:path";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { jest } from "@jest/globals";
-import Blob from "cross-blob";
+import "@lukso/data-provider-base/compatibility-node"; // jest is running node and jsdom doesn't support fetch.
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+import { compatibility } from "@lukso/data-provider-base";
 import IPFSHttpClientUploader from "@lukso/data-provider-ipfs-http-client";
 
 beforeEach(() => {
@@ -25,7 +26,7 @@ it("should pin images (web, infura)", async () => {
 }, 20000);
 
 async function mockDependencies() {
-	const file = new Blob(
+	const file = new compatibility.Blob(
 		// This is only for jest so it's no big deal.
 		// eslint-disable-next-line unicorn/prefer-module
 		[readFileSync(resolve(__dirname, "./test-image.png"))],
@@ -33,16 +34,12 @@ async function mockDependencies() {
 			type: "image/png",
 		},
 	);
-	// TODO: fix "is not assignable to type IDE error"
-	// file.arrayBuffer = async () => {
-	//   return Buffer.from('123123');
-	// };
 
 	const config = {
 		headers: {
-			authorization: `Basic ${Buffer.from(
+			authorization: `Basic ${compatibility.encodeBase64(
 				`${process.env.TEST_INFURA_API_KEY_NAME}:${process.env.TEST_INFURA_API_KEY}`,
-			).toString("base64")}`,
+			)}`,
 		},
 	};
 	const uploader = new IPFSHttpClientUploader(

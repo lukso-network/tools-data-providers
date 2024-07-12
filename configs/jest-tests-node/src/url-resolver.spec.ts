@@ -1,4 +1,5 @@
 import { UrlConverter, UrlResolver } from "@lukso/data-provider-urlresolver";
+import "@lukso/data-provider-base/compatibility-node"; // jest is running node and jsdom doesn't support fetch.
 
 it("should convert ipfs url to https", () => {
 	const resolver = new UrlResolver([

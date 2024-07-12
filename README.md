@@ -90,9 +90,9 @@ const provider = new PinataUploader({
 //
 const provider = new IPFSHttpClientUploader(import.meta.env.INFURA_GATEWAY, {
   headers: {
-    authorization: `Basic ${Buffer.from(
+    authorization: `Basic ${compatibility.encodeBase64(
       `${import.meta.env.INFURA_API_KEY_NAME}:${import.meta.env.INFURA_API_KEY}`
-    ).toString("base64")}`,
+    )}`,
   },
 });
 ```
@@ -185,11 +185,11 @@ This is how you would use this component within a page to talk to infura. (the c
   gateway={import.meta.env.TEST_INFURA_GATEWAY}
   options={{
     headers: {
-      authorization: `Basic ${Buffer.from(
+      authorization: `Basic ${compatibility.encodeBase64(
         `${import.meta.env.TEST_INFURA_API_KEY_NAME}:${
           import.meta.env.TEST_INFURA_API_KEY
         }`
-      ).toString("base64")}`,
+      )}`,
     },
   }}
 />
@@ -206,6 +206,8 @@ This would connect to this kind of endpoint
 ```ts
 import type { APIContext } from "astro";
 import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
+import { compatibility } from "@lukso/data-provider-base";
+// import "@lukso/data-provider-base/compatibility-node"; when on backend.
 
 export async function POST({ request }: APIContext) {
   const formData = await request.formData();
@@ -215,11 +217,11 @@ export async function POST({ request }: APIContext) {
     import.meta.env.TEST_INFURA_GATEWAY,
     {
       headers: {
-        authorization: `Basic ${Buffer.from(
+        authorization: `Basic ${compatibility.encodeBase64(
           `${import.meta.env.TEST_INFURA_API_KEY_NAME}:${
             import.meta.env.TEST_INFURA_API_KEY
           }`
-        ).toString("base64")}`,
+        )}`,
       },
     }
   );

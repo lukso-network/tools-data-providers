@@ -1,6 +1,7 @@
 import { jest } from "@jest/globals";
 import { IPFSHttpClientUploader } from "@lukso/data-provider-ipfs-http-client";
 import Blob from "cross-blob";
+import "@lukso/data-provider-base/compatibility-node";
 
 it("should pin images (node, mocked)", async () => {
 	const { upload, uploader, file } = await mockDependencies();

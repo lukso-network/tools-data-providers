@@ -1,9 +1,13 @@
 {
-	"extends": "@lukso/tsconfig/node.json",
-	"include": ["./src"],
-	"exclude": ["dist", "build", "node_modules"],
-	"compilerOptions": {
-		"lib": ["dom", "DOM.Iterable"],
-		"esModuleInterop": true
-	}
+  "extends": "@lukso/tsconfig/node.json",
+  "include": ["./src", "*.cjs"],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".", // root of your "paths" below. Required if "paths" is defined
+    "paths": {
+      "@compatibility/index.ts": ["src/node.ts"] // enables us to use @components/MyComponent
+    },
+    "lib": ["dom", "DOM.Iterable"],
+    "esModuleInterop": true
+  }
 }

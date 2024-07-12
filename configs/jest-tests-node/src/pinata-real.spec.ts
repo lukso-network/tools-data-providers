@@ -4,6 +4,7 @@ import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { jest } from "@jest/globals";
 import Blob from "cross-blob";
+import "@lukso/data-provider-base/compatibility-node";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

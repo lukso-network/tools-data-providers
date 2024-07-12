@@ -45,18 +45,6 @@ export type FormDataRequestOptions = {
     [key: string]: any;
 };
 
-// @public
-export function getBlob(): Promise<typeof Blob>;
-
-// @public
-export function getFetch(): Promise<typeof fetch>;
-
-// @public
-export function getFile(): Promise<typeof File>;
-
-// @public
-export function getFormData(): Promise<typeof FormData>;
-
 // Warning: (ae-internal-missing-underscore) The name "handleError" should be prefixed with an underscore because the declaration is marked as @internal
 //
 // @internal
