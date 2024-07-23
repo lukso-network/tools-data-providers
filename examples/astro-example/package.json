@@ -17,6 +17,7 @@
 		"@astrojs/vue": "^4.0.9",
 		"@lukso/data-provider-ipfs-http-client": "workspace:*",
 		"@lukso/data-provider-pinata": "workspace:*",
+		"@lukso/data-provider-cascade": "workspace:*",
 		"@lukso/data-provider-urlresolver": "workspace:*",
 		"@types/react": "^18.2.73",
 		"@types/react-dom": "^18.2.23",
