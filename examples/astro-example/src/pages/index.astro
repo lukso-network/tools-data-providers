@@ -4,8 +4,12 @@ import Card from "../components/Card.astro";
 import ReactCard from "../components/ReactCard.tsx";
 import Upload from "../components/Upload.tsx";
 import UploadPinata from "../components/UploadPinata.tsx";
+import UploadCascade from "../components/UploadCascade.tsx";
+import UploadSense from "../components/UploadSense.tsx";
 import UploadVue from "../components/UploadVue.vue";
 import UploadVuePinata from "../components/UploadVuePinata.vue";
+import UploadVueCascade from "../components/UploadVueCascade.vue";
+import UploadVueSense from "../components/UploadVueSense.vue";
 import VueCard from "../components/VueCard.vue";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -56,6 +60,12 @@ import Layout from "../layouts/Layout.astro";
           }
         }}/>
       </ReactCard>
+			<ReactCard color="white" title="Upload to Cascade" client:only="react">
+        <UploadCascade client:only="react"/>
+      </ReactCard>
+			<ReactCard color="white" title="Upload to Sense" client:only="react">
+        <UploadSense client:only="react"/>
+      </ReactCard>
 
       <li><h3>Frontend Vue</h3></li>
       <VueCard color="white" title="Upload to Local" client:only="vue">
@@ -71,6 +81,12 @@ import Layout from "../layouts/Layout.astro";
           }
         }}/>
       </VueCard>
+			<VueCard color="white" title="Upload to Cascade" client:only="vue">
+        <UploadVueCascade client:only="vue"/>
+      </VueCard>
+			<VueCard color="white" title="Upload to Sense" client:only="vue">
+        <UploadVueSense client:only="vue"/>
+      </VueCard>
 
       <li><h3>Backend React</h3></li>
       <ReactCard color="white" title="Upload to Local" client:only="react">
@@ -82,6 +98,12 @@ import Layout from "../layouts/Layout.astro";
       <ReactCard color="white" title="Upload to Infura" client:only="react">
         <Upload client:only="react" gateway="/api-infura"/>
       </ReactCard>
+      <ReactCard color="white" title="Upload to Cascade" client:only="react">
+        <Upload client:only="react" gateway="/api-cascade"/>
+      </ReactCard>
+      <ReactCard color="white" title="Upload to Sense" client:only="react">
+        <Upload client:only="react" gateway="/api-sense"/>
+      </ReactCard>
 
       <li><h3>Backend Vue</h3></li>
       <VueCard color="white" title="Upload to Local" client:only="vue">
@@ -92,6 +114,12 @@ import Layout from "../layouts/Layout.astro";
       </VueCard>
       <VueCard color="white" title="Upload to Infura" client:only="vue">
         <UploadVue client:only="vue" gateway="/api-infura"/>
+      </VueCard>
+			<VueCard color="white" title="Upload to Cascade" client:only="vue">
+        <UploadVue client:only="vue" gateway="/api-cascade"/>
+      </VueCard>
+      <VueCard color="white" title="Upload to Sense" client:only="vue">
+        <UploadVue client:only="vue" gateway="/api-sense"/>
       </VueCard>
 		</ul>
 	</main>
