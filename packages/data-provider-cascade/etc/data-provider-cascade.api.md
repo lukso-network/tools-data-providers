@@ -8,7 +8,9 @@ import { BaseFormDataUploader } from '@lukso/data-provider-base';
 import { FormDataPostHeaders } from '@lukso/data-provider-base';
 import { FormDataRequestOptions } from '@lukso/data-provider-base';
 
-// @public (undocumented)
+// Warning: (ae-internal-missing-underscore) The name "CascadeUploadedResult" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal (undocumented)
 export interface CascadeUploadedResult {
     // (undocumented)
     request_id: string;
@@ -39,17 +41,17 @@ export interface CascadeUploadedResult {
     ];
 }
 
-// @public (undocumented)
+// @public
 class CascadeUploader extends BaseFormDataUploader {
     constructor(apiKey: string);
+    // @internal
     getEndpoint(): string;
-    // (undocumented)
     getGatewayUrl(): string;
+    // @internal
     getRequestOptions(_dataContent: FormData, meta?: FormDataPostHeaders): Promise<FormDataRequestOptions>;
-    resolveUrl(result: any): string;
-    // (undocumented)
+    // @internal
     retrieveTxId(result_id: string): Promise<any>;
-    // (undocumented)
+    uploadFolderToCascade(folder: string, _meta?: FormDataPostHeaders): Promise<any>;
     uploadToCascade(data: any, _meta?: FormDataPostHeaders): Promise<any>;
 }
 export { CascadeUploader }

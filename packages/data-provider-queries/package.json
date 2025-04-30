@@ -19,8 +19,8 @@
 		"build": "pnpm run contracts && tsup src/index.ts --format esm,cjs --sourcemap --dts-resolve --dts",
 		"dev": "tsup src/index.ts --format esm,cjs --watch --dts",
 		"lint": "eslint \"src/**/*.ts*\"",
-		"clean": "rm -rf .turbo node_modules dist etc",
-		"docs": "mkdir -p ./etc ./temp && api-extractor run --local --verbose",
+		"clean": "rm -rf .turbo node_modules dist",
+		"docs": "rm -rf ./temp && mkdir -p ./temp && api-extractor run --local --verbose",
 		"contracts": "node scripts/convert.mjs -o contracts/ -i ../data-provider-fetcher/out"
 	},
 	"devDependencies": {

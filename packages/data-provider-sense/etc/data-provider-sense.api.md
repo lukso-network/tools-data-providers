@@ -8,12 +8,49 @@ import { BaseFormDataUploader } from '@lukso/data-provider-base';
 import { FormDataPostHeaders } from '@lukso/data-provider-base';
 import { FormDataRequestOptions } from '@lukso/data-provider-base';
 
-// @public (undocumented)
+// Warning: (ae-internal-missing-underscore) The name "SenseUploadedResult" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal
+export interface SenseUploadedResult {
+    // (undocumented)
+    request_id: string;
+    // (undocumented)
+    request_status: string;
+    // (undocumented)
+    results: [
+        {
+        result_status: string;
+        file_name: string;
+        file_type: string;
+        file_id: string;
+        created_at: Date;
+        last_updated_at: Date;
+        retry_num: number;
+        registration_ticket_txid: string;
+        activation_ticket_txid: string;
+        original_file_ipfs_link: string;
+        stored_file_ipfs_link: string;
+        stored_file_aws_link: string;
+        stored_file_other_links: object;
+        make_publicly_accessible: boolean;
+        offer_ticket_txid: string;
+        offer_ticket_intended_rcpt_pastel_id: string;
+        error: string;
+        result_id: string;
+    }
+    ];
+}
+
+// @public
 class SenseUploader extends BaseFormDataUploader {
     constructor(apiKey: string);
     getEndpoint(): string;
+    getGatewayUrl(): string;
+    // @internal
     getRequestOptions(_dataContent: FormData, meta?: FormDataPostHeaders): Promise<FormDataRequestOptions>;
-    resolveUrl(result: any): string;
+    retrieveTxId(result_id: string): Promise<any>;
+    uploadFolderToSense(folder: string, _meta?: FormDataPostHeaders): Promise<any>;
+    uploadToSense(data: any, _meta?: FormDataPostHeaders): Promise<any>;
 }
 export { SenseUploader }
 export default SenseUploader;
