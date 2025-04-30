@@ -13,7 +13,8 @@ beforeEach(() => {
 	jest.resetAllMocks();
 });
 
-it("should pin images (web, infura)", async () => {
+it.skip("should pin images (web, infura)", async () => {
+  // Infura is just returing a 400 with no explanation. I think their IPFS pinning has ben disabled.
 	const { uploader, file } = await mockDependencies();
 
 	const upload = await uploader.upload(file);
