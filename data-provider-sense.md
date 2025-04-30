@@ -8,5 +8,5 @@
 
 |  Class | Description |
 |  --- | --- |
-|  [SenseUploader](./data-provider-sense.senseuploader.md) |  |
+|  [SenseUploader](./data-provider-sense.senseuploader.md) | SenseUploader class for uploading files to the Sense Protocol on Pastel Network. |
 

@@ -4,6 +4,8 @@
 
 ## SenseUploader class
 
+SenseUploader class for uploading files to the Sense Protocol on Pastel Network.
+
 **Signature:**
 
 ```typescript
@@ -22,6 +24,8 @@ declare class SenseUploader extends BaseFormDataUploader
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
 |  [getEndpoint()](./data-provider-sense.senseuploader.getendpoint.md) |  | Return standard Sense protocol endpoint supported for all JWT and API keys. |
-|  [getRequestOptions(\_dataContent, meta)](./data-provider-sense.senseuploader.getrequestoptions.md) |  | Extract fetch request options. |
-|  [resolveUrl(result)](./data-provider-sense.senseuploader.resolveurl.md) |  | Decode IPFS URL from POST results. |
+|  [getGatewayUrl()](./data-provider-sense.senseuploader.getgatewayurl.md) |  | Return the endpoint to be used for the upload. |
+|  [retrieveTxId(result\_id)](./data-provider-sense.senseuploader.retrievetxid.md) |  | Check status of sense activation transaction at Pastel Network |
+|  [uploadFolderToSense(folder, \_meta)](./data-provider-sense.senseuploader.uploadfoldertosense.md) |  | Uploads images of folder to Sense Protocol and return result ids and ipfs links. |
+|  [uploadToSense(data, \_meta)](./data-provider-sense.senseuploader.uploadtosense.md) |  | Uploads file to Sense Protocol and return result id and ipfs link. |
 

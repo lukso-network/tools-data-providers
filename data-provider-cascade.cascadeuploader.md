@@ -4,6 +4,8 @@
 
 ## CascadeUploader class
 
+CascadeUploader class for uploading files to the Cascade Protocol on Pastel Network.
+
 **Signature:**
 
 ```typescript
@@ -21,7 +23,7 @@ declare class CascadeUploader extends BaseFormDataUploader
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
-|  [getEndpoint()](./data-provider-cascade.cascadeuploader.getendpoint.md) |  | Return standard cascade protocol endpoint supported for all JWT and API keys. |
-|  [getRequestOptions(\_dataContent, meta)](./data-provider-cascade.cascadeuploader.getrequestoptions.md) |  | Extract fetch request options. |
-|  [resolveUrl(result)](./data-provider-cascade.cascadeuploader.resolveurl.md) |  | Decode IPFS URL from POST results. |
+|  [getGatewayUrl()](./data-provider-cascade.cascadeuploader.getgatewayurl.md) |  | Return the endpoint to be used for the upload. |
+|  [uploadFolderToCascade(folder, \_meta)](./data-provider-cascade.cascadeuploader.uploadfoldertocascade.md) |  | Uploads images of folder to Cascade Protocol and return result ids and ipfs links. |
+|  [uploadToCascade(data, \_meta)](./data-provider-cascade.cascadeuploader.uploadtocascade.md) |  | Uploads file to Cascade Protocol and return result id and ipfs link. |
 

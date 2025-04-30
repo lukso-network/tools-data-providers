@@ -8,5 +8,5 @@
 
 |  Class | Description |
 |  --- | --- |
-|  [CascadeUploader](./data-provider-cascade.cascadeuploader.md) |  |
+|  [CascadeUploader](./data-provider-cascade.cascadeuploader.md) | CascadeUploader class for uploading files to the Cascade Protocol on Pastel Network. |
 
