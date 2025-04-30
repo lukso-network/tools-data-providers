@@ -13,7 +13,7 @@
 		"typescript": "^4.9.5"
 	},
 	"scripts": {
-		"test": "cross-env NODE_OPTIONS='${NODE_OPTIONS} --experimental-vm-modules' jest --verbose --detectOpenHandles --runInBand"
+		"test": "cross-env NODE_OPTIONS='${NODE_OPTIONS} --experimental-vm-modules' jest --verbose --runInBand"
 	},
 	"jest": {
 		"preset": "jest-presets/jest/browser"
